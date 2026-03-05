@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class Ennemy : MonoBehaviour
 {
+    public SpriteRenderer mySpriteRenderer;
+    public Rigidbody2D rb;
     public PvSystem Pv;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -12,7 +14,8 @@ public class Ennemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+
     }
 
     public void OnCollisionEnter2D(Collision2D collision)

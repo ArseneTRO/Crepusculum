@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     public TrailRenderer tr;
+    public SpriteRenderer mySpriteRenderer;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -27,12 +28,14 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if (isDashing) // pour que le joueur puisse rien faire tant qu'il dash
         {
             return;
         }
+        mySpriteRenderer.flipX = (Mathf.Sign(rb.linearVelocityX) < 0);
+
 
         if (Input.GetKey(KeyCode.D)) // Aller à droite
         {
@@ -59,10 +62,11 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isGrounded)
             {
-                isGrounded = false; // Pour empecher de jump tant que le player n'est pas retombé au sol
+                isGrounded = false; // Pour empecher de jump tant que le player n'est pas retombé au 
+                
+                rb.linearVelocity = new UnityEngine.Vector2(0, JumpForce);
                 canFrontflip = true; // Pour que le player puisse faire un frontflip après un saut
                 print("Jump !");
-                rb.linearVelocity = new UnityEngine.Vector2(0, JumpForce);
             }
         }
 
@@ -70,11 +74,13 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
-        if (Input.GetKeyDown(KeyCode.Space) && canFrontflip) // c'est la couroutine du frontflip A REPARER
+        /*if (Input.GetKeyDown(KeyCode.Space) && canFrontflip) // c'est la couroutine du frontflip A REPARER
         {
-            StartCoroutine(Frontflip());
-        }
+            //StartCoroutine(Frontflip());
+        }*/
 
+
+    }
         IEnumerator Dash()
         {
             canDash = false;
@@ -90,19 +96,21 @@ public class PlayerMovement : MonoBehaviour
             yield return new WaitForSeconds(dashingCooldown);
             canDash = true;
         }
-        IEnumerator Frontflip()
-        {
-            canFrontflip = false;
-            isFrontflipping = true;
-            float originalGravity = rb.gravityScale;
-            tr.emitting = true;
-            rb.linearVelocity = new UnityEngine.Vector2(0, JumpForce);
-            yield return new WaitForSeconds(frontflippingTime);
-            tr.emitting = false;
-            isFrontflipping = false;
-        }
 
-    }
+        /*IEnumerator Frontflip()
+        {
+            if (isGrounded == false)
+                {
+                    print("JE FRONTFLIP LA");
+                    canFrontflip = false;
+                    isFrontflipping = true;
+                    tr.emitting = true;
+                    rb.linearVelocity = new UnityEngine.Vector2(0, JumpForce);
+                    yield return new WaitForSeconds(frontflippingTime);
+                    tr.emitting = false;
+                    isFrontflipping = false;
+                }
+        }*/
 
 
     
