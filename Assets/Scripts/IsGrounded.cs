@@ -12,16 +12,15 @@ public class IsGrounded : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            print("Grounded !");
             playerMovement.isGrounded = true;  // Pour jump, etc.
-            playerMovement.canFrontflip = false; // Pour que le player puisse faire un frontflip après un saut
+            playerMovement.jumpsLeft = 2;
+            print("Grounded !");
         }
     }
 }

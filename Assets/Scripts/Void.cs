@@ -5,11 +5,11 @@ public class Void : MonoBehaviour
 {
     public Collider2D myCollider;
     public Collider2D PlayerCollider;
-    public PvSystem PV;
+    public HealthSystem HealthSystem;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        HealthSystem = GameObject.FindWithTag("Player").GetComponent<HealthSystem>();
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class Void : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            PV.Die();
+            HealthSystem.Die();
         }
     }
 }

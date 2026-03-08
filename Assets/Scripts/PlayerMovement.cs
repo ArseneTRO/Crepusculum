@@ -4,19 +4,19 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public int jumpsLeft;
     public bool isJumping = false;
     public bool isGrounded;
     public bool canDash = true;
     public bool isDashing;
-    public bool isFrontflipping;
-    public bool canFrontflip;
+    public bool flowered;
+    public bool CinematicPlaying;
 
     public float moveSpeed;
     public float JumpForce;
     public float dashingPower;
     public float dashingTime;
     public float dashingCooldown;
-    public float frontflippingTime;
 
     public Rigidbody2D rb;
     public TrailRenderer tr;
@@ -30,6 +30,11 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        if (CinematicPlaying)
+        {
+            rb.linearVelocity = Vector2.zero; // pour que le player puisse pas bouger pendant les cinématiques
+            return;
+        }
         if (isDashing) // pour que le joueur puisse rien faire tant qu'il dash
         {
             return;
@@ -65,8 +70,14 @@ public class PlayerMovement : MonoBehaviour
                 isGrounded = false; // Pour empecher de jump tant que le player n'est pas retombé au 
                 
                 rb.linearVelocity = new UnityEngine.Vector2(0, JumpForce);
-                canFrontflip = true; // Pour que le player puisse faire un frontflip après un saut
                 print("Jump !");
+                jumpsLeft -= 1;
+            }
+            else if (jumpsLeft == 1)
+            {
+                rb.linearVelocity = new UnityEngine.Vector2(0, JumpForce);
+                print("DoubleJump !");
+                jumpsLeft -= 1;
             }
         }
 
@@ -74,44 +85,30 @@ public class PlayerMovement : MonoBehaviour
         {
             StartCoroutine(Dash());
         }
-        /*if (Input.GetKeyDown(KeyCode.Space) && canFrontflip) // c'est la couroutine du frontflip A REPARER
-        {
-            //StartCoroutine(Frontflip());
-        }*/
+
 
 
     }
         IEnumerator Dash()
         {
-            canDash = false;
-            isDashing = true;
-            float originalGravity = rb.gravityScale;
-            rb.gravityScale = 0f;
-            rb.linearVelocity = new Vector2(transform.localScale.x * dashingPower, 0f);
-            tr.emitting = true;
-            yield return new WaitForSeconds(dashingTime);
-            tr.emitting = false;
-            rb.gravityScale = originalGravity;
-            isDashing = false;
-            yield return new WaitForSeconds(dashingCooldown);
-            canDash = true;
+            if (flowered)
+            {
+            yield break;
+            }
+            else
+            {
+                canDash = false;
+                isDashing = true;
+                float originalGravity = rb.gravityScale;
+                rb.gravityScale = 0f;
+                rb.linearVelocity = new Vector2(transform.localScale.x * dashingPower, 0f);
+                tr.emitting = true;
+                yield return new WaitForSeconds(dashingTime);
+                tr.emitting = false;
+                rb.gravityScale = originalGravity;
+                isDashing = false;
+                yield return new WaitForSeconds(dashingCooldown);
+                canDash = true;
+            }
         }
-
-        /*IEnumerator Frontflip()
-        {
-            if (isGrounded == false)
-                {
-                    print("JE FRONTFLIP LA");
-                    canFrontflip = false;
-                    isFrontflipping = true;
-                    tr.emitting = true;
-                    rb.linearVelocity = new UnityEngine.Vector2(0, JumpForce);
-                    yield return new WaitForSeconds(frontflippingTime);
-                    tr.emitting = false;
-                    isFrontflipping = false;
-                }
-        }*/
-
-
-    
 }
