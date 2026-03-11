@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Cinemachine;
 
 
 public class CinematicManager : MonoBehaviour
@@ -27,7 +28,7 @@ public class CinematicManager : MonoBehaviour
             Destroy(gameObject); // SI  doublon
         }
 
-
+        
     }
 
     private void Update()
@@ -53,6 +54,10 @@ public class CinematicManager : MonoBehaviour
         public StepType stepType;
         public GameObject target;
         public float moveSpeed;
+        public float zoomStart;
+        public float zoomEnd;
+        public CinemachineCamera myCamera;
+        public float cameraSpeed;
     }
     public enum StepType
     {
@@ -62,7 +67,7 @@ public class CinematicManager : MonoBehaviour
         FadeIn
     }
     Queue<Cinematic> CinematicQueue = new Queue<Cinematic>();
-
+   
     public void DisplayNextStep()
     {
         if (CinematicQueue.Count == 0)
@@ -88,6 +93,9 @@ public class CinematicManager : MonoBehaviour
                 // Code pour gérer le fade in
                 break;
         }
+        StartCoroutine(Cameraman(cinematicStep));
+
+
     }
 
     public void EndCinematic()
@@ -108,9 +116,14 @@ public class CinematicManager : MonoBehaviour
 
     }
 
-    public void StartCinematic(List<Cinematic> cinematicSteps)
+    public void StartCinematic(List<Cinematic> cinematicSteps, bool controlPlayer)
     {
-        player.CinematicPlaying = true;
+        
+        if (controlPlayer)
+        {
+            player.CinematicPlaying = true;
+        }
+
         foreach (Cinematic step in cinematicSteps)
         {
             CinematicQueue.Enqueue(step);
@@ -124,10 +137,7 @@ public class CinematicManager : MonoBehaviour
 
     IEnumerator CinematicMouvement(Cinematic cinematicStep)
     {
-        Debug.Log("Position actuelle : " + cinematicStep.target.transform.position);
-        Debug.Log("Position Start : " + cinematicStep.positionStart);
-        Debug.Log("Position End : " + cinematicStep.positionEnd);
-        cinematicStep.target.transform.position = cinematicStep.positionStart;
+        
         Rigidbody2D targetRb = cinematicStep.target.GetComponent<Rigidbody2D>();
         float distance = Vector2.Distance(cinematicStep.positionEnd, cinematicStep.positionStart);
         while (distance > 0.3f)
@@ -139,6 +149,20 @@ public class CinematicManager : MonoBehaviour
         }
             targetRb.linearVelocity = Vector2.zero;
         DisplayNextStep();
+        yield break;
+    }
+
+    IEnumerator Cameraman(Cinematic cinematicStep)
+    {
+        float t = 0f;
+        while (t < 1f)
+        {
+            cinematicStep.myCamera.Lens.OrthographicSize = Mathf.Lerp(cinematicStep.zoomStart, cinematicStep.zoomEnd, t);
+            t += Time.deltaTime / cinematicStep.cameraSpeed;
+            yield return null;
+        }
+
+
         yield break;
     }
 
