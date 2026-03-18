@@ -15,7 +15,7 @@ public class StartSpecialCinematic : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            CinematicManager.Instance.StartCinematic(cinematicSteps, false);
+            CinematicManager.Instance.StartCinematic(cinematicSteps, true);
             Destroy(gameObject);
         }
     }

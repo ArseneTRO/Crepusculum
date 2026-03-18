@@ -64,8 +64,10 @@ public class DialogueManager : MonoBehaviour
         if (sentences.Count == 0)
         {
             EndDialogue();
+            
             return;
         }
+        
         string sentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(sentence));
@@ -84,7 +86,11 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-
+        if (CinematicManager.Instance.fromCinematic)
+        {
+            CinematicManager.Instance.fromCinematic = false;
+            CinematicManager.Instance.DisplayNextStep();
+        }
         animator.SetBool("IsOpen", false);
 
     }

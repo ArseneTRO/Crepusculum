@@ -1,9 +1,10 @@
-using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Cinemachine;
+using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.UI;
 
 
 public class CinematicManager : MonoBehaviour
@@ -15,6 +16,8 @@ public class CinematicManager : MonoBehaviour
     public static CinematicManager Instance;
     public bool CinematicUI;
     public Animator animator;
+    public bool fromCinematic;
+
 
     private void Awake()
     {
@@ -58,13 +61,15 @@ public class CinematicManager : MonoBehaviour
         public float zoomEnd;
         public CinemachineCamera myCamera;
         public float cameraSpeed;
+        public string npcName;
     }
     public enum StepType
     {
         Text,
         Movement,
         FadeOut,
-        FadeIn
+        FadeIn,
+        Dialogue
     }
     Queue<Cinematic> CinematicQueue = new Queue<Cinematic>();
    
@@ -75,6 +80,18 @@ public class CinematicManager : MonoBehaviour
             EndCinematic();
             return;
         }
+        if (CinematicQueue.Peek().stepType == StepType.Dialogue)
+        {
+            CinematicUI = false;
+            fromCinematic = true;
+            StopAllCoroutines();
+            
+        }
+        else
+        {
+            CinematicUI = true;
+        }
+
         StopAllCoroutines();
 
         Cinematic cinematicStep = CinematicQueue.Dequeue();
@@ -91,6 +108,9 @@ public class CinematicManager : MonoBehaviour
                 break;
             case StepType.FadeIn:
                 // Code pour gérer le fade in
+                break;
+            case StepType.Dialogue:
+                DialogueManager.Instance.StartDialogue(new Dialogue { name = cinematicStep.npcName, sentences = cinematicStep.sentences, sprite = cinematicStep.sprite });
                 break;
         }
         StartCoroutine(Cameraman(cinematicStep));
@@ -127,6 +147,12 @@ public class CinematicManager : MonoBehaviour
         foreach (Cinematic step in cinematicSteps)
         {
             CinematicQueue.Enqueue(step);
+        }
+        if (CinematicQueue.Peek().stepType == StepType.Dialogue)
+        {
+            CinematicUI = false;
+            DisplayNextStep();
+            return;
         }
         CinematicUI = true;
         DisplayNextStep();
