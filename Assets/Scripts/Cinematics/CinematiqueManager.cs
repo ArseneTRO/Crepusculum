@@ -5,19 +5,17 @@ using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-
+using static CinematicManager;
 
 public class CinematicManager : MonoBehaviour
 {
-
-
     //Singleton (porte d'entrée pour accéder à chaque élément facilement) (absolument exceptionnel)
-
     public static CinematicManager Instance;
     public bool CinematicUI;
     public Animator animator;
     public bool fromCinematic;
-
+    public TMP_Text dialogueText;
+    public PlayerMovement player;
 
     private void Awake()
     {
@@ -30,93 +28,14 @@ public class CinematicManager : MonoBehaviour
         {
             Destroy(gameObject); // SI  doublon
         }
-
-        
     }
 
     private void Update()
     {
-        if (CinematicUI && Input.GetKeyDown(KeyCode.Space))
-        {
-            DisplayNextStep();
-        }
-
         animator.SetBool("CinematicIsOn", CinematicUI);
     }
 
 
-    public TMP_Text dialogueText;
-    public PlayerMovement player;
-    [System.Serializable]
-    public class Cinematic   // Relatif à sois meme
-    {
-        public Sprite sprite;
-        public string[] sentences;
-        public Vector2 positionStart;
-        public Vector2 positionEnd;
-        public StepType stepType;
-        public GameObject target;
-        public float moveSpeed;
-        public float zoomStart;
-        public float zoomEnd;
-        public CinemachineCamera myCamera;
-        public float cameraSpeed;
-        public string npcName;
-    }
-    public enum StepType
-    {
-        Text,
-        Movement,
-        FadeOut,
-        FadeIn,
-        Dialogue
-    }
-    Queue<Cinematic> CinematicQueue = new Queue<Cinematic>();
-   
-    public void DisplayNextStep()
-    {
-        if (CinematicQueue.Count == 0)
-        {
-            EndCinematic();
-            return;
-        }
-        if (CinematicQueue.Peek().stepType == StepType.Dialogue)
-        {
-            CinematicUI = false;
-            fromCinematic = true;
-            StopAllCoroutines();
-            
-        }
-        else
-        {
-            CinematicUI = true;
-        }
-
-        StopAllCoroutines();
-
-        Cinematic cinematicStep = CinematicQueue.Dequeue();
-        switch (cinematicStep.stepType)
-        {
-            case StepType.Text:
-                StartCoroutine(TypeSentence(cinematicStep.sentences[0]));
-                break;
-            case StepType.Movement:
-                StartCoroutine(CinematicMouvement(cinematicStep));
-                break;
-            case StepType.FadeOut:
-                // Code pour gérer le fade out
-                break;
-            case StepType.FadeIn:
-                // Code pour gérer le fade in
-                break;
-            case StepType.Dialogue:
-                DialogueManager.Instance.StartDialogue(new Dialogue { name = cinematicStep.npcName, sentences = cinematicStep.sentences, sprite = cinematicStep.sprite });
-                break;
-        }
-        StartCoroutine(Cameraman(cinematicStep));
-
-
-    }
 
     public void EndCinematic()
     {
@@ -125,74 +44,37 @@ public class CinematicManager : MonoBehaviour
 
     }
 
-    IEnumerator TypeSentence(string CinematicSentence)
+    private bool NextCinematicElement(CinematicElement element)
     {
-        dialogueText.text = "";
-        foreach (char letter in CinematicSentence.ToCharArray())
-        {
-            dialogueText.text += letter;
-            yield return new WaitForSeconds(0.02f);
-        }
-
+        return element.IsEnded();
     }
 
-    public void StartCinematic(List<Cinematic> cinematicSteps, bool controlPlayer)
+    public void StartCinematic(List<CinematicElement> cinematicElements, bool controlPlayer)
+    {
+        StartCoroutine(Cinematic(cinematicElements, controlPlayer));
+    }
+
+    private IEnumerator Cinematic(List<CinematicElement> cinematicElements, bool controlPlayer)
     {
         
-        if (controlPlayer)
+        if (!controlPlayer)
         {
             player.CinematicPlaying = true;
         }
 
-        foreach (Cinematic step in cinematicSteps)
-        {
-            CinematicQueue.Enqueue(step);
-        }
-        if (CinematicQueue.Peek().stepType == StepType.Dialogue)
+
+        foreach (CinematicElement element in cinematicElements)
         {
             CinematicUI = false;
-            DisplayNextStep();
-            return;
-        }
-        CinematicUI = true;
-        DisplayNextStep();
-    }
+            element.StartProcess();
+            
+            yield return new WaitUntil(()=>NextCinematicElement(element));
 
-
-
-
-    IEnumerator CinematicMouvement(Cinematic cinematicStep)
-    {
-        
-        Rigidbody2D targetRb = cinematicStep.target.GetComponent<Rigidbody2D>();
-        float distance = Vector2.Distance(cinematicStep.positionEnd, cinematicStep.positionStart);
-        while (distance > 0.3f)
-        {
-            Vector2 dirToTarget = (cinematicStep.positionEnd - (Vector2)cinematicStep.target.transform.position).normalized;
-            targetRb.linearVelocity = dirToTarget * cinematicStep.moveSpeed;
-            distance = Vector2.Distance(cinematicStep.positionEnd, cinematicStep.target.transform.position);
-            yield return null;
-        }
-            targetRb.linearVelocity = Vector2.zero;
-        DisplayNextStep();
-        yield break;
-    }
-
-    IEnumerator Cameraman(Cinematic cinematicStep)
-    {
-        float t = 0f;
-        while (t < 1f)
-        {
-            cinematicStep.myCamera.Lens.OrthographicSize = Mathf.Lerp(cinematicStep.zoomStart, cinematicStep.zoomEnd, t);
-            t += Time.deltaTime / cinematicStep.cameraSpeed;
-            yield return null;
         }
 
-
-        yield break;
+        player.CinematicPlaying = false;
     }
+
 
 
 }
-
-

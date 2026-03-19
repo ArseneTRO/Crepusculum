@@ -13,8 +13,15 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
 
     private Queue<string> sentences;
+    public List<Dialogue> dialogues;
 
-    
+    private bool dialogueEnded;
+
+
+    public bool IsDialogueEnded()
+    {
+        return dialogueEnded;
+    }
 
     public static DialogueManager Instance;
     private void Awake()
@@ -34,6 +41,7 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        dialogueEnded = false;
         animator.SetBool("IsOpen", true);
 
         nameText.text = dialogue.name;
@@ -84,14 +92,10 @@ public class DialogueManager : MonoBehaviour
         
     }
 
+
     void EndDialogue()
     {
-        if (CinematicManager.Instance.fromCinematic)
-        {
-            CinematicManager.Instance.fromCinematic = false;
-            CinematicManager.Instance.DisplayNextStep();
-        }
+        dialogueEnded =true;    
         animator.SetBool("IsOpen", false);
-
     }
 }
