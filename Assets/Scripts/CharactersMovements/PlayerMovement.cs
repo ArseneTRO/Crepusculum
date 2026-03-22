@@ -11,12 +11,15 @@ public class PlayerMovement : MonoBehaviour
     public bool isDashing;
     public bool flowered;
     public bool CinematicPlaying;
+    public bool DialoguePlaying;
 
     public float moveSpeed;
     public float JumpForce;
     public float dashingPower;
     public float dashingTime;
     public float dashingCooldown;
+
+    public Animator animator;
 
     public Rigidbody2D rb;
     public TrailRenderer tr;
@@ -30,9 +33,23 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
+        if(rb.linearVelocity.x == 0)
+        {
+            animator.SetBool("IsWalking", false);
+        }
+        else
+        animator.SetBool("IsWalking", true);
+        
+
+
         if (CinematicPlaying)
         {
-            rb.linearVelocity = Vector2.zero; // pour que le player puisse pas bouger pendant les cinématiques
+            rb.linearVelocity = Vector2.zero; // pour que le player puisse pas bouger pendant les cinmatiques
+            return;
+        }
+        if (DialoguePlaying)
+        {
+            rb.linearVelocity = Vector2.zero; // pour que le player puisse pas bouger pendant les cinmatiques
             return;
         }
         if (isDashing) // pour que le joueur puisse rien faire tant qu'il dash
@@ -42,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         mySpriteRenderer.flipX = (Mathf.Sign(rb.linearVelocityX) < 0);
 
 
-        if (Input.GetKey(KeyCode.D)) // Aller à droite
+        if (Input.GetKey(KeyCode.D)) // Aller ï¿½ droite
         {
             rb.linearVelocity = new UnityEngine.Vector2(moveSpeed, rb.linearVelocity.y);
 
@@ -51,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
                 dashingPower = dashingPower * -1;
             }
         }
-        else if (Input.GetKey(KeyCode.A)) // Aller à guache
+        else if (Input.GetKey(KeyCode.A)) // Aller ï¿½ guache
         {
             rb.linearVelocity = new UnityEngine.Vector2(-moveSpeed, rb.linearVelocity.y);
             if (dashingPower > 0)
@@ -67,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (isGrounded)
             {
-                isGrounded = false; // Pour empecher de jump tant que le player n'est pas retombé au 
+                isGrounded = false; // Pour empecher de jump tant que le player n'est pas retombï¿½ au 
                 
                 rb.linearVelocity = new UnityEngine.Vector2(0, JumpForce);
                 print("Jump !");

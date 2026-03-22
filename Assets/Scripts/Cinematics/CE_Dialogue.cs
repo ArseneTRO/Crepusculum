@@ -18,6 +18,6 @@ public class CE_Dialogue : CinematicElement
     }
     public override bool IsEnded()
     {
-        return DialogueManager.Instance.IsDialogueEnded();
+        return DialogueManager.Instance.IsDialogueEnded() && Input.GetKeyDown(KeyCode.Space);
     }
 }

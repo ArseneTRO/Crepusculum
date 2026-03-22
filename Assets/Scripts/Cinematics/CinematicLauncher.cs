@@ -29,7 +29,27 @@ public class CinematicLauncher : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer);
-            Destroy(gameObject);
+            CinematicManager.Instance.CinematicLauncher = this;
+            
         }
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.P)) 
+        {
+            cinematicElements.RemoveAll(element => element.IsEnded());
+            CinematicManager.Instance.EndCinematic();
+        }
+    }
+
+    public void CinematicEnded()
+    {
+        if (CinematicManager.Instance.CinematicLauncher == this)
+        {
+            CinematicManager.Instance.CinematicLauncher = null;
+        }
+        print("Cinematic Ended");
+        Destroy(gameObject);
     }
 }

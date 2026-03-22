@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class FlowerSystem : PlayerMovement
 {
-    public CircleCollider2D flowerCollider;
+    public BoxCollider2D flowerCollider;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -17,14 +17,15 @@ public class FlowerSystem : PlayerMovement
         {
             base.moveSpeed = 2.5f;
             base.JumpForce = 5f;
-            mySpriteRenderer.color = Color.gray;
+            animator.SetBool("Flowered", true);
 
         }
         else
         {
-            mySpriteRenderer.color = Color.white;
             base.moveSpeed = 5f;
             base.JumpForce = 7f;
+            animator.SetBool("Flowered", false);
+
         }
         base.Update();
     }

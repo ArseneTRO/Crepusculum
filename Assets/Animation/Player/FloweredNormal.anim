@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: IdleAnimation
+  m_Name: FloweredNormal
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,15 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -4342657637965536982, guid: d04827550280ce3439f5a8e0be70e084, type: 3}
-    - time: 0.33333334
-      value: {fileID: 8361745828278301964, guid: d04827550280ce3439f5a8e0be70e084, type: 3}
+      value: {fileID: 779242227169448145, guid: 6d46734f65393f04b905023f31bf9107, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 3
+  m_SampleRate: 60
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -46,14 +44,13 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -4342657637965536982, guid: d04827550280ce3439f5a8e0be70e084, type: 3}
-    - {fileID: 8361745828278301964, guid: d04827550280ce3439f5a8e0be70e084, type: 3}
+    - {fileID: 779242227169448145, guid: 6d46734f65393f04b905023f31bf9107, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.6666667
+    m_StopTime: 0.016666668
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0

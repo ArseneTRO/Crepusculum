@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text nameText;
     public TMP_Text dialogueText;
     public Image illustration;
+    public PlayerMovement playerMovement;
 
     public Animator animator;
 
@@ -20,12 +21,13 @@ public class DialogueManager : MonoBehaviour
 
     public bool IsDialogueEnded()
     {
-        return dialogueEnded;
+        return dialogueEnded && Input.GetKeyDown(KeyCode.Space);
     }
 
     public static DialogueManager Instance;
     private void Awake()
     {
+        playerMovement = FindObjectOfType<PlayerMovement>();
         if (Instance == null)
         {
             Instance = this;
@@ -97,5 +99,6 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueEnded =true;    
         animator.SetBool("IsOpen", false);
+        playerMovement.DialoguePlaying = false;
     }
 }

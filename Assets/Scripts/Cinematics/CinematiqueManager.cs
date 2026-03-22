@@ -9,8 +9,9 @@ using static CinematicManager;
 
 public class CinematicManager : MonoBehaviour
 {
-    //Singleton (porte d'entrée pour accéder à chaque élément facilement) (absolument exceptionnel)
+    //Singleton (porte d'entrï¿½e pour accï¿½der ï¿½ chaque ï¿½lï¿½ment facilement) (absolument exceptionnel)
     public static CinematicManager Instance;
+    public CinematicLauncher CinematicLauncher;
     public bool CinematicUI;
     public Animator animator;
     public bool fromCinematic;
@@ -41,6 +42,7 @@ public class CinematicManager : MonoBehaviour
     {
         player.CinematicPlaying = false;
         CinematicUI = false;
+        CinematicLauncher.CinematicEnded();
 
     }
 
@@ -73,6 +75,8 @@ public class CinematicManager : MonoBehaviour
         }
 
         player.CinematicPlaying = false;
+        CinematicUI = false;
+        CinematicLauncher.CinematicEnded();
     }
 
 

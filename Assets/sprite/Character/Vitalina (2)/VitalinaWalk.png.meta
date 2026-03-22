@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: ba382a01538178f4f9cdf8169cf94f6c
+guid: 4977ddb195789a1478295bfcaa860a00
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 608075622941810758
-    second: Vitalina_idle_2_0
+      213: -5244581172789940890
+    second: VitalinaWalk_0
+  - first:
+      213: -1394544002244931787
+    second: VitalinaWalk_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -96,40 +99,49 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Vitalina_idle_2_0
+      name: VitalinaWalk_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 1
         y: 0
-        width: 23
-        height: 28
+        width: 21
+        height: 27
       alignment: 9
-      pivot: {x: 0.50166225, y: 0.0016213714}
+      pivot: {x: 0.49999994, y: 0.015730543}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 640650eae81507800800000000000000
-      internalID: 608075622941810758
+      spriteID: 66d6728d5318737b0800000000000000
+      internalID: -5244581172789940890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VitalinaWalk_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 0
+        width: 22
+        height: 25
+      alignment: 9
+      pivot: {x: 0.49826205, y: 0.016750224}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53f0a8a5e9595ace0800000000000000
+      internalID: -1394544002244931787
       vertices: []
       indices: 
       edges: []
@@ -138,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1a11d067a6c194c459ce0e5d59239012
+    spriteID: 2ceae17b6ab653c4ab1622ff888bdb9d
     internalID: 0
     vertices: []
     indices: 
@@ -146,9 +158,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Vitalina_idle_2_0: 608075622941810758
+      VitalinaWalk_0: -5244581172789940890
+      VitalinaWalk_1: -1394544002244931787
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
