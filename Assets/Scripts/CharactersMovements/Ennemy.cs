@@ -6,7 +6,6 @@ public class Ennemy : MonoBehaviour
     public SpriteRenderer mySpriteRenderer;
     public Rigidbody2D rb;
     public LifeBarSystem Pv;
-    public HealthSystem PlayerHealthSystem;
     [SerializeField]
     private Transform myBase;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -47,9 +46,10 @@ public class Ennemy : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Player"))
+        var playerHealth = collision.gameObject.GetComponent<HealthSystem>();
+        if (playerHealth!= null)
         {
-            PlayerHealthSystem.ChangeHealth(-1);
+            playerHealth.ChangeHealth(-1);
         }
     }
 }
