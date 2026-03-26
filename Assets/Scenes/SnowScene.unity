@@ -119,6 +119,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &11440827
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 11440828}
+  - component: {fileID: 11440829}
+  m_Layer: 0
+  m_Name: Step (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &11440828
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11440827}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 608453811}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11440829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11440827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daae47fff62a6c848a420e66a62a02e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomStart: 0
+  zoomEnd: 0
+  myCamera: {fileID: 0}
+  cameraSpeed: 0
+  shouldCameraMove: 0
+  sentences: Vos membres semblent gagner en force.
 --- !u!1 &14375962
 GameObject:
   m_ObjectHideFlags: 0
@@ -2445,8 +2495,8 @@ BoxCollider2D:
   m_Offset: {x: -0.0000005364418, y: 0.3483351}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.49631545, y: 0.0021185882}
-    oldSize: {x: 1.4375, y: 1}
+    pivot: {x: 0.49790746, y: -0.002824896}
+    oldSize: {x: 1.0384616, y: 0.7692308}
     newSize: {x: 0.27, y: 0.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -37966,7 +38016,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 572438781}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ec4fde329d600446a033c767e1d9cd7, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b397c19b60eae0428f191aca8aa6b2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   zoomStart: 0
@@ -37974,11 +38024,14 @@ MonoBehaviour:
   myCamera: {fileID: 0}
   cameraSpeed: 0
   shouldCameraMove: 0
-  positionStart: {x: 10.293, y: -1.95}
-  positionEnd: {x: 25.61, y: -1.95}
-  target: {fileID: 264111681}
-  moveSpeed: 0
-  isEnded: 0
+  sprite: {fileID: -4342657637965536982, guid: d04827550280ce3439f5a8e0be70e084, type: 3}
+  sentences:
+  - "H\xC9 !!!"
+  - "D\xC9P\xC8CHE-TOI !"
+  - "JE T'ATTENDS D\xC9J\xC0 DE L'AUTRE COT\xC9 !"
+  - ALORS GAMINE, ON AS PEUR DU GRAND SAUT ?
+  - NE T'EN FAIS DONC PAS. JE VAIS T'AIDER !
+  npcName: Lulupin
 --- !u!1001 &578468086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38305,6 +38358,15 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 572438782}
+  - {fileID: 1498526222}
+  - {fileID: 11440828}
+  - {fileID: 1316060140}
+  - {fileID: 1029274973}
+  - {fileID: 1691856422}
+  - {fileID: 1054738928}
+  - {fileID: 940141127}
+  - {fileID: 1852347905}
+  - {fileID: 1000129561}
   m_Father: {fileID: 2036482505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &608453812
@@ -60364,6 +60426,57 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 349796498339253599, guid: a6324dfe6090d5942ae97526515bc9c6, type: 3}
   m_PrefabInstance: {fileID: 723490808}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &940141126
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 940141127}
+  - component: {fileID: 940141128}
+  m_Layer: 0
+  m_Name: Step (7)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &940141127
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940141126}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 608453811}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &940141128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 940141126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daae47fff62a6c848a420e66a62a02e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomStart: 0
+  zoomEnd: 0
+  myCamera: {fileID: 0}
+  cameraSpeed: 0
+  shouldCameraMove: 0
+  sentences: "Vous avez d\xE9bloqu\xE9 le dash, pour l'utiliser, appuyez sur \"A\".
+    Le dash est soumis \xE0 un cooldown !"
 --- !u!1 &959253871
 GameObject:
   m_ObjectHideFlags: 0
@@ -60677,6 +60790,56 @@ MonoBehaviour:
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
   FollowOffset: {x: 0, y: 0, z: -10}
+--- !u!1 &1000129560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1000129561}
+  - component: {fileID: 1000129562}
+  m_Layer: 0
+  m_Name: Step (8)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1000129561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000129560}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 608453811}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1000129562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000129560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daae47fff62a6c848a420e66a62a02e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomStart: 0
+  zoomEnd: 0
+  myCamera: {fileID: 0}
+  cameraSpeed: 0
+  shouldCameraMove: 0
+  sentences: 'Obejctif : Passer le ravin'
 --- !u!1 &1020194552
 GameObject:
   m_ObjectHideFlags: 0
@@ -60821,6 +60984,113 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1029274972
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1029274973}
+  - component: {fileID: 1029274974}
+  m_Layer: 0
+  m_Name: Step (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1029274973
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029274972}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 608453811}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1029274974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029274972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b397c19b60eae0428f191aca8aa6b2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomStart: 0
+  zoomEnd: 0
+  myCamera: {fileID: 0}
+  cameraSpeed: 0
+  shouldCameraMove: 0
+  sprite: {fileID: -4342657637965536982, guid: d04827550280ce3439f5a8e0be70e084, type: 3}
+  sentences:
+  - "BON, C'EST PAS DE BONNE FOIE, MAIS JE TE PARTAGE MES ABILIT\xC9S."
+  - "TU DEVRAIS POUVOIR SAUTER UNE DEUXI\xC8ME FOIS, M\xCAME EN L'AIR"
+  - "ET TE D\xC9PLACER SOUDAINEMENT VERS L'AVANT"
+  - ESSAIE DE COMBINER LES DEUX POUR PASSER CE GOUFFRE !
+  npcName: Lulupin
+--- !u!1 &1054738927
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1054738928}
+  - component: {fileID: 1054738929}
+  m_Layer: 0
+  m_Name: Step (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1054738928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054738927}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 608453811}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1054738929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054738927}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daae47fff62a6c848a420e66a62a02e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomStart: 0
+  zoomEnd: 0
+  myCamera: {fileID: 0}
+  cameraSpeed: 0
+  shouldCameraMove: 0
+  sentences: "Vous avez d\xE9bloqu\xE9 le double-jump, pour l'utiliser, appuyez sur
+    \"ESPACE\" une fois en l'air."
 --- !u!1 &1081580981
 GameObject:
   m_ObjectHideFlags: 0
@@ -62184,6 +62454,7 @@ Transform:
   - {fileID: 1569549072}
   - {fileID: 490508984}
   - {fileID: 959253872}
+  - {fileID: 1242261767}
   m_Father: {fileID: 2036482505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1200329442
@@ -62593,6 +62864,59 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &1242261766
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1242261767}
+  - component: {fileID: 1242261768}
+  m_Layer: 0
+  m_Name: Step (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1242261767
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242261766}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1200329441}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1242261768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242261766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db4824d2021bf0841a9030874dc84719, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomStart: 0
+  zoomEnd: 0
+  myCamera: {fileID: 0}
+  cameraSpeed: 0
+  shouldCameraMove: 0
+  tpPosition: {x: 26.58, y: -1.96, z: 0}
+  target: {fileID: 264111681}
+  isEnded: 0
+  targetTransform: {fileID: 0}
 --- !u!1 &1272775473
 GameObject:
   m_ObjectHideFlags: 0
@@ -62832,6 +63156,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306877349}
   m_CullTransparentMesh: 1
+--- !u!1 &1316060139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1316060140}
+  - component: {fileID: 1316060141}
+  m_Layer: 0
+  m_Name: Step (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1316060140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316060139}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 608453811}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1316060141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1316060139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daae47fff62a6c848a420e66a62a02e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomStart: 0
+  zoomEnd: 0
+  myCamera: {fileID: 0}
+  cameraSpeed: 0
+  shouldCameraMove: 0
+  sentences: "Votre corps gagne en agilit\xE9."
 --- !u!1 &1356552215
 GameObject:
   m_ObjectHideFlags: 0
@@ -66970,6 +67344,56 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1498125712}
   m_CullTransparentMesh: 1
+--- !u!1 &1498526221
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1498526222}
+  - component: {fileID: 1498526223}
+  m_Layer: 0
+  m_Name: Step (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1498526222
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498526221}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 608453811}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1498526223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498526221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daae47fff62a6c848a420e66a62a02e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomStart: 0
+  zoomEnd: 0
+  myCamera: {fileID: 0}
+  cameraSpeed: 0
+  shouldCameraMove: 0
+  sentences: "Vous vous sentez \xE9trange."
 --- !u!1 &1499516267
 GameObject:
   m_ObjectHideFlags: 0
@@ -67999,6 +68423,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6324dfe6090d5942ae97526515bc9c6, type: 3}
+--- !u!1 &1691856421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1691856422}
+  - component: {fileID: 1691856423}
+  m_Layer: 0
+  m_Name: Step (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1691856422
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691856421}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 608453811}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1691856423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1691856421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daae47fff62a6c848a420e66a62a02e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomStart: 0
+  zoomEnd: 0
+  myCamera: {fileID: 0}
+  cameraSpeed: 0
+  shouldCameraMove: 0
+  sentences: "Lulupin vous as partag\xE9 ses abilit\xE9s"
 --- !u!1 &1711115689
 GameObject:
   m_ObjectHideFlags: 0
@@ -68236,6 +68710,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6324dfe6090d5942ae97526515bc9c6, type: 3}
+--- !u!1 &1852347904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1852347905}
+  - component: {fileID: 1852347906}
+  m_Layer: 0
+  m_Name: Step (9)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1852347905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852347904}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 608453811}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1852347906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1852347904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: daae47fff62a6c848a420e66a62a02e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  zoomStart: 0
+  zoomEnd: 0
+  myCamera: {fileID: 0}
+  cameraSpeed: 0
+  shouldCameraMove: 0
+  sentences: Tentez d'utiliser le double jump puis de le combiner au dash
 --- !u!1 &1858849894
 GameObject:
   m_ObjectHideFlags: 0
