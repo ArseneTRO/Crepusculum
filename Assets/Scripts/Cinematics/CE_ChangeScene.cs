@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class CE_ChangeScene : CinematicElement
 {

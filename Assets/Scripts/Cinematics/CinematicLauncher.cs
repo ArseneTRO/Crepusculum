@@ -28,8 +28,9 @@ public class CinematicLauncher : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer);
+            if (CinematicManager.Instance.CinematicLauncher == this) return;
             CinematicManager.Instance.CinematicLauncher = this;
+            CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer);
             
         }
     }
@@ -42,6 +43,8 @@ public class CinematicLauncher : MonoBehaviour
             CinematicManager.Instance.EndCinematic();
         }
     }
+
+    
 
     public void CinematicEnded()
     {
