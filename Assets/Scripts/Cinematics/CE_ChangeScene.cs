@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-public class CE_ChangeScene : CinematicElement
+public class CE_Declencheur : CinematicElement
 {
 
     public Vector3 tpPosition;
