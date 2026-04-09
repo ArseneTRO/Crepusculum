@@ -16,7 +16,8 @@ public class DialogueManager : MonoBehaviour
     private Queue<string> sentences;
     public List<Dialogue> dialogues;
 
-    private bool dialogueEnded;
+    private bool dialogueEnded = true;
+
 
 
     public bool IsDialogueEnded()
@@ -27,7 +28,7 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager Instance;
     private void Awake()
     {
-        playerMovement = FindObjectOfType<PlayerMovement>();
+        playerMovement = FindFirstObjectByType<PlayerMovement>();
         if (Instance == null)
         {
             Instance = this;
@@ -43,6 +44,11 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        if (!dialogueEnded)
+        {
+            return;    
+        }
+
         dialogueEnded = false;
         animator.SetBool("IsOpen", true);
 
@@ -70,20 +76,21 @@ public class DialogueManager : MonoBehaviour
     }
 
     public void DisplayNextSentence()
-        {
+    {
         if (sentences.Count == 0)
         {
             EndDialogue();
-            
             return;
         }
-        
+
         string sentence = sentences.Dequeue();
-        StopAllCoroutines();
-        StartCoroutine(TypeSentence(sentence));
+        print(sentences.Count);
+        print(sentence);
+        //StartCoroutine(TypeSentence(sentence));
+        dialogueText.text = sentence;   
     }
 
-    IEnumerator TypeSentence(string sentence)
+    private IEnumerator TypeSentence(string sentence)
     {
         dialogueText.text = "";
         foreach (char letter in sentence.ToCharArray())

@@ -27,10 +27,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             DisplayNextSentence();
         }
-        if (playerMovement.CinematicPlaying && Input.GetKeyDown(KeyCode.Space))
-        {
-            DisplayNextSentence();
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -55,6 +52,6 @@ public class DialogueTrigger : MonoBehaviour
     }
     void DisplayNextSentence()
     {   
-    DialogueManager.Instance.DisplayNextSentence();
+        DialogueManager.Instance.DisplayNextSentence();
     }
 }
