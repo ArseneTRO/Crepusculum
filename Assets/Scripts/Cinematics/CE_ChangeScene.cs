@@ -1,34 +1,45 @@
 using UnityEngine;
 using System.Collections;
+using Microsoft.Unity.VisualStudio.Editor;
+using UnityEngine.SceneManagement;
+using UnityEditor;
 
-public class CE_Declencheur : CinematicElement
+public class CE_ChangeScene : CinematicElement
 {
 
-    public Vector3 tpPosition;
-    public GameObject target;
+    public bool WeNeedToLoadScene = false;
+    public GameObject loadScene;
+    public string sceneName;
     public bool isEnded;
-    [SerializeField]
-    private Transform targetTransform;
 
+    void Awake()
+        {
+            DontDestroyOnLoad(gameObject);
+        }
     public override void PostStartProcess()
     {
-        isEnded = false;
-        StartCoroutine(Teleportation());
-    }
-    IEnumerator Teleportation()
-    {
-        targetTransform = target.GetComponent<Transform>();
-        targetTransform.position = tpPosition;
-        while (targetTransform.position != tpPosition)
         {
-            yield return new WaitForEndOfFrame();
+            StartCoroutine(LoadScene());
+            Destroy(gameObject);
         }
-        isEnded = true;
-        yield break;
     }
-
     public override bool IsEnded()
     {
         return isEnded;
     }
+        IEnumerator LoadScene()
+            {
+                if (WeNeedToLoadScene)
+                {   
+                    loadScene.gameObject.SetActive(true);
+                    yield return new WaitForSeconds(1f);
+                    SceneManager.LoadScene(sceneName);
+                    yield return new WaitForSeconds(4f);
+                    loadScene.gameObject.SetActive(false);
+                    isEnded = true;
+                    yield break;
+                }
+            }
+
 }
+
