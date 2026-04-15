@@ -77,17 +77,24 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+        StartCoroutine(NextSentence());
+    }
+
+    IEnumerator NextSentence()
+    {
+        yield return new WaitForSeconds(0.1f);
         if (sentences.Count == 0)
         {
             EndDialogue();
-            return;
+            yield break;
         }
 
         string sentence = sentences.Dequeue();
         print(sentences.Count);
         print(sentence);
         //StartCoroutine(TypeSentence(sentence));
-        dialogueText.text = sentence;   
+        dialogueText.text = sentence;
+        yield break;
     }
 
     private IEnumerator TypeSentence(string sentence)

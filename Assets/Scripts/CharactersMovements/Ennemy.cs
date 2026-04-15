@@ -8,15 +8,22 @@ public class Ennemy : MonoBehaviour
     public LifeBarSystem Pv;
     [SerializeField]
     private Transform myBase;
+    public PauseSystem pause;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartCoroutine(Path());
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (pause.isPaused)
+        {
+            return;
+        }
         mySpriteRenderer.flipX = (Mathf.Sign(rb.linearVelocityX) < 0);
     }
 
@@ -28,9 +35,7 @@ public class Ennemy : MonoBehaviour
 
             if (distance > 5)
             {
-                // Retour à la base en priorité
-                Vector2 dirToTarget = (myBase.position - transform.position).normalized;
-                rb.linearVelocity = dirToTarget * 7f;
+                transform.position = myBase.position;
                 yield return null; // Attend juste la prochaine frame fraté
             }
             else

@@ -1,45 +1,47 @@
-using UnityEngine;
-using System.Collections;
-using Microsoft.Unity.VisualStudio.Editor;
-using UnityEngine.SceneManagement;
-using UnityEditor;
 
-public class CE_ChangeScene : CinematicElement
-{
+            using UnityEngine;
+            using System.Collections;
+            using Microsoft.Unity.VisualStudio.Editor;
+            using UnityEngine.SceneManagement;
+            using UnityEditor;
 
-    public bool WeNeedToLoadScene = false;
-    public GameObject loadScene;
-    public string sceneName;
-    public bool isEnded;
-
-    void Awake()
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-    public override void PostStartProcess()
+    public class CE_ChangeScene : CinematicElement
     {
+        public bool WeNeedToLoadScene = false;
+        public GameObject loadScene;
+        public string sceneName;
+        public bool isEnded;
+        void Awake()
         {
-            StartCoroutine(LoadScene());
-            Destroy(gameObject);
+            DontDestroyOnLoad(loadScene);
         }
-    }
-    public override bool IsEnded()
-    {
-        return isEnded;
-    }
-        IEnumerator LoadScene()
+        public override void PostStartProcess()
+        {
             {
-                if (WeNeedToLoadScene)
-                {   
-                    loadScene.gameObject.SetActive(true);
-                    yield return new WaitForSeconds(1f);
-                    SceneManager.LoadScene(sceneName);
-                    yield return new WaitForSeconds(4f);
-                    loadScene.gameObject.SetActive(false);
-                    isEnded = true;
-                    yield break;
-                }
-            }
+                StartCoroutine(LoadScene());
 
-}
+            }
+        }
+        public override bool IsEnded()
+        {
+            return isEnded;
+        }
+        IEnumerator LoadScene()
+        {
+            if (WeNeedToLoadScene)
+            {
+                loadScene.gameObject.SetActive(true);
+                yield return new WaitForSeconds(4f);
+                SceneManager.LoadScene(sceneName);
+                yield return new WaitForSeconds(0.5f);
+                loadScene.gameObject.SetActive(false);
+                isEnded = true;
+                Destroy(gameObject);
+                yield break;
+            }
+        }
+    }
+
+
+
 

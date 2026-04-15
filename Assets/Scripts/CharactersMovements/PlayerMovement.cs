@@ -9,7 +9,6 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
     public bool canDash = true;
     public bool isDashing;
-    public bool flowered;
     public bool CinematicPlaying;
     public bool DialoguePlaying;
 
@@ -18,22 +17,36 @@ public class PlayerMovement : MonoBehaviour
     public float dashingPower;
     public float dashingTime;
     public float dashingCooldown;
+    public PauseSystem pause;
 
     public Animator animator;
-
-    public Rigidbody2D rb;
-    public TrailRenderer tr;
-    public SpriteRenderer mySpriteRenderer;
+    [SerializeField]
+    private Rigidbody2D rb;
+    [SerializeField]
+    private TrailRenderer tr;
+    [SerializeField]
+    private SpriteRenderer mySpriteRenderer;
+    [SerializeField]
+    private DistanceJoint2D joint2D;
+    public bool flowered;
+    public LulupinMainScript lulupin;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
+    
     void Start()
     {
         isGrounded = false;
+        pause = FindFirstObjectByType<PauseSystem>(FindObjectsInactive.Include);
     }
 
     // Update is called once per frame
     public void Update()
     {
-        if(rb.linearVelocity.x == 0)
+        if (pause.isPaused)
+        {
+            return;
+        }
+        if (rb.linearVelocity.x == 0)
         {
             animator.SetBool("IsWalking", false);
         }
@@ -45,7 +58,14 @@ public class PlayerMovement : MonoBehaviour
         if (CinematicPlaying)
         {
             rb.linearVelocity = Vector2.zero; // pour que le player puisse pas bouger pendant les cinmatiques
+            joint2D.enabled = false;
+            lulupin.distanceSystem = false;
             return;
+        }
+        else
+        {
+            joint2D.enabled = true;
+            lulupin.distanceSystem = true;
         }
         if (DialoguePlaying)
         {
@@ -59,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
         mySpriteRenderer.flipX = (Mathf.Sign(rb.linearVelocityX) < 0);
 
 
-        if (Input.GetKey(KeyCode.D)) // Aller � droite
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) // Aller a droite
         {
             rb.linearVelocity = new UnityEngine.Vector2(moveSpeed, rb.linearVelocity.y);
 
@@ -68,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
                 dashingPower = dashingPower * -1;
             }
         }
-        else if (Input.GetKey(KeyCode.A)) // Aller � guache
+        else if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)) // Aller a guache
         {
             rb.linearVelocity = new UnityEngine.Vector2(-moveSpeed, rb.linearVelocity.y);
             if (dashingPower > 0)
@@ -101,6 +121,11 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Q) && canDash) // c'est la couroutine du dash
         {
             StartCoroutine(Dash());
+        }
+
+        if (!CinematicPlaying)
+        {
+            joint2D.enabled = true;
         }
 
 

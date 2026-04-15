@@ -47,6 +47,8 @@ GameObject:
   - component: {fileID: 187553875388467192}
   - component: {fileID: 3918633824777547030}
   - component: {fileID: 8854749056713638713}
+  - component: {fileID: 2591121737584820518}
+  - component: {fileID: 5283263506520980515}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Flower
@@ -71,6 +73,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6955322427835852279
 SpriteRenderer:
+  serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -115,7 +118,8 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
+  m_MaskInteraction: 0
   m_Sprite: {fileID: -5263515878806827629, guid: f3d0e6a272f6f104eb7d5fd0d8865888, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -125,7 +129,6 @@ SpriteRenderer:
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!50 &5826559895744906437
 Rigidbody2D:
@@ -215,7 +218,6 @@ MonoBehaviour:
   mySpriteRenderer: {fileID: 6955322427835852279}
   rb: {fileID: 5826559895744906437}
   Pv: {fileID: 0}
-  PlayerHealthSystem: {fileID: 8854749056713638713}
   myBase: {fileID: 3334973045634963243}
 --- !u!114 &8854749056713638713
 MonoBehaviour:
@@ -233,6 +235,55 @@ MonoBehaviour:
   maxHealthPoints: 3
   checkpoint: {fileID: 0}
   transform: {fileID: 0}
+--- !u!58 &2591121737584820518
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7567661954945760462}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.0023128414, y: 0}
+  m_Radius: 0.35198677
+--- !u!114 &5283263506520980515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7567661954945760462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08998b5db03a2ea4d8d15b453a6e7197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FloweredEnemisystem
+  FlowerSystem: {fileID: 0}
 --- !u!1 &8987002661854869330
 GameObject:
   m_ObjectHideFlags: 0

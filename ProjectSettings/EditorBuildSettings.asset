@@ -14,6 +14,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SnowScene.unity
     guid: ddd0c4ba84ccc3a4896a8af844adfa58
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity
+    guid: 9bf0b731daa9b8849badd645ce201ed6
+  - enabled: 1
+    path: Assets/Scenes/EasterEgg.unity
+    guid: 521d393cb91fcb543a0a85a4d0ed38ef
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
