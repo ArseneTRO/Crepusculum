@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
@@ -8,11 +9,13 @@ public class DialogueTrigger : MonoBehaviour
     public bool isInRange;
     public BoxCollider2D boxCollider2D;
     public PlayerMovement playerMovement;
+    private bool CanSkip = true;
 
      void Start()
     {
         boxCollider2D = GetComponent<BoxCollider2D>();
         playerMovement = FindObjectOfType<PlayerMovement>();
+        CanSkip = true;
     }
 
     // Update is called once per frame
@@ -23,12 +26,14 @@ public class DialogueTrigger : MonoBehaviour
             TriggerDialogue();
             playerMovement.DialoguePlaying = true;
         }
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && CanSkip)
         {
-            DisplayNextSentence();
+                StartCoroutine(DispNextSentence());
         }
         
     }
+
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -51,7 +56,23 @@ public class DialogueTrigger : MonoBehaviour
         DialogueManager.Instance.StartDialogue(dialogue);
     }
     void DisplayNextSentence()
-    {   
-        DialogueManager.Instance.DisplayNextSentence();
+    {
+        StartCoroutine(DispNextSentence());
+    }
+    IEnumerator DispNextSentence()
+    {
+
+        if (!CanSkip)
+        {
+            yield break;
+        }
+        if (CanSkip)
+        {
+            CanSkip = false;
+            DialogueManager.Instance.DisplayNextSentence();
+            yield return new WaitForSeconds(1f);
+            CanSkip = true;
+            yield break;
+        }
     }
 }

@@ -9,6 +9,8 @@ public class Ennemy : MonoBehaviour
     [SerializeField]
     private Transform myBase;
     public PauseSystem pause;
+    public HealthSystem playerHealth;
+    private bool canHit = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -51,10 +53,21 @@ public class Ennemy : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        var playerHealth = collision.gameObject.GetComponent<HealthSystem>();
+        playerHealth = collision.gameObject.GetComponent<HealthSystem>();
         if (playerHealth!= null)
         {
-            playerHealth.ChangeHealth(-1);
+            StartCoroutine(PlayerHit());
         }
+    }
+
+    IEnumerator PlayerHit()
+    {
+        if (!canHit) yield break;
+        canHit = false;
+        playerHealth.ChangeHealth(-1);
+        print("Je retire de la vie");
+
+        yield return new WaitForSeconds(1f);
+        canHit = true;
     }
 }

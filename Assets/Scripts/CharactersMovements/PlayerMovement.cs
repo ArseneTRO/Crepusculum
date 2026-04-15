@@ -30,6 +30,8 @@ public class PlayerMovement : MonoBehaviour
     private DistanceJoint2D joint2D;
     public bool flowered;
     public LulupinMainScript lulupin;
+    [SerializeField]
+    private bool IsThisSceneIsJoint = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
     
@@ -62,11 +64,17 @@ public class PlayerMovement : MonoBehaviour
             lulupin.distanceSystem = false;
             return;
         }
+        else if (!IsThisSceneIsJoint)
+        {
+            joint2D.enabled = false;
+            lulupin.distanceSystem = false;
+        }           
         else
         {
-            joint2D.enabled = true;
-            lulupin.distanceSystem = true;
+           joint2D.enabled = true;
+           lulupin.distanceSystem = true;
         }
+        
         if (DialoguePlaying)
         {
             rb.linearVelocity = Vector2.zero; // pour que le player puisse pas bouger pendant les cinmatiques
@@ -125,7 +133,16 @@ public class PlayerMovement : MonoBehaviour
 
         if (!CinematicPlaying)
         {
-            joint2D.enabled = true;
+            if (!IsThisSceneIsJoint)
+            {
+                joint2D.enabled = false;
+                lulupin.distanceSystem = false;
+            }
+            else
+            {
+                joint2D.enabled = true;
+                lulupin.distanceSystem = true;
+            }
         }
 
 

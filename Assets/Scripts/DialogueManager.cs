@@ -15,6 +15,7 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
     public List<Dialogue> dialogues;
+    private bool canDisplay;
 
     private bool dialogueEnded = true;
 
@@ -77,12 +78,13 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
+
         StartCoroutine(NextSentence());
+
     }
 
     IEnumerator NextSentence()
     {
-        yield return new WaitForSeconds(0.1f);
         if (sentences.Count == 0)
         {
             EndDialogue();
@@ -92,8 +94,9 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         print(sentences.Count);
         print(sentence);
-        //StartCoroutine(TypeSentence(sentence));
+        StartCoroutine(TypeSentence(sentence));
         dialogueText.text = sentence;
+        
         yield break;
     }
 

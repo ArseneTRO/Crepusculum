@@ -1,0 +1,663 @@
+fileFormatVersion: 2
+guid: 34bf514dbbfffa047b856bd9213b1731
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3719117761557476321
+    second: OptionsScreenMainMenu_0
+  - first:
+      213: 4242130271271015924
+    second: OptionsScreenMainMenu_1
+  - first:
+      213: -6398161719154464385
+    second: OptionsScreenMainMenu_2
+  - first:
+      213: -3162502560225336413
+    second: OptionsScreenMainMenu_3
+  - first:
+      213: -3271529627259888995
+    second: OptionsScreenMainMenu_4
+  - first:
+      213: -5096724218484325732
+    second: OptionsScreenMainMenu_5
+  - first:
+      213: -5258379398044983310
+    second: OptionsScreenMainMenu_6
+  - first:
+      213: 9112086493070316052
+    second: OptionsScreenMainMenu_7
+  - first:
+      213: 211829075968088436
+    second: OptionsScreenMainMenu_8
+  - first:
+      213: -6054086715289423788
+    second: OptionsScreenMainMenu_9
+  - first:
+      213: -1601111121078267852
+    second: OptionsScreenMainMenu_10
+  - first:
+      213: -1293520871913672214
+    second: OptionsScreenMainMenu_11
+  - first:
+      213: -2312725569505796511
+    second: OptionsScreenMainMenu_12
+  - first:
+      213: -6974465378099554213
+    second: OptionsScreenMainMenu_13
+  - first:
+      213: -1461667602907696301
+    second: OptionsScreenMainMenu_14
+  - first:
+      213: 1849500230463700087
+    second: OptionsScreenMainMenu_15
+  - first:
+      213: -3655486647780787249
+    second: OptionsScreenMainMenu_16
+  - first:
+      213: -6367416661137211862
+    second: OptionsScreenMainMenu_17
+  - first:
+      213: -6260638258452371465
+    second: OptionsScreenMainMenu_18
+  - first:
+      213: 6003364125894066370
+    second: OptionsScreenMainMenu_19
+  - first:
+      213: -2945947512237622434
+    second: OptionsScreenMainMenu_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1165
+        height: 1080
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1c4580c91a036cc0800000000000000
+      internalID: -3719117761557476321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_1
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 961
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f55a0681031fda30800000000000000
+      internalID: 4242130271271015924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_2
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 454
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f79ab4ab0d92537a0800000000000000
+      internalID: -6398161719154464385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_3
+      rect:
+        serializedVersion: 2
+        x: 1164
+        y: 446
+        width: 24
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a361885da88c14d0800000000000000
+      internalID: -3162502560225336413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_4
+      rect:
+        serializedVersion: 2
+        x: 1166
+        y: 471
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9a120723213992d0800000000000000
+      internalID: -3271529627259888995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_5
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 476
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c928c1fa35cc449b0800000000000000
+      internalID: -5096724218484325732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_6
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 457
+        width: 20
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ffdb4d2ccb7607b0800000000000000
+      internalID: -5258379398044983310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_7
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 420
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41257163362a47e70800000000000000
+      internalID: 9112086493070316052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_8
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 423
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4795d2a1c6190f200800000000000000
+      internalID: 211829075968088436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_9
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 393
+        width: 38
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45033c755309bfba0800000000000000
+      internalID: -6054086715289423788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_10
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 370
+        width: 42
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 430d33e1be5b7c9e0800000000000000
+      internalID: -1601111121078267852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_11
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 410
+        width: 23
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae13800de9d7c0ee0800000000000000
+      internalID: -1293520871913672214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_12
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 320
+        width: 164
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16ed4ae095c87efd0800000000000000
+      internalID: -2312725569505796511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_13
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 373
+        width: 21
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b589d10e0b8b53f90800000000000000
+      internalID: -6974465378099554213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_14
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 313
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3537df43f0d17bbe0800000000000000
+      internalID: -1461667602907696301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_15
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 252
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77cbac819aebaa910800000000000000
+      internalID: 1849500230463700087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_16
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 256
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcbb7dde24a154dc0800000000000000
+      internalID: -3655486647780787249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_17
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 190
+        width: 61
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2e3300684462a7a0800000000000000
+      internalID: -6367416661137211862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_18
+      rect:
+        serializedVersion: 2
+        x: 1154
+        y: 189
+        width: 13
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f7e9b99caebd19a0800000000000000
+      internalID: -6260638258452371465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_19
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 148
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c04d358ddb305350800000000000000
+      internalID: 6003364125894066370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OptionsScreenMainMenu_20
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 150
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5b712e8854ed17d0800000000000000
+      internalID: -2945947512237622434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      OptionsScreenMainMenu_0: -3719117761557476321
+      OptionsScreenMainMenu_1: 4242130271271015924
+      OptionsScreenMainMenu_10: -1601111121078267852
+      OptionsScreenMainMenu_11: -1293520871913672214
+      OptionsScreenMainMenu_12: -2312725569505796511
+      OptionsScreenMainMenu_13: -6974465378099554213
+      OptionsScreenMainMenu_14: -1461667602907696301
+      OptionsScreenMainMenu_15: 1849500230463700087
+      OptionsScreenMainMenu_16: -3655486647780787249
+      OptionsScreenMainMenu_17: -6367416661137211862
+      OptionsScreenMainMenu_18: -6260638258452371465
+      OptionsScreenMainMenu_19: 6003364125894066370
+      OptionsScreenMainMenu_2: -6398161719154464385
+      OptionsScreenMainMenu_20: -2945947512237622434
+      OptionsScreenMainMenu_3: -3162502560225336413
+      OptionsScreenMainMenu_4: -3271529627259888995
+      OptionsScreenMainMenu_5: -5096724218484325732
+      OptionsScreenMainMenu_6: -5258379398044983310
+      OptionsScreenMainMenu_7: 9112086493070316052
+      OptionsScreenMainMenu_8: 211829075968088436
+      OptionsScreenMainMenu_9: -6054086715289423788
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
