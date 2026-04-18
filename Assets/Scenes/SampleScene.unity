@@ -846,6 +846,8 @@ MonoBehaviour:
   rb: {fileID: 1022557579}
   Pv: {fileID: 1565051879}
   myBase: {fileID: 777867475}
+  pause: {fileID: 0}
+  playerHealth: {fileID: 0}
 --- !u!61 &1022557584
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12118,7 +12120,6 @@ MonoBehaviour:
   isGrounded: 0
   canDash: 1
   isDashing: 0
-  flowered: 0
   CinematicPlaying: 0
   DialoguePlaying: 0
   moveSpeed: 5
@@ -12126,11 +12127,17 @@ MonoBehaviour:
   dashingPower: 5
   dashingTime: 0.2
   dashingCooldown: 2
+  pause: {fileID: 0}
   animator: {fileID: 0}
   rb: {fileID: 2122651571}
   tr: {fileID: 2122651575}
   mySpriteRenderer: {fileID: 2122651569}
-  flowerCollider: {fileID: 2122651576}
+  joint2D: {fileID: 0}
+  flowered: 0
+  lulupin: {fileID: 0}
+  IsThisSceneIsJoint: 0
+  flowerObject: {fileID: 0}
+  interactable: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
