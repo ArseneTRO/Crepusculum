@@ -36,10 +36,12 @@ public class Interactable : MonoBehaviour
         DontDestroyOnLoad(this);
         DontDestroyOnLoad(shortLoading);
         DontDestroyOnLoad(Feedback);
+        DontDestroyOnLoad(Feedback.gameObject);
     }
     void Start()
     {
         pause = FindFirstObjectByType<PauseSystem>(FindObjectsInactive.Include);
+        
     }
 
     // Update is called once per frame

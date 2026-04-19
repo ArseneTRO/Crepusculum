@@ -10,7 +10,7 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text dialogueText;
     public Image illustration;
     public PlayerMovement playerMovement;
-
+    public DialogueTrigger trigger;
     public Animator animator;
 
     private Queue<string> sentences;
@@ -51,9 +51,10 @@ public class DialogueManager : MonoBehaviour
         }
 
         dialogueEnded = false;
-        animator.SetBool("IsOpen", true);
 
+        animator.SetBool("IsOpen", true);
         nameText.text = dialogue.name;
+
         
         sentences.Clear();
 
@@ -78,7 +79,7 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-
+        StopAllCoroutines();
         StartCoroutine(NextSentence());
 
     }
@@ -90,12 +91,13 @@ public class DialogueManager : MonoBehaviour
             EndDialogue();
             yield break;
         }
-
+        
         string sentence = sentences.Dequeue();
+        
         print(sentences.Count);
         print(sentence);
         StartCoroutine(TypeSentence(sentence));
-        dialogueText.text = sentence;
+        
         
         yield break;
     }

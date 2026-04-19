@@ -9,13 +9,14 @@ public class DialogueTrigger : MonoBehaviour
     public bool isInRange;
     public BoxCollider2D boxCollider2D;
     public PlayerMovement playerMovement;
-    private bool CanSkip = true;
+    //public bool CanSkip = true;
+
 
      void Start()
     {
         boxCollider2D = GetComponent<BoxCollider2D>();
         playerMovement = FindObjectOfType<PlayerMovement>();
-        CanSkip = true;
+        //CanSkip = true;
     }
 
     // Update is called once per frame
@@ -26,7 +27,7 @@ public class DialogueTrigger : MonoBehaviour
             TriggerDialogue();
             playerMovement.DialoguePlaying = true;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && CanSkip)
+        if (Input.GetKeyDown(KeyCode.Space) /*&& CanSkip && playerMovement.DialoguePlaying*/)
         {
                 StartCoroutine(DispNextSentence());
         }
@@ -62,17 +63,17 @@ public class DialogueTrigger : MonoBehaviour
     IEnumerator DispNextSentence()
     {
 
-        if (!CanSkip)
-        {
-            yield break;
-        }
-        if (CanSkip)
-        {
-            CanSkip = false;
-            DialogueManager.Instance.DisplayNextSentence();
+        //if (!CanSkip)
+        //{
+        //yield break;
+        //}
+        //if (CanSkip)
+        //{
+        //CanSkip = false;
+        DialogueManager.Instance.DisplayNextSentence();
             yield return new WaitForSeconds(1f);
-            CanSkip = true;
-            yield break;
-        }
+        //CanSkip = true;
+        yield break;
+        //}
     }
 }

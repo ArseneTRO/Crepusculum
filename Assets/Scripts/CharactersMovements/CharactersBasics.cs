@@ -7,18 +7,22 @@ public class CharactersBasics : MonoBehaviour
     [SerializeField]
     private Rigidbody2D rb;
     private SpriteRenderer mySpriteRenderer;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public PauseSystem pause;
     void Start()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         mySpriteRenderer = GetComponent<SpriteRenderer>();
+        pause = FindFirstObjectByType<PauseSystem>();
     }
-
-    // Update is called once per frame
     void Update()
     {
-        if(rb.linearVelocity.x == 0)
+        if (pause.isPaused)
+        {
+            rb.linearVelocity = Vector2.zero; 
+            return;
+        }
+        if (rb.linearVelocity.x == 0)
         {
             animator.SetBool("IsWalking", false);
         }

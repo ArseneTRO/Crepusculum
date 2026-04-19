@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (pause.isPaused)
         {
+            rb.linearVelocity = Vector2.zero; // pour que le player puisse pas bouger pendant les cinmatiques
             return;
         }
         if (rb.linearVelocity.x == 0)
