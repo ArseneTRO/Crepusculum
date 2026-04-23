@@ -15,7 +15,7 @@ public class DialogueTrigger : MonoBehaviour
      void Start()
     {
         boxCollider2D = GetComponent<BoxCollider2D>();
-        playerMovement = FindObjectOfType<PlayerMovement>();
+        playerMovement = FindFirstObjectByType<PlayerMovement>();
         //CanSkip = true;
     }
 
@@ -62,18 +62,10 @@ public class DialogueTrigger : MonoBehaviour
     }
     IEnumerator DispNextSentence()
     {
-
-        //if (!CanSkip)
-        //{
-        //yield break;
-        //}
-        //if (CanSkip)
-        //{
-        //CanSkip = false;
         DialogueManager.Instance.DisplayNextSentence();
             yield return new WaitForSeconds(1f);
-        //CanSkip = true;
+
         yield break;
-        //}
+
     }
 }

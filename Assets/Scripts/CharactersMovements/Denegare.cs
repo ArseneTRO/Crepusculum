@@ -1,0 +1,92 @@
+using System.Collections;
+using UnityEngine;
+
+public class Denegare : MonoBehaviour
+{
+    public Dialogue dialogueDenied;
+    public Dialogue dialogueNotEnough;
+    public Dialogue dialogueAccepted;
+
+    public bool isInRange;
+    public BoxCollider2D boxCollider2D;
+    public PlayerMovement playerMovement;
+    public InventorySystem inventorySystem;
+    public Item denKey;
+    //public bool CanSkip = true;
+
+
+    void Start()
+    {
+        boxCollider2D = GetComponent<BoxCollider2D>();
+        playerMovement = FindFirstObjectByType<PlayerMovement>();
+        inventorySystem = FindFirstObjectByType<InventorySystem>();
+        //CanSkip = true;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (isInRange && Input.GetKeyDown(KeyCode.E) && playerMovement.CinematicPlaying == false)
+        {
+            TriggerDialogue();
+            playerMovement.DialoguePlaying = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Space) /*&& CanSkip && playerMovement.DialoguePlaying*/)
+        {
+            StartCoroutine(DispNextSentence());
+        }
+
+    }
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            isInRange = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            isInRange = false;
+        }
+    }
+
+    void TriggerDialogue()
+    {
+        Item result = inventorySystem.Inventory.Find(x => x.itemName == "Chaussons aux pommes");
+        if (result)
+        {
+            if(result.amount <5)
+            {
+                DialogueManager.Instance.StartDialogue(dialogueDenied);
+            }
+            else
+            {
+                DialogueManager.Instance.StartDialogue(dialogueAccepted);
+                inventorySystem.Inventory.Add(denKey);
+                inventorySystem.Inventory.Remove(result);
+            }
+        }
+        else
+        {
+        DialogueManager.Instance.StartDialogue(dialogueDenied);
+        }
+    }
+    void DisplayNextSentence()
+    {
+        StartCoroutine(DispNextSentence());
+    }
+    IEnumerator DispNextSentence()
+    {
+        DialogueManager.Instance.DisplayNextSentence();
+        yield return new WaitForSeconds(1f);
+
+        yield break;
+
+    }
+}

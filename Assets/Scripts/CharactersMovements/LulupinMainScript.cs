@@ -16,23 +16,13 @@ public class LulupinMainScript : MonoBehaviour
     [SerializeField]
     private Transform myTransform;
     public bool distanceSystem;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         Physics2D.IgnoreCollision(playerBox, myBox);
         Physics2D.IgnoreCollision(playerCircle, myCircle);
         Physics2D.IgnoreCollision(playerCircle, myBox);
         Physics2D.IgnoreCollision(playerBox, myCircle);
-
-
         float distance = Vector3.Distance(vitalinaTransform.position, myTransform.position);
-
         if(distanceSystem)
         { 
             if (distance > 1.5)
