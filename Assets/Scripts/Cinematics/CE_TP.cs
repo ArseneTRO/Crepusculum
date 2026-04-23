@@ -12,11 +12,46 @@ public class CE_TP : CinematicElement
     public bool isEnded;
     [SerializeField]
     private Transform targetTransform;
+    public CE_CheckSomething check;
+    public bool deniedCrew = false;
+    private bool myDenied;
 
     public override void PostStartProcess()
     {
-        isEnded = false;
-        StartCoroutine(Teleportation());
+        check =  FindFirstObjectByType<CE_CheckSomething>();
+        if (check == null)
+        {
+            myDenied = false;
+        }
+        myDenied = check.isDenied;
+        if (!check.iDidMyRole)
+        {
+            myDenied = false;
+        }
+        if (deniedCrew)
+        {
+            if (myDenied)
+            {
+                isEnded = false;
+                StartCoroutine(Teleportation());
+            }
+            else
+            {
+                return;
+            }
+        }
+        else
+        {
+            if (!myDenied)
+            {
+                isEnded = false;
+                StartCoroutine(Teleportation());
+            }
+            else
+            {
+                return;
+            }
+        }
     }
     IEnumerator Teleportation()
     {

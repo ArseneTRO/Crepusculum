@@ -8,10 +8,44 @@ public class CE_Trigger : CinematicElement
     private Animator myAnimator;
     public string myBool;
     public bool isEnded;
+    public CE_CheckSomething check;
+    public bool deniedCrew = false;
+    private bool myDenied;
 
     public override void PostStartProcess()
     {
-        StartCoroutine(Trigger());
+        check =  FindFirstObjectByType<CE_CheckSomething>();
+        if (check == null)
+        {
+            myDenied = false;
+        }
+        myDenied = check.isDenied;
+        if (!check.iDidMyRole)
+        {
+            myDenied = false;
+        }
+        if (deniedCrew)
+        {
+            if (myDenied)
+            {
+                StartCoroutine(Trigger());
+            }
+            else
+            {
+                return;
+            }
+        }
+        else
+        {
+            if (!myDenied)
+            {
+                StartCoroutine(Trigger());
+            }
+            else
+            {
+                return;
+            }
+        }
     }
 
     public override bool IsEnded()
@@ -21,10 +55,10 @@ public class CE_Trigger : CinematicElement
 
     IEnumerator Trigger()
     {
-        Debug.Log("PostStartProcess appelé !");
+        Debug.Log("PostStartProcess appelï¿½ !");
         isEnded = false;
         myAnimator.SetBool(myBool, true);
-        Debug.Log($"SetBool appelé : {myBool} = true sur {myAnimator.gameObject.name}");
+        Debug.Log($"SetBool appelï¿½ : {myBool} = true sur {myAnimator.gameObject.name}");
         yield return new WaitForSeconds(0.5f);
         isEnded = true;
         yield break;

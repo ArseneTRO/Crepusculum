@@ -10,6 +10,7 @@ public class CinematicElement : MonoBehaviour
     public CinemachineCamera myCamera;
     public float cameraSpeed;
     public bool shouldCameraMove;
+    
 
     public void StartProcess()
     {

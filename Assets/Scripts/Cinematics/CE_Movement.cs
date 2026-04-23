@@ -8,11 +8,47 @@ public class CE_Movement : CinematicElement
     public GameObject target;
     public float moveSpeed;
     public bool isEnded;
+    public CE_CheckSomething check;
+    public bool deniedCrew = false;
+    private bool myDenied;
 
     public override void PostStartProcess()
     {
-        isEnded = false;
-        StartCoroutine(CinematicMouvement());
+        check =  FindFirstObjectByType<CE_CheckSomething>();
+        if (check == null)
+        {
+            myDenied = false;
+        }
+        myDenied = check.isDenied;
+        if (!check.iDidMyRole)
+        {
+            myDenied = false;
+        }
+        if (deniedCrew)
+        {
+            if (myDenied)
+            {
+                isEnded = false;
+                StartCoroutine(CinematicMouvement());
+            }
+            else
+            {
+                return;
+            }
+        }
+        else
+        {
+            if (!myDenied)
+            {
+                isEnded = false;
+                StartCoroutine(CinematicMouvement());
+            }
+            else
+            {
+                return;
+            }
+        }
+
     }
     IEnumerator CinematicMouvement()
     {

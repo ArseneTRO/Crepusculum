@@ -6,11 +6,20 @@ using UnityEngine;
 
 public class CinematicLauncher : MonoBehaviour
 {
-
+    [SerializeField]
+    private CircleCollider2D range;
+    public GameObject Feedback;
+    [SerializeField]
+    private FlowerSystem FlowerSystem;
+    [SerializeField]
+    private bool isInRange;
     [SerializeField]
     private List<CinematicElement> cinematicElements;
     [SerializeField]
     private bool launchOnStart;
+    [SerializeField]
+    private bool launchOnTriggerEnter;
+
     [SerializeField]
     private bool controlPlayer;
     private Interactable interactable;
@@ -18,6 +27,7 @@ public class CinematicLauncher : MonoBehaviour
 
     void Start()
     {
+        FlowerSystem = FindFirstObjectByType<FlowerSystem>();
         if (interactable != null)
             {
                 if (interactable.LoadIsComingFromMe) 
@@ -40,8 +50,14 @@ public class CinematicLauncher : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (pause.isPaused)
+
+        if (pause.isPaused || !launchOnTriggerEnter)
         {
+            if (FlowerSystem.interactable != this.gameObject)
+                {
+                    FlowerSystem.interactable = this.gameObject;
+                    isInRange=true;
+                }
             return;
         }
         if (collision.CompareTag("Player"))
@@ -49,9 +65,22 @@ public class CinematicLauncher : MonoBehaviour
             if (CinematicManager.Instance.CinematicLauncher == this) return;
             CinematicManager.Instance.CinematicLauncher = this;
             CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer);
-            
         }
     }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            if (FlowerSystem.interactable == this.gameObject)
+            {
+                FlowerSystem.interactable = null;
+                isInRange=false;
+            }
+        }
+    }
+
+    
 
     void Update()
     {
@@ -59,6 +88,21 @@ public class CinematicLauncher : MonoBehaviour
         {
             cinematicElements.RemoveAll(element => element.IsEnded());
             CinematicManager.Instance.EndCinematic();
+        }
+        if (Input.GetKeyDown(KeyCode.E) && isInRange)
+        {
+            if (CinematicManager.Instance.CinematicLauncher == this) return;
+            CinematicManager.Instance.CinematicLauncher = this;
+            CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer);
+        }
+
+        if (isInRange)
+        {
+            Feedback.SetActive(true);
+        }
+        else
+        {
+            Feedback.SetActive(false);
         }
     }
 
