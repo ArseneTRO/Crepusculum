@@ -14,6 +14,7 @@ using UnityEditor;
     public CE_CheckSomething check;
     public bool deniedCrew = false;
     private bool myDenied;
+    private bool ended;
 
     public override void PostStartProcess()
     {
@@ -21,6 +22,22 @@ using UnityEditor;
         if (check == null)
         {
             myDenied = false;
+
+            if (!myDenied)
+            {
+                if (WeNeedToLoadScene)
+                {
+                changeScene = FindFirstObjectByType<ChangeScene>();
+                changeScene.ChangeTheScene(sceneName);
+                }
+            }
+            else
+            {
+                ended = true;
+                return;
+            }
+            ended = true;
+            return;
         }
         myDenied = check.isDenied;
         if (!check.iDidMyRole)
@@ -39,30 +56,32 @@ using UnityEditor;
             }
             else
             {
+                ended = true;
                 return;
             }
         }
-        else
-        {
-            if (!myDenied)
+        else 
+        {if (!myDenied)
             {
                 if (WeNeedToLoadScene)
                 {
                 changeScene = FindFirstObjectByType<ChangeScene>();
                 changeScene.ChangeTheScene(sceneName);
                 }
+                
             }
             else
             {
+                
+                ended = true;
                 return;
-            }
-        }
+            }}
             
         
     }
         public override bool IsEnded()
         {
-            return isEnded;
+            return ended;
         }
         
     }

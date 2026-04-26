@@ -24,6 +24,8 @@ public class CinematicLauncher : MonoBehaviour
     private bool controlPlayer;
     private Interactable interactable;
     public PauseSystem pause;
+    [SerializeField]
+    private bool destroyAfterTheEnd;
 
     void Start()
     {
@@ -50,18 +52,19 @@ public class CinematicLauncher : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (pause.isPaused || !launchOnTriggerEnter)
-        {
-            if (FlowerSystem.interactable != this.gameObject)
-                {
-                    FlowerSystem.interactable = this.gameObject;
-                    isInRange=true;
-                }
-            return;
-        }
         if (collision.CompareTag("Player"))
         {
+            if (pause.isPaused || !launchOnTriggerEnter)
+            {
+                if (FlowerSystem.interactable != this.gameObject)
+                    {
+                        FlowerSystem.interactable = this.gameObject;
+                        isInRange=true;
+                    }
+                if (CinematicManager.Instance.CinematicLauncher == this) return;
+                CinematicManager.Instance.CinematicLauncher = this;
+                return;
+            }
             if (CinematicManager.Instance.CinematicLauncher == this) return;
             CinematicManager.Instance.CinematicLauncher = this;
             CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer);
@@ -89,10 +92,10 @@ public class CinematicLauncher : MonoBehaviour
             cinematicElements.RemoveAll(element => element.IsEnded());
             CinematicManager.Instance.EndCinematic();
         }
+        Debug.Log("in range : " + isInRange);
         if (Input.GetKeyDown(KeyCode.E) && isInRange)
         {
-            if (CinematicManager.Instance.CinematicLauncher == this) return;
-            CinematicManager.Instance.CinematicLauncher = this;
+            Debug.Log("E pressé et in range 23: " + isInRange);
             CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer);
         }
 
@@ -115,6 +118,9 @@ public class CinematicLauncher : MonoBehaviour
             CinematicManager.Instance.CinematicLauncher = null;
         }
         print("Cinematic Ended");
+        if (destroyAfterTheEnd)
+        {
         Destroy(gameObject);
+        }
     }
 }

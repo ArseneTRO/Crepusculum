@@ -22,6 +22,18 @@ public class CE_TP : CinematicElement
         if (check == null)
         {
             myDenied = false;
+
+            if (!myDenied)
+            {
+                isEnded = false;
+                StartCoroutine(Teleportation());
+            }
+            else
+            {
+                isEnded = true;
+                return;
+            }
+            return;
         }
         myDenied = check.isDenied;
         if (!check.iDidMyRole)
@@ -37,6 +49,8 @@ public class CE_TP : CinematicElement
             }
             else
             {
+                print("J'ai fait mon taff Denied2 -Text");
+                isEnded = true;
                 return;
             }
         }
@@ -49,6 +63,7 @@ public class CE_TP : CinematicElement
             }
             else
             {
+                isEnded = true;
                 return;
             }
         }
@@ -67,6 +82,31 @@ public class CE_TP : CinematicElement
 
     public override bool IsEnded()
     {
-        return isEnded;
+        if (deniedCrew)
+        {
+            if (myDenied)
+            {
+                return isEnded && DialogueManager.Instance.IsDialogueEnded() && Input.GetKeyDown(KeyCode.Space);
+                
+            }
+            else
+            {
+                return isEnded;
+            }
+        }
+        else
+        {
+            if (!myDenied)
+            {
+                return isEnded && DialogueManager.Instance.IsDialogueEnded() && Input.GetKeyDown(KeyCode.Space);
+                
+            }
+            else
+            {
+        
+                return isEnded;
+            }
+        }
+        
     }
 }

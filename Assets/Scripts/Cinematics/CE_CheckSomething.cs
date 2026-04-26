@@ -29,7 +29,7 @@ public void Continue()
     }
     else
      {
-        isDenied = true;
+        isDenied = false;
         iDidMyRole = true;
     }
     isEnded = true;

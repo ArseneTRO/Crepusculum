@@ -50,7 +50,32 @@ public class CE_Trigger : CinematicElement
 
     public override bool IsEnded()
     {
-        return isEnded;
+        if (deniedCrew)
+        {
+            if (myDenied)
+            {
+                return isEnded && DialogueManager.Instance.IsDialogueEnded() && Input.GetKeyDown(KeyCode.Space);
+                
+            }
+            else
+            {
+                return isEnded;
+            }
+        }
+        else
+        {
+            if (!myDenied)
+            {
+                return isEnded && DialogueManager.Instance.IsDialogueEnded() && Input.GetKeyDown(KeyCode.Space);
+                
+            }
+            else
+            {
+        
+                return isEnded;
+            }
+        }
+        
     }
 
     IEnumerator Trigger()

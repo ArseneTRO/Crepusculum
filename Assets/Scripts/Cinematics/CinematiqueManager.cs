@@ -9,7 +9,7 @@ using static CinematicManager;
 
 public class CinematicManager : MonoBehaviour
 {
-    //Singleton (porte d'entr�e pour acc�der � chaque �l�ment facilement) (absolument exceptionnel)
+    
     public static CinematicManager Instance;
     public CinematicLauncher CinematicLauncher;
     public bool CinematicUI;
@@ -65,12 +65,36 @@ public class CinematicManager : MonoBehaviour
         }
 
 
-        foreach (CinematicElement element in cinematicElements)
+        for (int i = 0; i < cinematicElements.Count; i++)
         {
-            CinematicUI = false;
-            element.StartProcess();
+            CinematicElement element = cinematicElements[i];
+            if (i != 0 && cinematicElements[i-1] is CE_Text && cinematicElements[i] is CE_Text)
+            {
+                var elementTemp = cinematicElements[i-1]  as CE_Text;
+                var CurrentElementTemp = cinematicElements[i]  as CE_Text;
+                if (elementTemp.deniedCrew == CurrentElementTemp.deniedCrew)
+                {
+                    CinematicUI  = true;
+                    element.StartProcess();
             
-            yield return new WaitUntil(()=>NextCinematicElement(element));
+                    yield return new WaitUntil(()=>NextCinematicElement(element));
+                }
+                else
+                {
+                    CinematicUI = false;
+                    element.StartProcess();
+            
+                    yield return new WaitUntil(()=>NextCinematicElement(element));
+                }
+                
+            }
+            else
+            {
+                CinematicUI = false;
+                element.StartProcess();
+            
+                yield return new WaitUntil(()=>NextCinematicElement(element));
+            }
 
         }
 

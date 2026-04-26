@@ -19,6 +19,21 @@ public class CE_Text : CinematicElement
         if (check == null)
         {
             myDenied = false;
+
+            if (!myDenied)
+            {
+                dialogueText = CinematicManager.Instance.dialogueText;
+                CinematicManager.Instance.CinematicUI = true;
+                ended = false;
+                StartCoroutine(TypeSentence(sentences));
+                print("J'ai fait mon taff null1 -Text");
+            }
+            else
+            {
+                ended = true;
+                return;
+            }
+            return;
         }
         myDenied = check.isDenied;
         if (!check.iDidMyRole)
@@ -33,9 +48,12 @@ public class CE_Text : CinematicElement
                 CinematicManager.Instance.CinematicUI = true;
                 ended = false;
                 StartCoroutine(TypeSentence(sentences));
+                
             }
             else
             {
+                print("J'ai fait mon taff Denied2 -Text");
+                ended = true;
                 return;
             }
         }
@@ -47,9 +65,12 @@ public class CE_Text : CinematicElement
                 CinematicManager.Instance.CinematicUI = true;
                 ended = false;
                 StartCoroutine(TypeSentence(sentences));
+                
             }
             else
             {
+                
+                ended = true;
                 return;
             }
         }
@@ -70,6 +91,31 @@ public class CE_Text : CinematicElement
 
     public override bool IsEnded()
     {
-        return ended && Input.GetKeyDown(KeyCode.Space);
+        if (deniedCrew)
+        {
+            if (myDenied)
+            {
+                return ended && Input.GetKeyDown(KeyCode.Space);
+                
+            }
+            else
+            {
+                return ended;
+            }
+        }
+        else
+        {
+            if (!myDenied)
+            {
+                return ended && Input.GetKeyDown(KeyCode.Space);
+                
+            }
+            else
+            {
+        
+                return ended;
+            }
+        }
+        
     }
 }
