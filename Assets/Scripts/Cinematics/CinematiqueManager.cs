@@ -51,12 +51,12 @@ public class CinematicManager : MonoBehaviour
         return element.IsEnded();
     }
 
-    public void StartCinematic(List<CinematicElement> cinematicElements, bool controlPlayer)
+    public void StartCinematic(List<CinematicElement> cinematicElements, bool controlPlayer, bool DontEndUI)
     {
-        StartCoroutine(Cinematic(cinematicElements, controlPlayer));
+        StartCoroutine(Cinematic(cinematicElements, controlPlayer, DontEndUI));
     }
 
-    private IEnumerator Cinematic(List<CinematicElement> cinematicElements, bool controlPlayer)
+    private IEnumerator Cinematic(List<CinematicElement> cinematicElements, bool controlPlayer, bool DontEndUI)
     {
         
         if (!controlPlayer)
@@ -75,7 +75,10 @@ public class CinematicManager : MonoBehaviour
         }
 
         player.CinematicPlaying = false;
-        CinematicUI = false;
+        if (!DontEndUI)
+        {
+            CinematicUI = false;
+        }
         CinematicLauncher.CinematicEnded();
     }
 
