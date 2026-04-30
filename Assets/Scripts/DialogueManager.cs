@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     public PlayerMovement playerMovement;
     public DialogueTrigger trigger;
     public Animator animator;
+    public PauseSystem PauseSystem;
 
     private Queue<string> sentences;
     public List<Dialogue> dialogues;
@@ -29,6 +30,7 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager Instance;
     private void Awake()
     {
+        PauseSystem = FindFirstObjectByType<PauseSystem>();
         playerMovement = FindFirstObjectByType<PlayerMovement>();
         if (Instance == null)
         {
@@ -79,9 +81,11 @@ public class DialogueManager : MonoBehaviour
 
     public void DisplayNextSentence()
     {
-        StopAllCoroutines();
-        StartCoroutine(NextSentence());
-
+        if (!PauseSystem.isPaused)
+        {
+            StopAllCoroutines();
+            StartCoroutine(NextSentence());
+        }
     }
 
     IEnumerator NextSentence()

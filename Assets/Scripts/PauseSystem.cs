@@ -16,9 +16,7 @@ public class PauseSystem : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
-        DontDestroyOnLoad(pauseScreen);
-        DontDestroyOnLoad(OptionsScreen);
+
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

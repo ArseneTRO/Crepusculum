@@ -20,7 +20,7 @@ public class Verifier : MonoBehaviour
     Item result = InventorySystem.Inventory.Find(x => x.itemName == ItemSearched);
         if (result)
         {
-            if (result.amount < AmountRequired)
+            if (result.amount >= AmountRequired)
             {
                 CinematicAccepted.Launch();
             }

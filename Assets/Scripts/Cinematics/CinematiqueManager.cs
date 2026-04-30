@@ -17,6 +17,8 @@ public class CinematicManager : MonoBehaviour
     public bool fromCinematic;
     public TMP_Text dialogueText;
     public PlayerMovement player;
+    public PauseSystem pauseSystem;
+    private bool GiveBackControl;
 
     private void Awake()
     {
@@ -40,7 +42,11 @@ public class CinematicManager : MonoBehaviour
 
     public void EndCinematic()
     {
-        player.CinematicPlaying = false;
+        if (!GiveBackControl)
+        {
+            player.CinematicPlaying = false;
+            //safe
+        }
         CinematicUI = false;
         CinematicLauncher.CinematicEnded();
 
@@ -51,18 +57,21 @@ public class CinematicManager : MonoBehaviour
         return element.IsEnded();
     }
 
-    public void StartCinematic(List<CinematicElement> cinematicElements, bool controlPlayer, bool DontEndUI)
+    public void StartCinematic(List<CinematicElement> cinematicElements, bool controlPlayer, bool DontEndUI, bool EndPlayer)
     {
-        StartCoroutine(Cinematic(cinematicElements, controlPlayer, DontEndUI));
+        StartCoroutine(Cinematic(cinematicElements, controlPlayer, DontEndUI, EndPlayer));
     }
 
-    private IEnumerator Cinematic(List<CinematicElement> cinematicElements, bool controlPlayer, bool DontEndUI)
+    private IEnumerator Cinematic(List<CinematicElement> cinematicElements, bool controlPlayer, bool DontEndUI, bool EndPlayer)
     {
         
         if (!controlPlayer)
         {
             player.CinematicPlaying = true;
+            GiveBackControl = EndPlayer;
         }
+
+        
 
 
         foreach (CinematicElement element in cinematicElements)
@@ -74,7 +83,11 @@ public class CinematicManager : MonoBehaviour
 
         }
 
-        player.CinematicPlaying = false;
+        if (GiveBackControl)
+        {
+            player.CinematicPlaying = false;
+            print("C'est moi le fouteur de merde");
+        }
         if (!DontEndUI)
         {
             CinematicUI = false;

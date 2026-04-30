@@ -17,6 +17,8 @@ public class CinematicLauncher : MonoBehaviour
     private bool DontEndUI;
     private Interactable interactable;
     public PauseSystem pause;
+    [SerializeField]
+    private bool EndPlayer;
 
     void Start()
     {
@@ -34,7 +36,7 @@ public class CinematicLauncher : MonoBehaviour
 
         if(launchOnStart)
         {
-            CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer, DontEndUI);
+            CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer, DontEndUI, EndPlayer);
         }
         pause = FindFirstObjectByType<PauseSystem>(FindObjectsInactive.Include);
 
@@ -42,7 +44,7 @@ public class CinematicLauncher : MonoBehaviour
 
     public void Launch()
         {
-            CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer, DontEndUI);
+            CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer, DontEndUI, EndPlayer);
         }
 
 private void OnTriggerEnter2D(Collider2D collision)
@@ -55,7 +57,7 @@ private void OnTriggerEnter2D(Collider2D collision)
         {
             if (CinematicManager.Instance.CinematicLauncher == this) return;
             CinematicManager.Instance.CinematicLauncher = this;
-            CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer, DontEndUI);
+            CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer, DontEndUI, EndPlayer);
             
         }
     }

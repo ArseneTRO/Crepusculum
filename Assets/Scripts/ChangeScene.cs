@@ -27,7 +27,6 @@ public class ChangeScene : MonoBehaviour
             SceneManager.LoadScene(theSceneName);
             yield return new WaitForSeconds(0.5f);
             loadScene.gameObject.SetActive(false);
-            Destroy(this.gameObject);
             yield break;
         }
 }
