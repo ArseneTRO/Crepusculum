@@ -1,4 +1,6 @@
+using Unity.VectorGraphics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthSystem : MonoBehaviour
 {
@@ -44,6 +46,7 @@ public class HealthSystem : MonoBehaviour
         {
             transform.position = checkpoint.position;
             healthPoints = 3;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

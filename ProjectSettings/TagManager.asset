@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Flower
   - LoadingScreen
+  - fog
+  - TP
   layers:
   - Default
   - TransparentFX

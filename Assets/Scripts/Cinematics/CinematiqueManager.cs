@@ -59,16 +59,16 @@ public class CinematicManager : MonoBehaviour
 
     public void StartCinematic(List<CinematicElement> cinematicElements, bool controlPlayer, bool DontEndUI, bool EndPlayer)
     {
+        GiveBackControl = EndPlayer;
         StartCoroutine(Cinematic(cinematicElements, controlPlayer, DontEndUI, EndPlayer));
     }
 
     private IEnumerator Cinematic(List<CinematicElement> cinematicElements, bool controlPlayer, bool DontEndUI, bool EndPlayer)
     {
-        
+        GiveBackControl = EndPlayer;
         if (!controlPlayer)
         {
             player.CinematicPlaying = true;
-            GiveBackControl = EndPlayer;
         }
 
         
@@ -83,10 +83,9 @@ public class CinematicManager : MonoBehaviour
 
         }
 
-        if (GiveBackControl)
+        if (!GiveBackControl)
         {
             player.CinematicPlaying = false;
-            print("C'est moi le fouteur de merde");
         }
         if (!DontEndUI)
         {
