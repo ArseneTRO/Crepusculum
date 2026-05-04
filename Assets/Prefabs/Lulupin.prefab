@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 5922449516812901775}
   - component: {fileID: 5383486896155726957}
   - component: {fileID: 8544013757287115014}
+  - component: {fileID: 2148143549068762112}
+  - component: {fileID: 8225711345213325810}
   m_Layer: 0
   m_Name: Lulupin
   m_TagString: Untagged
@@ -31,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 7573891524407752624}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.524, y: -1.96, z: 0}
+  m_LocalPosition: {x: 75.6, y: 18.6, z: 0}
   m_LocalScale: {x: 0.68946266, y: 0.6894627, z: 0.6894627}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -82,8 +84,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1036346017
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4342657637965536982, guid: d04827550280ce3439f5a8e0be70e084, type: 3}
@@ -154,7 +156,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -205,6 +207,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 0}
   rb: {fileID: 0}
+  pause: {fileID: 0}
 --- !u!58 &8544013757287115014
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -241,3 +244,42 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0.0021729858, y: 0.33280826}
   m_Radius: 0.31352264
+--- !u!232 &2148143549068762112
+DistanceJoint2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7573891524407752624}
+  m_Enabled: 1
+  serializedVersion: 4
+  m_EnableCollision: 0
+  m_ConnectedRigidBody: {fileID: 0}
+  m_BreakForce: Infinity
+  m_BreakTorque: Infinity
+  m_BreakAction: 3
+  m_AutoConfigureConnectedAnchor: 0
+  m_Anchor: {x: 0, y: 0}
+  m_ConnectedAnchor: {x: 0, y: 0}
+  m_AutoConfigureDistance: 0
+  m_Distance: 1.46
+  m_MaxDistanceOnly: 1
+--- !u!114 &8225711345213325810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7573891524407752624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c52d86749960e4e478a7bef169857bad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LulupinMainScript
+  playerBox: {fileID: 0}
+  myBox: {fileID: 7474628130590460381}
+  playerCircle: {fileID: 0}
+  myCircle: {fileID: 8544013757287115014}
+  vitalinaTransform: {fileID: 0}
+  myTransform: {fileID: 4770152072025875616}
+  distanceSystem: 0

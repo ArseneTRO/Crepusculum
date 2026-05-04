@@ -60,5 +60,8 @@ TagManager:
   - name: Front
     uniqueID: 1015907211
     locked: 0
+  - name: Fog
+    uniqueID: 3963516747
+    locked: 0
   m_RenderingLayers:
   - Default
