@@ -28,7 +28,6 @@ public class LulupinMainScript : MonoBehaviour
             if (distance > 1.5)
             {
                 // Retour à la base en priorité
-                print("Retourner à Vitalina");
                 myTransform.position = vitalinaTransform.position;
             }
         }

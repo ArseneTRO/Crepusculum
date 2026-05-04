@@ -9,10 +9,11 @@ public class ElevatorSystem : MonoBehaviour
     [SerializeField]
     private int minY;
     private bool GettingDown = false;
+    private float t;
 
     void Start()
     {
-        
+        t = 0;
     }
 
     // Update is called once per frame
@@ -21,19 +22,23 @@ public class ElevatorSystem : MonoBehaviour
         if (GettingDown)
         {
 
-            while (transform.position.y == maxY)
+            if (transform.position.y != minY)
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y - 1, 0);
+                t += (float)(0.5 * Time.deltaTime);
+                transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, minY, t), 0);
                 print("Je descends !");
+                t = 0;
             }
 
         }
         if (!GettingDown)
         {
-            while (transform.position.y != maxY)
+            if (transform.position.y != maxY)
             {
-                transform.position = new Vector3(transform.position.x, transform.position.y + 1, 0);
-                print("Je Monte !");
+                t += (float)(0.5 * Time.deltaTime);
+                transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, maxY, t), 0);
+                print("Je monte !");
+                t= 0;
             }
         }
     }
@@ -42,13 +47,16 @@ public class ElevatorSystem : MonoBehaviour
      if(collision.CompareTag("Player"))
         {
             GettingDown = true;
+            print("player entré");
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
      if(collision.CompareTag("Player"))
         {
-            GettingDown = true;
+            GettingDown = false;
+            print("player sorti");
+
         }
     }
 }

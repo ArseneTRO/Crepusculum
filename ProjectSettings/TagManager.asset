@@ -8,6 +8,7 @@ TagManager:
   - LoadingScreen
   - fog
   - TP
+  - KillPlayer
   layers:
   - Default
   - TransparentFX
