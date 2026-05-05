@@ -1,0 +1,882 @@
+fileFormatVersion: 2
+guid: d035150d487bce840abe1cf3ff7a9906
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7892500232507540551
+    second: TilesmapLvl3 1_0
+  - first:
+      213: -2782570264068804323
+    second: TilesmapLvl3 1_1
+  - first:
+      213: -384232422444400262
+    second: TilesmapLvl3 1_2
+  - first:
+      213: -7765705211373294386
+    second: TilesmapLvl3 1_3
+  - first:
+      213: 5942571952651894321
+    second: TilesmapLvl3 1_4
+  - first:
+      213: -5766966242532732021
+    second: TilesmapLvl3 1_5
+  - first:
+      213: -4324512014054417647
+    second: TilesmapLvl3 1_6
+  - first:
+      213: 2829430854491813895
+    second: TilesmapLvl3 1_7
+  - first:
+      213: 150975187921992570
+    second: TilesmapLvl3 1_8
+  - first:
+      213: -911881952729600742
+    second: TilesmapLvl3 1_9
+  - first:
+      213: 6298796925167171340
+    second: TilesmapLvl3 1_10
+  - first:
+      213: 6989084269339574951
+    second: TilesmapLvl3 1_11
+  - first:
+      213: -655071240526705685
+    second: TilesmapLvl3 1_12
+  - first:
+      213: 902303034537284893
+    second: TilesmapLvl3 1_13
+  - first:
+      213: -1972592978873410768
+    second: TilesmapLvl3 1_14
+  - first:
+      213: 3103657532452734409
+    second: TilesmapLvl3 1_15
+  - first:
+      213: 6499235396409071179
+    second: TilesmapLvl3 1_16
+  - first:
+      213: 3651150840129383711
+    second: TilesmapLvl3 1_17
+  - first:
+      213: -5042997433433614431
+    second: TilesmapLvl3 1_18
+  - first:
+      213: 2858492641590243580
+    second: TilesmapLvl3 1_19
+  - first:
+      213: 4559439212148858373
+    second: TilesmapLvl3 1_20
+  - first:
+      213: -8949857068269657276
+    second: TilesmapLvl3 1_21
+  - first:
+      213: 7837983717172567942
+    second: TilesmapLvl3 1_22
+  - first:
+      213: 4645223234374854775
+    second: TilesmapLvl3 1_23
+  - first:
+      213: 6565284102276507177
+    second: TilesmapLvl3 1_24
+  - first:
+      213: -6620208849866103876
+    second: TilesmapLvl3 1_25
+  - first:
+      213: 3464048256392817819
+    second: TilesmapLvl3 1_26
+  - first:
+      213: -3051651868268578735
+    second: TilesmapLvl3 1_27
+  - first:
+      213: 5718119005143551289
+    second: TilesmapLvl3 1_28
+  - first:
+      213: -1167283807043904203
+    second: TilesmapLvl3 1_29
+  - first:
+      213: -4859823182862310928
+    second: TilesmapLvl3 1_30
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 303
+        width: 169
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bb33b3dad4387290800000000000000
+      internalID: -7892500232507540551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_1
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 303
+        width: 166
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d113d9766135269d0800000000000000
+      internalID: -2782570264068804323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_2
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 236
+        width: 17
+        height: 55
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a718305c5aeeaaaf0800000000000000
+      internalID: -384232422444400262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 215
+        width: 64
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecce1b5314caa3490800000000000000
+      internalID: -7765705211373294386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_4
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 249
+        width: 11
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13ef302b4b1487250800000000000000
+      internalID: 5942571952651894321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_5
+      rect:
+        serializedVersion: 2
+        x: 222
+        y: 231
+        width: 18
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b83da22d1ce97ffa0800000000000000
+      internalID: -5766966242532732021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_6
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 205
+        width: 26
+        height: 66
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11b90674c3f3cf3c0800000000000000
+      internalID: -4324512014054417647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_7
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 248
+        width: 4
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 708b3860f58244720800000000000000
+      internalID: 2829430854491813895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_8
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 193
+        width: 29
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7bfcfd222f581200800000000000000
+      internalID: 150975187921992570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_9
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 111
+        width: 102
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1d667202385853f0800000000000000
+      internalID: -911881952729600742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_10
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 199
+        width: 48
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0779e45e62d96750800000000000000
+      internalID: 6298796925167171340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_11
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 192
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a2814bfc173ef060800000000000000
+      internalID: 6989084269339574951
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_12
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 192
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bebc4dd6d28b8e6f0800000000000000
+      internalID: -655071240526705685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_13
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 192
+        width: 8
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d151a5d44df958c00800000000000000
+      internalID: 902303034537284893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 175
+        width: 47
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03b12df0321ff94e0800000000000000
+      internalID: -1972592978873410768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_15
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 143
+        width: 64
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c58f46f418621b20800000000000000
+      internalID: 3103657532452734409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_16
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 111
+        width: 102
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b469b9a982ce13a50800000000000000
+      internalID: 6499235396409071179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_17
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 111
+        width: 63
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1de74f285e7ba230800000000000000
+      internalID: 3651150840129383711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 159
+        width: 47
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a79bf0ad8ca30ab0800000000000000
+      internalID: -5042997433433614431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 143
+        width: 47
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf0fd0f99e76ba720800000000000000
+      internalID: 2858492641590243580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 127
+        width: 47
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50e9e177ec1664f30800000000000000
+      internalID: 4559439212148858373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_21
+      rect:
+        serializedVersion: 2
+        x: 294
+        y: 131
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 443a44f2a68bbc380800000000000000
+      internalID: -8949857068269657276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_22
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 31
+        width: 104
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68fdd51d9ac16cc60800000000000000
+      internalID: 7837983717172567942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_24
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 113
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 926e5bd4b139c1b50800000000000000
+      internalID: 6565284102276507177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_25
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 111
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb365dc502b4024a0800000000000000
+      internalID: -6620208849866103876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_26
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 80
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9cea1f2985c21030800000000000000
+      internalID: 3464048256392817819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_27
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 15
+        width: 83
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 158b1bd4bca56a5d0800000000000000
+      internalID: -3051651868268578735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 96
+        height: 47
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93dcdf470f6da5f40800000000000000
+      internalID: 5718119005143551289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TilesmapLvl3 1_31
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 191
+        width: 40
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f682b854110670419cd96c902b297d2
+      internalID: 1590517852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ea3b18aa594c1034fb28dfd884069d8d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      TilesmapLvl3 1_0: -7892500232507540551
+      TilesmapLvl3 1_1: -2782570264068804323
+      TilesmapLvl3 1_10: 6298796925167171340
+      TilesmapLvl3 1_11: 6989084269339574951
+      TilesmapLvl3 1_12: -655071240526705685
+      TilesmapLvl3 1_13: 902303034537284893
+      TilesmapLvl3 1_14: -1972592978873410768
+      TilesmapLvl3 1_15: 3103657532452734409
+      TilesmapLvl3 1_16: 6499235396409071179
+      TilesmapLvl3 1_17: 3651150840129383711
+      TilesmapLvl3 1_18: -5042997433433614431
+      TilesmapLvl3 1_19: 2858492641590243580
+      TilesmapLvl3 1_2: -384232422444400262
+      TilesmapLvl3 1_20: 4559439212148858373
+      TilesmapLvl3 1_21: -8949857068269657276
+      TilesmapLvl3 1_22: 7837983717172567942
+      TilesmapLvl3 1_23: 4645223234374854775
+      TilesmapLvl3 1_24: 6565284102276507177
+      TilesmapLvl3 1_25: -6620208849866103876
+      TilesmapLvl3 1_26: 3464048256392817819
+      TilesmapLvl3 1_27: -3051651868268578735
+      TilesmapLvl3 1_28: 5718119005143551289
+      TilesmapLvl3 1_29: -1167283807043904203
+      TilesmapLvl3 1_3: -7765705211373294386
+      TilesmapLvl3 1_30: -4859823182862310928
+      TilesmapLvl3 1_31: 1590517852
+      TilesmapLvl3 1_4: 5942571952651894321
+      TilesmapLvl3 1_5: -5766966242532732021
+      TilesmapLvl3 1_6: -4324512014054417647
+      TilesmapLvl3 1_7: 2829430854491813895
+      TilesmapLvl3 1_8: 150975187921992570
+      TilesmapLvl3 1_9: -911881952729600742
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
