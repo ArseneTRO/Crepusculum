@@ -8,6 +8,8 @@ public class ElevatorSystem : MonoBehaviour
     private int maxY;
     [SerializeField]
     private int minY;
+    [SerializeField]
+    private float duration;
     private bool GettingDown = false;
     private float t;
 
@@ -24,7 +26,7 @@ public class ElevatorSystem : MonoBehaviour
 
             if (transform.position.y != minY)
             {
-                t += (float)(0.5 * Time.deltaTime);
+                t += (float)(duration * Time.deltaTime);
                 transform.position = new Vector3(transform.position.x, Mathf.Lerp(transform.position.y, minY, t), 0);
                 print("Je descends !");
                 t = 0;

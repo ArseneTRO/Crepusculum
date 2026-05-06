@@ -5,6 +5,10 @@ public class TempPlateform : MonoBehaviour
 {
     [SerializeField]
     private GameObject Me;
+    [SerializeField]
+    private float timeBeforeDisappear;
+    [SerializeField]
+    private float timeBeforeAppear;
     void Start()
     {
     }
@@ -20,9 +24,9 @@ public class TempPlateform : MonoBehaviour
     }
     IEnumerator Timer()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(timeBeforeDisappear);
         Me.SetActive(false);
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(timeBeforeAppear);
         Me.SetActive(true);
         yield break;
     }
