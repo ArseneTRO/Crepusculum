@@ -20,7 +20,10 @@ public class TempPlateform : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        StartCoroutine(Timer());
+        if (collision.gameObject.tag == "Player")
+        {
+            StartCoroutine(Timer());
+        }
     }
     IEnumerator Timer()
     {
