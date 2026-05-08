@@ -21,6 +21,11 @@ public class RunnerSystem : MonoBehaviour
             rb.linearVelocity = new Vector3(speed, rb.linearVelocity.y);
             print("Position modifiée");
         }
+        else
+        {
+            rb.linearVelocity = new Vector3(0, rb.linearVelocity.y);
+            print("Rigibody EGALE ZEROOOOOOOOO");
+        }
 
     }
 
