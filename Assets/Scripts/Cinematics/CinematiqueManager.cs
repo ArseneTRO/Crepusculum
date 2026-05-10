@@ -46,6 +46,7 @@ public class CinematicManager : MonoBehaviour
         {
             player.CinematicPlaying = false;
             //safe
+            print("C'est moi qui fout la merde ligne 49");
         }
         CinematicUI = false;
         CinematicLauncher.CinematicEnded();
@@ -86,6 +87,7 @@ public class CinematicManager : MonoBehaviour
         if (!GiveBackControl)
         {
             player.CinematicPlaying = false;
+            
         }
         if (!DontEndUI)
         {

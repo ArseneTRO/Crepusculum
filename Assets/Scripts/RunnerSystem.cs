@@ -8,6 +8,9 @@ public class RunnerSystem : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField]
     private float speed;
+    public Transform playerTransform;
+    public Transform AzraetTransform;
+    public HealthSystem playerHP;
     void Start()
     {
 
@@ -26,7 +29,11 @@ public class RunnerSystem : MonoBehaviour
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y);
             print("Rigibody EGALE ZEROOOOOOOOO");
         }
-
+        var dist = Mathf.Abs(playerTransform.position.x - AzraetTransform.position.x);
+        if (dist > 12)
+        {
+            playerHP.Die();
+        }
     }
 
 
