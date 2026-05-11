@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class CE_MouvementByGo : CinematicElement
 {
@@ -14,7 +15,11 @@ public class CE_MouvementByGo : CinematicElement
     }
     IEnumerator CinematicMouvement()
     {
-//////////////////////////////////////////////////////CODE A FAIRE
+        while (target.transform.position.x > PositionEnd.transform.position.x)
+        {
+            target.transform.position = new Vector3(Mathf.Lerp(target.transform.position.x, PositionEnd.transform.position.x, 0.2f), Mathf.Lerp(target.transform.position.y, PositionEnd.transform.position.y, 0.2f), 0);
+            yield return null;
+        }
     }
 
     public override bool IsEnded()

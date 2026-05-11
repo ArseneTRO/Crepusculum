@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public GameObject loadScene;
+    public loadScreen loadScene;
     bool isFromAnotherScene;
     GameObject AnotherChangeScene;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,6 +29,8 @@ public class ChangeScene : MonoBehaviour
             Destroy(gameObject); // doublon
             
         }
+
+        loadScene = FindFirstObjectByType<loadScreen>();
     }
     public void ChangeTheScene(string sceneName)
     {

@@ -11,6 +11,7 @@ public class RunnerSystem : MonoBehaviour
     public Transform playerTransform;
     public Transform AzraetTransform;
     public HealthSystem playerHP;
+    public CinematicLauncher Cinematics;
     void Start()
     {
 
@@ -19,6 +20,11 @@ public class RunnerSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
+        {
+            
+        }
         if (IsRunnerWorking)
         {
             rb.linearVelocity = new Vector3(speed, rb.linearVelocity.y);
