@@ -56,13 +56,20 @@ public class PlayerMovement : MonoBehaviour
         else
         animator.SetBool("IsWalking", true);
         
-
+        
 
         if (CinematicPlaying)
         {
-            rb.linearVelocity = Vector2.zero; // pour que le player puisse pas bouger pendant les cinmatiques
-            joint2D.enabled = false;
-            lulupin.distanceSystem = false;
+            if(!isGrounded)
+            {
+                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+                joint2D.enabled = false;
+                lulupin.distanceSystem = false;
+            }
+            else
+            {
+                rb.linearVelocity = Vector2.zero; // pour que le player puisse pas bouger pendant les cinmatiques
+            }
             return;
         }
         else if (!IsThisSceneIsJoint)

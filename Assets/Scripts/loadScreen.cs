@@ -8,9 +8,10 @@ public class loadScreen : MonoBehaviour
         changeScene = FindFirstObjectByType<ChangeScene>();
         if (changeScene = null)
         {
-            changeScene.loadScene = this;
+            changeScene.loadScene = this.GetComponent<Canvas>();
         }
-        this.gameObject.SetActive(false);
+
+        this.GetComponent<Canvas>().scaleFactor = 0;
     }
 
     void Update()
