@@ -19,6 +19,14 @@ public class Interactable : MonoBehaviour
     private GameObject Feedback;
     [SerializeField]
     private bool instructions;
+    [SerializeField]    
+    private bool Verify;
+    
+    public string ItemSearched;
+    public int AmountRequired;
+    public Verifier Verifier;
+    public CinematicLauncher Accepted;
+    public CinematicLauncher Denied;
     [SerializeField]
     private bool noCinematicOnStart;
     [HideInInspector]
@@ -92,6 +100,13 @@ public class Interactable : MonoBehaviour
 
     IEnumerator Enter()
     {
+        if (Verifier)
+        {
+            Verifier.CheckSomething(ItemSearched, AmountRequired, Accepted, Denied);
+            yield return null;
+        }
+        else
+        {
             shortLoading.SetActive(true);
             LoadIsComingFromMe = true;
             if (instructions)
@@ -106,13 +121,12 @@ public class Interactable : MonoBehaviour
                 shortLoading.SetActive(false);
                 LoadIsComingFromMe = false;
                 dontStartCinematicOnStart=false;
-            yield break;
+                yield break;
             }
             SceneManager.LoadScene(myScene);
             yield return new WaitForSeconds(1);
             shortLoading.SetActive(false);
-       
-
+        }
     }
 
 }

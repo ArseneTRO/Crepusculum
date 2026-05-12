@@ -17,6 +17,10 @@ public class Verifier : MonoBehaviour
     {
         CinematicAccepted = CinematicA;
         CinematicDenied = CinematicB;
+        if(InventorySystem == null)
+        {
+            CinematicDenied.Launch();
+        }
     Item result = InventorySystem.Inventory.Find(x => x.itemName == ItemSearched);
         if (result)
         {

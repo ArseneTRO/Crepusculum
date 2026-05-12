@@ -15,11 +15,20 @@ public class CE_MouvementByGo : CinematicElement
     }
     IEnumerator CinematicMouvement()
     {
-        while (target.transform.position.x > PositionEnd.transform.position.x)
+        if (target == null || PositionEnd == null) { isEnded = true; yield break; }
+        Rigidbody2D targetRb = target.GetComponent<Rigidbody2D>();
+        float distance = Vector2.Distance(PositionEnd.transform.position, target.transform.position);
+        while (distance > 0.3f)
         {
-            target.transform.position = new Vector3(Mathf.Lerp(target.transform.position.x, PositionEnd.transform.position.x, 0.2f), Mathf.Lerp(target.transform.position.y, PositionEnd.transform.position.y, 0.2f), 0);
-            yield return null;
+            Vector2 dirToTarget = ((Vector2)PositionEnd.transform.position - (Vector2)target.transform.position).normalized;
+            targetRb.linearVelocity = dirToTarget * moveSpeed;
+            distance = Vector2.Distance(PositionEnd.transform.position, target.transform.position);
+            print(distance);
+            yield return new WaitForFixedUpdate();
         }
+        targetRb.linearVelocity = Vector2.zero;
+        isEnded = true;
+        yield break;
     }
 
     public override bool IsEnded()
