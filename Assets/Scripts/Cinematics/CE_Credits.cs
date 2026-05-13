@@ -20,7 +20,10 @@ public class CE_Credits : CinematicElement
         AllCredits.SetBool("Credits", true);
         yield return new WaitForSeconds(10);
         CreditsOn = true; 
-        yield return new WaitForSeconds(52);
+        yield return new WaitForSeconds(53);
+        CreditsOn = false;
+        isEnded = true;
+        SceneManager.LoadScene("TitleScreen");
     }
 
     private void Update()

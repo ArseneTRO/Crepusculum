@@ -907,6 +907,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   healthPoints: 0
+  playerAnimator: {fileID: 0}
+  rb: {fileID: 0}
   maxHealthPoints: 3
   checkpoint: {fileID: 0}
   transform: {fileID: 0}
@@ -12100,6 +12102,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthSystem
   healthPoints: 0
+  playerAnimator: {fileID: 0}
+  rb: {fileID: 0}
   maxHealthPoints: 3
   checkpoint: {fileID: 1872923739}
   transform: {fileID: 2122651570}
