@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VectorGraphics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,6 +7,10 @@ public class HealthSystem : MonoBehaviour
 {
     [SerializeField]
     private int healthPoints;
+    [SerializeField]
+    private Animator playerAnimator;
+    [SerializeField]
+    private Rigidbody2D rb;  
     public int currentHealthPoints
     {
         get { return healthPoints; }
@@ -44,9 +49,24 @@ public class HealthSystem : MonoBehaviour
         }
         else
         {
-            transform.position = checkpoint.position;
-            healthPoints = 3;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            rb = this.gameObject.GetComponent<Rigidbody2D>();
+            StartCoroutine(PlayerDie());
         }
+    }
+
+    IEnumerator PlayerDie()
+    {
+        if (playerAnimator != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            playerAnimator.SetBool("isDead", true);
+            yield return new WaitForSeconds(0.5f);
+            playerAnimator.SetBool("isDead", false);
+            yield return new WaitForSeconds(0.5f);
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y);
+        }
+        transform.position = checkpoint.position;
+        healthPoints = 3;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

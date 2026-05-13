@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using System.Collections;   
 
 public class LulupinMainScript : MonoBehaviour
 {
@@ -13,11 +14,15 @@ public class LulupinMainScript : MonoBehaviour
     private CircleCollider2D myCircle;
     [SerializeField]
     private Transform vitalinaTransform;
+
+    private Joint2D myJoint;
     [SerializeField]
     private Transform myTransform;
     public bool distanceSystem;
+    public PlayerMovement playerMovement;
     void Update()
     {
+        myJoint = this.gameObject.GetComponent<Joint2D>();
         Physics2D.IgnoreCollision(playerBox, myBox);
         Physics2D.IgnoreCollision(playerCircle, myCircle);
         Physics2D.IgnoreCollision(playerCircle, myBox);
@@ -30,6 +35,23 @@ public class LulupinMainScript : MonoBehaviour
                 // Retour à la base en priorité
                 myTransform.position = vitalinaTransform.position;
             }
+        }
+
+        if (playerMovement.CinematicPlaying)
+        {
+            StartCoroutine(CinematicPlaying());
+        }
+        else
+        {
+            myJoint.enabled = true;
+            distanceSystem = true;
+        }
+        
+        IEnumerator CinematicPlaying()
+        {
+            myJoint.enabled = false;
+            yield return new WaitForSeconds(0.5f);
+            distanceSystem = false;
         }
     }
 

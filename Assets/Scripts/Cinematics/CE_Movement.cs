@@ -24,7 +24,6 @@ public class CE_Movement : CinematicElement
             Vector2 dirToTarget = (positionEnd - (Vector2)target.transform.position).normalized;
             targetRb.linearVelocity = dirToTarget * moveSpeed;
             distance = Vector2.Distance(positionEnd, target.transform.position);
-            print(distance);
             yield return new WaitForEndOfFrame();
         }
         targetRb.linearVelocity = Vector2.zero;

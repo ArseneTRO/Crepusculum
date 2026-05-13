@@ -63,24 +63,14 @@ public class PlayerMovement : MonoBehaviour
             if(!isGrounded)
             {
                 rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
-                joint2D.enabled = false;
-                lulupin.distanceSystem = false;
+                //joint2D.enabled = false;
+                //lulupin.distanceSystem = false;
             }
             else
             {
                 rb.linearVelocity = Vector2.zero; // pour que le player puisse pas bouger pendant les cinmatiques
             }
             return;
-        }
-        else if (!IsThisSceneIsJoint)
-        {
-            joint2D.enabled = false;
-            lulupin.distanceSystem = false;
-        }           
-        else
-        {
-           joint2D.enabled = true;
-           lulupin.distanceSystem = true;
         }
         
         if (DialoguePlaying)
