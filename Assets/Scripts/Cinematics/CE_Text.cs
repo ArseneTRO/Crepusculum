@@ -1,4 +1,3 @@
-using UnityEditor.Rendering;
 using System.Collections;
 using UnityEngine;
 using TMPro;

@@ -1,5 +1,3 @@
-using UnityEditor.SearchService;
-using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;

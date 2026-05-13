@@ -30,8 +30,8 @@ public class TitleScreen : MonoBehaviour
 
     public void Quit()
         {
-            Application.Quit();
-    }
+                Application.Quit();
+        }
 
     public void Option()
     {

@@ -56,6 +56,10 @@ public class PauseSystem : MonoBehaviour
         {
             StartCoroutine(GoToTheTitleScreen());
         }
+        public void Quit()
+        {
+            Application.Quit();
+        }
 
         IEnumerator GoToTheTitleScreen()
         {
