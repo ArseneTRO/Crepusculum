@@ -14,6 +14,8 @@ public class CinematicLauncher : MonoBehaviour
     [SerializeField]
     private bool controlPlayer;
     [SerializeField]
+    private bool dontDestroy;
+    [SerializeField]
     private bool DontEndUI;
     private Interactable interactable;
     public PauseSystem pause;
@@ -86,6 +88,9 @@ private void OnTriggerEnter2D(Collider2D collision)
             CinematicManager.Instance.CinematicLauncher = null;
         }
         print("Cinematic Ended");
-        Destroy(gameObject);
+        if (!dontDestroy)
+        {
+            Destroy(gameObject);
+        }
     }
 }
