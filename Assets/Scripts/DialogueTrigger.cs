@@ -9,6 +9,7 @@ public class DialogueTrigger : MonoBehaviour
     public bool isInRange;
     public BoxCollider2D boxCollider2D;
     public PlayerMovement playerMovement;
+    public bool isCinematic;
     //public bool CanSkip = true;
 
 
@@ -22,12 +23,13 @@ public class DialogueTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isInRange && Input.GetKeyDown(KeyCode.E) && playerMovement.CinematicPlaying == false)
+        Debug.Log(playerMovement.DialoguePlaying);
+        if (isInRange && Input.GetKeyDown(KeyCode.E) && !playerMovement.CinematicPlaying)
         {
             TriggerDialogue();
             playerMovement.DialoguePlaying = true;
         }
-        if (Input.GetKeyDown(KeyCode.Space) /*&& CanSkip && playerMovement.DialoguePlaying*/)
+        if (Input.GetKeyDown(KeyCode.Space) && playerMovement.DialoguePlaying && !playerMovement.CinematicPlaying)
         {
                 StartCoroutine(DispNextSentence());
         }
@@ -56,7 +58,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         DialogueManager.Instance.StartDialogue(dialogue);
     }
-    void DisplayNextSentence()
+    public void DisplayNextSentence()
     {
         StartCoroutine(DispNextSentence());
     }

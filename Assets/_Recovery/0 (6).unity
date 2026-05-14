@@ -1043,7 +1043,6 @@ MonoBehaviour:
   sentences:
   - Venez, laissons Vitalina seule un instant.
   npcName: "M\xE9m\xE9"
-  playerMovement: {fileID: 0}
 --- !u!4 &49942766 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 658799021336430609, guid: cc0b2bc3020c3fb4f86dd2eca9f9d5ca, type: 3}
@@ -1186,7 +1185,6 @@ MonoBehaviour:
   sentences:
   - "Et voil\xE0 que les animaux causent maintenant ?"
   npcName: Vitalina
-  playerMovement: {fileID: 0}
 --- !u!1 &78844377
 GameObject:
   m_ObjectHideFlags: 0
@@ -1519,7 +1517,6 @@ MonoBehaviour:
   sentences:
   - "Tu m\u2019a menti, il n\u2019y as rien ici !"
   npcName: Vitalina
-  playerMovement: {fileID: 0}
 --- !u!1 &97589948 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8494385205040281589, guid: b45d1de77b26dc64286df162118d8bb6, type: 3}
@@ -1877,184 +1874,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2456d9fa183227e44a2c94c233db2ef8, type: 3}
---- !u!43 &159638868
-Mesh:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  serializedVersion: 12
-  m_SubMeshes:
-  - serializedVersion: 2
-    firstByte: 0
-    indexCount: 54
-    topology: 0
-    baseVertex: 0
-    firstVertex: 0
-    vertexCount: 30
-    localAABB:
-      m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.039993286, y: 0.19999695, z: 0}
-  m_Shapes:
-    vertices: []
-    shapes: []
-    channels: []
-    fullWeights: []
-  m_BindPose: []
-  m_BoneNameHashes: 
-  m_RootBoneNameHash: 0
-  m_BonesAABB: []
-  m_VariableBoneCountWeights:
-    m_Data: 
-  m_MeshCompression: 0
-  m_IsReadable: 1
-  m_KeepVertices: 1
-  m_KeepIndices: 1
-  m_IndexFormat: 0
-  m_IndexBuffer: 00000600070007000100000001000a000b000b000200010002000e000f000f000300020003001200130013000400030004001600170017000500040005001a001b001b000000050000000800090001000c000d0002001000110003001400150004001800190005001c001d00
-  m_VertexData:
-    serializedVersion: 3
-    m_VertexCount: 30
-    m_Channels:
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 3
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 12
-      format: 0
-      dimension: 4
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    - stream: 0
-      offset: 0
-      format: 0
-      dimension: 0
-    m_DataSize: 840
-    _typelessdata: 00d0233d0050b93d00000000000080bf000000000000653b00cc4c3e0000653b00cc4c3e00000000000080bf00000000000006bb00cc4c3e000006bb00cc4c3e00000000000080bf0000000000d023bd00080c3e00d023bd00080c3e00000000000080bf0000000000d023bd00cc4cbe00d023bd00cc4cbe00000000000080bf0000000000d0233d00cc4cbe00d0233d00cc4cbe00000000000080bf0000000000d0233d0050b93d00d0233d0050b93d0000000000000000000000000000653b00cc4c3e0000653b00cc4c3e00000000000000000000000000d0233d0050b93d00d0233d0050b93d000000000000803f000000000000653b00cc4c3e00d0233d0050b93d0000000000004040000000000000653b00cc4c3e0000653b00cc4c3e000000000000000000000000000006bb00cc4c3e000006bb00cc4c3e0000000000000000000000000000653b00cc4c3e0000653b00cc4c3e000000000000803f00000000000006bb00cc4c3e0000653b00cc4c3e000000000000404000000000000006bb00cc4c3e000006bb00cc4c3e00000000000000000000000000d023bd00080c3e00d023bd00080c3e000000000000000000000000000006bb00cc4c3e000006bb00cc4c3e000000000000803f0000000000d023bd00080c3e000006bb00cc4c3e00000000000040400000000000d023bd00080c3e00d023bd00080c3e00000000000000000000000000d023bd00cc4cbe00d023bd00cc4cbe00000000000000000000000000d023bd00080c3e00d023bd00080c3e000000000000803f0000000000d023bd00cc4cbe00d023bd00080c3e00000000000040400000000000d023bd00cc4cbe00d023bd00cc4cbe00000000000000000000000000d0233d00cc4cbe00d0233d00cc4cbe00000000000000000000000000d023bd00cc4cbe00d023bd00cc4cbe000000000000803f0000000000d0233d00cc4cbe00d023bd00cc4cbe00000000000040400000000000d0233d00cc4cbe00d0233d00cc4cbe00000000000000000000000000d0233d0050b93d00d0233d0050b93d00000000000000000000000000d0233d00cc4cbe00d0233d00cc4cbe000000000000803f0000000000d0233d0050b93d00d0233d00cc4cbe00000000000040400000000000d0233d0050b93d
-  m_CompressedMesh:
-    m_Vertices:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UV:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Normals:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Tangents:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Weights:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_NormalSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_TangentSigns:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_FloatColors:
-      m_NumItems: 0
-      m_Range: 0
-      m_Start: 0
-      m_Data: 
-      m_BitSize: 0
-    m_BoneIndices:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_Triangles:
-      m_NumItems: 0
-      m_Data: 
-      m_BitSize: 0
-    m_UVInfo: 0
-  m_LocalAABB:
-    m_Center: {x: 0, y: 0, z: 0}
-    m_Extent: {x: 0, y: 0, z: 0}
-  m_MeshUsageFlags: 0
-  m_CookingOptions: 30
-  m_BakedConvexCollisionMesh: 
-  m_BakedTriangleCollisionMesh: 
-  'm_MeshMetrics[0]': 1
-  'm_MeshMetrics[1]': 1
-  m_MeshOptimizationFlags: 1
-  m_StreamData:
-    serializedVersion: 2
-    offset: 0
-    size: 0
-    path: 
-  m_MeshLodInfo:
-    serializedVersion: 2
-    m_LodSelectionCurve:
-      serializedVersion: 1
-      m_LodSlope: 0
-      m_LodBias: 0
-    m_NumLevels: 1
-    m_SubMeshes:
-    - serializedVersion: 2
-      m_Levels:
-      - serializedVersion: 1
-        m_IndexStart: 0
-        m_IndexCount: 0
 --- !u!1001 &162407804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32213,7 +32032,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 264111681}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c52d86749960e4e478a7bef169857bad, type: 3}
   m_Name: 
@@ -32508,7 +32327,6 @@ MonoBehaviour:
   DontEndUI: 0
   pause: {fileID: 0}
   EndPlayer: 0
-  isSkipped: 0
   Skip: 0
 --- !u!4 &299980149 stripped
 Transform:
@@ -70573,7 +70391,6 @@ MonoBehaviour:
     a d\xE9pos\xE9es sur la tombe de son p\xE8re. La pr\xE9sence de ces fleurs (dans
     l'environnement ou sur les personnages) affaiblira certaines capacit\xE9s."
   npcName: Fleurs
-  playerMovement: {fileID: 0}
 --- !u!4 &490905771 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3749934376822757659, guid: 24a7c2379f8817449845cc965a940728, type: 3}
@@ -70714,8 +70531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc06f57c74af6841a713ba3aecfd27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CinematicManager
-  cinematicLauncher: {fileID: 652356050}
-  cinematicUI: 0
+  CinematicLauncher: {fileID: 652356050}
+  CinematicUI: 0
   animator: {fileID: 1225026419}
   fromCinematic: 0
   dialogueText: {fileID: 41076633}
@@ -70820,7 +70637,6 @@ MonoBehaviour:
   - ALORS GAMINE, ON AS PEUR DU GRAND SAUT ?
   - NE VOUS EN FAITES DONC PAS. JE VAIS VOUS AIDER !
   npcName: Lulupin
-  playerMovement: {fileID: 0}
 --- !u!1001 &578468086
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71043,7 +70859,6 @@ MonoBehaviour:
   sentences:
   - Qu'est-ce que ?
   npcName: Vitalina
-  playerMovement: {fileID: 0}
 --- !u!1001 &599918075
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71171,7 +70986,6 @@ MonoBehaviour:
   sentences:
   - Pourquoi pleurez-vous ?
   npcName: "\xC9trange Renard"
-  playerMovement: {fileID: 0}
 --- !u!1 &608435915
 GameObject:
   m_ObjectHideFlags: 0
@@ -71392,7 +71206,6 @@ MonoBehaviour:
   DontEndUI: 0
   pause: {fileID: 0}
   EndPlayer: 0
-  isSkipped: 0
   Skip: 0
 --- !u!1 &609091194
 GameObject:
@@ -71449,7 +71262,6 @@ MonoBehaviour:
     casse. Mais d\xE9p\xEAchons-nous\u2026 Les mondes sacr\xE9s ne nous attendront
     pas \xE9ternellement !"
   npcName: Lulupin
-  playerMovement: {fileID: 0}
 --- !u!1 &627099604
 GameObject:
   m_ObjectHideFlags: 0
@@ -100668,7 +100480,6 @@ MonoBehaviour:
   - ... ?
   - "Et bien ? Que nous vaut cette t\xEAte ? "
   npcName: Lulupin
-  playerMovement: {fileID: 0}
 --- !u!1 &652356048
 GameObject:
   m_ObjectHideFlags: 0
@@ -100760,7 +100571,6 @@ MonoBehaviour:
   DontEndUI: 0
   pause: {fileID: 0}
   EndPlayer: 0
-  isSkipped: 0
   Skip: 0
 --- !u!4 &654107032 stripped
 Transform:
@@ -103040,7 +102850,6 @@ MonoBehaviour:
   sentences:
   - " Euh .. je .. je suis Vitalina. Mon papa\u2026 il vient de mourir. Je suis triste."
   npcName: Vitalina
-  playerMovement: {fileID: 0}
 --- !u!1 &714849095
 GameObject:
   m_ObjectHideFlags: 0
@@ -103602,7 +103411,6 @@ MonoBehaviour:
   - "Je suis Lulupin, demi-dieu de la ruse et de la malice, enchant\xE9 !  "
   - "Mais vous, qui \xEAtes-vous donc ? Et pourquoi pleurez-vous ?"
   npcName: "\xC9trange Renard"
-  playerMovement: {fileID: 0}
 --- !u!1 &755990103
 GameObject:
   m_ObjectHideFlags: 0
@@ -113728,7 +113536,6 @@ MonoBehaviour:
   sentences:
   - C'est vrai ?
   npcName: Vitalina
-  playerMovement: {fileID: 0}
 --- !u!1 &974409084
 GameObject:
   m_ObjectHideFlags: 0
@@ -114268,7 +114075,6 @@ MonoBehaviour:
     on doit pouvoir la rattraper ! Vite, avant qu\u2019elle ne prenne ses pattes
     \xE0 son coup, nous devons y aller !"
   npcName: Lulupin
-  playerMovement: {fileID: 0}
 --- !u!1001 &1021998443
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -114486,7 +114292,6 @@ MonoBehaviour:
   - "ET VOUS D\xC9PLACER SOUDAINEMENT VERS L'AVANT"
   - ESSAYEZ DE COMBINER LES DEUX POUR PASSER CE GOUFFRE !
   npcName: Lulupin
-  playerMovement: {fileID: 0}
 --- !u!1 &1030733767
 GameObject:
   m_ObjectHideFlags: 0
@@ -121504,7 +121309,6 @@ MonoBehaviour:
   DontEndUI: 0
   pause: {fileID: 0}
   EndPlayer: 0
-  isSkipped: 0
   Skip: 0
 --- !u!58 &1200329443
 CircleCollider2D:
@@ -121606,7 +121410,6 @@ MonoBehaviour:
   - "Armez-vous donc de patience ! On n\u2019entre pas dans un monde sacr\xE9 comme
     dans un poulailler !"
   npcName: Lulupin
-  playerMovement: {fileID: 0}
 --- !u!1 &1214214934
 GameObject:
   m_ObjectHideFlags: 0
@@ -127839,7 +127642,6 @@ MonoBehaviour:
   - "Et voil\xE0 qu\u2019on accuse le vieux Lulupin d\u2019\xEAtre un menteur. Ah,
     la brute ! Passons. Allons-y."
   npcName: Lulupin
-  playerMovement: {fileID: 0}
 --- !u!1 &1513009536
 GameObject:
   m_ObjectHideFlags: 0
@@ -128404,9 +128206,7 @@ MonoBehaviour:
   sentences:
   - "Ces fleurs, j\u2019ai pos\xE9 les m\xEAmes sur la tombe de mon papa. J\u2019avoue
     que \xE7a ne me fait pas rien\u2026"
-  - Test
   npcName: Vitalina
-  playerMovement: {fileID: 0}
 --- !u!1 &1596506564
 GameObject:
   m_ObjectHideFlags: 0
@@ -133713,7 +133513,6 @@ MonoBehaviour:
     Horace, dans ta derni\xE8re ballade, ta plus douce ballade, qui t\u2019emm\xE8nera
     l\xE0 o\xF9 nous prions que tu te plairas, dans l\u2019au\u2011del\xE0."
   npcName: "Pr\xEAtre"
-  playerMovement: {fileID: 0}
 --- !u!1 &1688475797
 GameObject:
   m_ObjectHideFlags: 0
@@ -135697,7 +135496,6 @@ MonoBehaviour:
   sentences:
   - Bon ... Quand faut y aller ...
   npcName: Vitalina
-  playerMovement: {fileID: 0}
 --- !u!1001 &1945745516
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -136100,7 +135898,6 @@ MonoBehaviour:
   - "C\u2019est une vieille connaissance. Tu sais, si tu veux, on peux r\xE9cup\xE9rer
     votre papa !"
   npcName: Lulupin
-  playerMovement: {fileID: 0}
 --- !u!1 &2011183717
 GameObject:
   m_ObjectHideFlags: 0
@@ -136752,6 +136549,184 @@ MonoBehaviour:
   shouldCameraMove: 0
   sentences: Bienvenue dans Crepusculum
   pauseSystem: {fileID: 0}
+--- !u!43 &2047361730
+Mesh:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  serializedVersion: 12
+  m_SubMeshes:
+  - serializedVersion: 2
+    firstByte: 0
+    indexCount: 54
+    topology: 0
+    baseVertex: 0
+    firstVertex: 0
+    vertexCount: 30
+    localAABB:
+      m_Center: {x: 0, y: 0, z: 0}
+      m_Extent: {x: 0.039993286, y: 0.19999695, z: 0}
+  m_Shapes:
+    vertices: []
+    shapes: []
+    channels: []
+    fullWeights: []
+  m_BindPose: []
+  m_BoneNameHashes: 
+  m_RootBoneNameHash: 0
+  m_BonesAABB: []
+  m_VariableBoneCountWeights:
+    m_Data: 
+  m_MeshCompression: 0
+  m_IsReadable: 1
+  m_KeepVertices: 1
+  m_KeepIndices: 1
+  m_IndexFormat: 0
+  m_IndexBuffer: 00000600070007000100000001000a000b000b000200010002000e000f000f000300020003001200130013000400030004001600170017000500040005001a001b001b000000050000000800090001000c000d0002001000110003001400150004001800190005001c001d00
+  m_VertexData:
+    serializedVersion: 3
+    m_VertexCount: 30
+    m_Channels:
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 3
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 12
+      format: 0
+      dimension: 4
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    - stream: 0
+      offset: 0
+      format: 0
+      dimension: 0
+    m_DataSize: 840
+    _typelessdata: 00d0233d0050b93d00000000000080bf000000000000653b00cc4c3e0000653b00cc4c3e00000000000080bf00000000000006bb00cc4c3e000006bb00cc4c3e00000000000080bf0000000000d023bd00080c3e00d023bd00080c3e00000000000080bf0000000000d023bd00cc4cbe00d023bd00cc4cbe00000000000080bf0000000000d0233d00cc4cbe00d0233d00cc4cbe00000000000080bf0000000000d0233d0050b93d00d0233d0050b93d0000000000000000000000000000653b00cc4c3e0000653b00cc4c3e00000000000000000000000000d0233d0050b93d00d0233d0050b93d000000000000803f000000000000653b00cc4c3e00d0233d0050b93d0000000000004040000000000000653b00cc4c3e0000653b00cc4c3e000000000000000000000000000006bb00cc4c3e000006bb00cc4c3e0000000000000000000000000000653b00cc4c3e0000653b00cc4c3e000000000000803f00000000000006bb00cc4c3e0000653b00cc4c3e000000000000404000000000000006bb00cc4c3e000006bb00cc4c3e00000000000000000000000000d023bd00080c3e00d023bd00080c3e000000000000000000000000000006bb00cc4c3e000006bb00cc4c3e000000000000803f0000000000d023bd00080c3e000006bb00cc4c3e00000000000040400000000000d023bd00080c3e00d023bd00080c3e00000000000000000000000000d023bd00cc4cbe00d023bd00cc4cbe00000000000000000000000000d023bd00080c3e00d023bd00080c3e000000000000803f0000000000d023bd00cc4cbe00d023bd00080c3e00000000000040400000000000d023bd00cc4cbe00d023bd00cc4cbe00000000000000000000000000d0233d00cc4cbe00d0233d00cc4cbe00000000000000000000000000d023bd00cc4cbe00d023bd00cc4cbe000000000000803f0000000000d0233d00cc4cbe00d023bd00cc4cbe00000000000040400000000000d0233d00cc4cbe00d0233d00cc4cbe00000000000000000000000000d0233d0050b93d00d0233d0050b93d00000000000000000000000000d0233d00cc4cbe00d0233d00cc4cbe000000000000803f0000000000d0233d0050b93d00d0233d00cc4cbe00000000000040400000000000d0233d0050b93d
+  m_CompressedMesh:
+    m_Vertices:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UV:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Normals:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Tangents:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Weights:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_NormalSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_TangentSigns:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_FloatColors:
+      m_NumItems: 0
+      m_Range: 0
+      m_Start: 0
+      m_Data: 
+      m_BitSize: 0
+    m_BoneIndices:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_Triangles:
+      m_NumItems: 0
+      m_Data: 
+      m_BitSize: 0
+    m_UVInfo: 0
+  m_LocalAABB:
+    m_Center: {x: 0, y: 0, z: 0}
+    m_Extent: {x: 0, y: 0, z: 0}
+  m_MeshUsageFlags: 0
+  m_CookingOptions: 30
+  m_BakedConvexCollisionMesh: 
+  m_BakedTriangleCollisionMesh: 
+  'm_MeshMetrics[0]': 1
+  'm_MeshMetrics[1]': 1
+  m_MeshOptimizationFlags: 1
+  m_StreamData:
+    serializedVersion: 2
+    offset: 0
+    size: 0
+    path: 
+  m_MeshLodInfo:
+    serializedVersion: 2
+    m_LodSelectionCurve:
+      serializedVersion: 1
+      m_LodSlope: 0
+      m_LodBias: 0
+    m_NumLevels: 1
+    m_SubMeshes:
+    - serializedVersion: 2
+      m_Levels:
+      - serializedVersion: 1
+        m_IndexStart: 0
+        m_IndexCount: 0
 --- !u!1 &2078042745
 GameObject:
   m_ObjectHideFlags: 0
@@ -136922,7 +136897,6 @@ MonoBehaviour:
   sentences:
   - "Qu\u2019est-ce que tu racontes ? C\u2019est impossible !"
   npcName: Vitalina
-  playerMovement: {fileID: 0}
 --- !u!1 &2099005770 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5285209516358372259, guid: 7c2a15b957c146940b7f2edfdd0c8d68, type: 3}
@@ -137022,7 +136996,6 @@ MonoBehaviour:
   sentences:
   - "Adieu, Papa. Je t\u2019aime."
   npcName: Vitalina
-  playerMovement: {fileID: 0}
 --- !u!1001 &2101508869
 PrefabInstance:
   m_ObjectHideFlags: 0

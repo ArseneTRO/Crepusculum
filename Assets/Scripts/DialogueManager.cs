@@ -10,7 +10,6 @@ public class DialogueManager : MonoBehaviour
     public TMP_Text dialogueText;
     public Image illustration;
     public PlayerMovement playerMovement;
-    public DialogueTrigger trigger;
     public Animator animator;
     public PauseSystem PauseSystem;
 
@@ -45,6 +44,14 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space) && !dialogueEnded && playerMovement.CinematicPlaying)
+        {
+            DisplayNextSentence();
+        }
+    }
+    
     public void StartDialogue(Dialogue dialogue)
     {
         if (!dialogueEnded)
@@ -120,7 +127,7 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        dialogueEnded =true;    
+        dialogueEnded =true;  
         animator.SetBool("IsOpen", false);
         playerMovement.DialoguePlaying = false;
     }

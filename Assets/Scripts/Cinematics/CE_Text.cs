@@ -14,7 +14,7 @@ public class CE_Text : CinematicElement
     {
         pauseSystem = FindFirstObjectByType<PauseSystem>();
         dialogueText = CinematicManager.Instance.dialogueText;
-        CinematicManager.Instance.CinematicUI = true;
+        CinematicManager.Instance.cinematicUI = true;
         ended = false;
         StartCoroutine(TypeSentence(sentences));
     }

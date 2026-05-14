@@ -21,7 +21,7 @@ public class CinematicLauncher : MonoBehaviour
     public PauseSystem pause;
     [SerializeField]
     private bool EndPlayer;
-    private bool isSkipped;
+    public bool isSkipped;
     public bool Skip;
 
     void Start()
@@ -41,6 +41,7 @@ public class CinematicLauncher : MonoBehaviour
         if(launchOnStart)
         {
             CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer, DontEndUI, EndPlayer);
+            print("LaunchOnStart");
         }
         pause = FindFirstObjectByType<PauseSystem>(FindObjectsInactive.Include);
 
@@ -49,6 +50,7 @@ public class CinematicLauncher : MonoBehaviour
     public void Launch()
         {
             CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer, DontEndUI, EndPlayer);
+            print("Launch on Launch!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         }
 
 private void OnTriggerEnter2D(Collider2D collision)
@@ -59,22 +61,22 @@ private void OnTriggerEnter2D(Collider2D collision)
         }
         if (collision.CompareTag("Player"))
         {
-            if (CinematicManager.Instance.CinematicLauncher == this) return;
-            CinematicManager.Instance.CinematicLauncher = this;
+            if (CinematicManager.Instance.cinematicLauncher == this) return;
+            CinematicManager.Instance.cinematicLauncher = this;
             CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer, DontEndUI, EndPlayer);
+            print("Launch on COllision!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             
         }
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P)) 
+        if (Input.GetKeyDown(KeyCode.P) && !isSkipped) 
         {
             isSkipped = true;
             cinematicElements.RemoveAll(element => element.IsEnded());
             CinematicManager.Instance.EndCinematic();
-            isSkipped = false;
-            Debug.Log("HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+            Debug.Log("Cinematic Skipped Succesfully !");
         }
         Skip = isSkipped;
     }
@@ -83,9 +85,9 @@ private void OnTriggerEnter2D(Collider2D collision)
 
     public void CinematicEnded()
     {
-        if (CinematicManager.Instance.CinematicLauncher == this)
+        if (CinematicManager.Instance.cinematicLauncher == this)
         {
-            CinematicManager.Instance.CinematicLauncher = null;
+            CinematicManager.Instance.cinematicLauncher = null;
         }
         print("Cinematic Ended");
         if (!dontDestroy)
