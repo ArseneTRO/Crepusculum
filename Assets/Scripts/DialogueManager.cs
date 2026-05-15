@@ -23,7 +23,7 @@ public class DialogueManager : MonoBehaviour
 
     public bool IsDialogueEnded()
     {
-        return dialogueEnded && Input.GetKeyDown(KeyCode.Space);
+        return dialogueEnded /*&& Input.GetKeyDown(KeyCode.Space)*/;
     }
 
     public static DialogueManager Instance;
@@ -46,7 +46,7 @@ public class DialogueManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && !dialogueEnded && playerMovement.CinematicPlaying)
+        if (Input.GetKeyDown(KeyCode.Space) && playerMovement.CinematicPlaying)
         {
             DisplayNextSentence();
         }

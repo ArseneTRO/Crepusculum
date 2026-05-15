@@ -18,7 +18,10 @@ public class CinematicManager : MonoBehaviour
     public PlayerMovement player;               // Référence au script de mouvement du joueur
     public PauseSystem pauseSystem;             // Référence au système de pause
     private bool GiveBackControl;               // Si true, on ne redonne PAS le contrôle au joueur à la fin
-
+    public bool alreadyEnded;               // Si true, on ne redonne PAS le contrôle au joueur à la fin
+    private CinematicLauncher currentLauncher;
+    private bool isCinematicPlaying;
+    
     private void Awake()
     {
         // Singleton : si aucune instance n'existe, on devient l'instance
@@ -42,14 +45,18 @@ public class CinematicManager : MonoBehaviour
 
     public void EndCinematic()
     {
+        if (alreadyEnded) return;
+        alreadyEnded = true;
         // Si GiveBackControl est false, on redonne le contrôle au joueur
         if (!GiveBackControl)
         {
             player.CinematicPlaying = false;
         }
         cinematicUI = false;
+        
         // Prévient le launcher que la cinématique est terminée
-        cinematicLauncher.CinematicEnded();
+        currentLauncher?.CinematicEnded();
+        isCinematicPlaying = false;
     }
 
     // Condition utilisée par WaitUntil : attend que l'élément soit terminé
@@ -60,6 +67,10 @@ public class CinematicManager : MonoBehaviour
 
     public void StartCinematic(List<CinematicElement> cinematicElements, bool controlPlayer, bool DontEndUI, bool EndPlayer)
     {
+        if (isCinematicPlaying) return;
+        currentLauncher = cinematicLauncher;
+        isCinematicPlaying = true;
+        alreadyEnded = false;
         GiveBackControl = EndPlayer;
         cinematicLauncher.isSkipped = false;
         // Lance la coroutine qui joue les éléments un par un
@@ -68,7 +79,7 @@ public class CinematicManager : MonoBehaviour
 
     private IEnumerator Cinematic(List<CinematicElement> cinematicElements, bool controlPlayer, bool DontEndUI, bool EndPlayer)
     {
-        var myLauncher = cinematicLauncher;
+        
         GiveBackControl = EndPlayer;
 
         // Si controlPlayer est false, on bloque le joueur pendant la cinématique
@@ -82,9 +93,9 @@ public class CinematicManager : MonoBehaviour
         {
             cinematicUI = false;
             element.StartProcess(); // Démarre l'élément (dialogue, mouvement, tp...)
-            yield return new WaitUntil(() => NextCinematicElement(element) || (myLauncher?.Skip ?? false));
+            yield return new WaitUntil(() => NextCinematicElement(element) || (currentLauncher?.Skip ?? false));
 
-            if (myLauncher?.Skip ?? false)
+            if (currentLauncher?.Skip ?? false)
             {
                 break;
             }
@@ -103,7 +114,7 @@ public class CinematicManager : MonoBehaviour
         {
             cinematicUI = false;
         }
-        myLauncher.isSkipped = false;
-        myLauncher.CinematicEnded();
+        currentLauncher.isSkipped = false;
+        EndCinematic();
     }
 }
