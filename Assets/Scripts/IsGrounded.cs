@@ -16,11 +16,12 @@ public class IsGrounded : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        /*
         if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             playerMovement.isGrounded = true;  // Pour jump, etc.
             playerMovement.jumpsLeft = 2;
             print("Grounded !");
-        }
+        }*/
     }
 }

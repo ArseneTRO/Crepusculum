@@ -32,7 +32,12 @@ public class PauseSystem : MonoBehaviour
         {
             pauseScreen.SetActive(false);
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !pause)
+        {
+            pause = true;
+            pauseScreen.SetActive(true);
+        }        
+        if (Input.GetKeyDown(KeyCode.Escape) && pause)
         {
             pause = true;
             pauseScreen.SetActive(true);

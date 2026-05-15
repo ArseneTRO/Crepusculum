@@ -106,12 +106,22 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = new UnityEngine.Vector2(0f, rb.linearVelocity.y);
         }
+        
+        
+        var hit = Physics2D.Raycast(transform.position, Vector2.down, 0.001f);
+        Debug.DrawRay(transform.position, Vector2.down * 0.001f, Color.red);
+        if (hit)
+        {
+            isGrounded = true;
+        }
         if (Input.GetKeyDown(KeyCode.Space)) // jump
         {
             if (isGrounded)
             {
-                isGrounded = false; // Pour empecher de jump tant que le player n'est pas retomb� au 
-                
+
+
+                isGrounded = false; // Pour empecher de jump tant que le player n'est pas retomb� au
+
                 rb.linearVelocity = new UnityEngine.Vector2(0, JumpForce);
                 print("Jump !");
                 jumpsLeft -= 1;
