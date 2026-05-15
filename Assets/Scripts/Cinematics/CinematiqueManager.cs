@@ -19,6 +19,8 @@ public class CinematicManager : MonoBehaviour
     public PlayerMovement player;
     public PauseSystem pauseSystem;
     private bool GiveBackControl;
+    private bool _skip;
+
 
     private void Awake()
     {
@@ -36,6 +38,11 @@ public class CinematicManager : MonoBehaviour
     private void Update()
     {
         animator.SetBool("CinematicIsOn", CinematicUI);
+        
+        if (Input.GetKeyDown(KeyCode.P)) 
+        {
+            _skip = true; 
+        }
     }
 
 
@@ -46,8 +53,8 @@ public class CinematicManager : MonoBehaviour
         {
             player.CinematicPlaying = false;
             //safe
-            print("C'est moi qui fout la merde ligne 49");
         }
+
         CinematicUI = false;
         CinematicLauncher.CinematicEnded();
 
@@ -55,47 +62,63 @@ public class CinematicManager : MonoBehaviour
 
     private bool NextCinematicElement(CinematicElement element)
     {
+        if (_skip)
+        {
+            print("Skip partiel");
+            if (element.GetType() == typeof(CE_Dialogue) || element.GetType() == typeof(CE_Text))
+            {
+                print("Skip total");
+                return true;
+            }
+        }
+        print("no skip");
         return element.IsEnded();
     }
 
-    public void StartCinematic(List<CinematicElement> cinematicElements, bool controlPlayer, bool DontEndUI, bool EndPlayer)
-    {
-        GiveBackControl = EndPlayer;
-        StartCoroutine(Cinematic(cinematicElements, controlPlayer, DontEndUI, EndPlayer));
-    }
-
-    private IEnumerator Cinematic(List<CinematicElement> cinematicElements, bool controlPlayer, bool DontEndUI, bool EndPlayer)
-    {
-        GiveBackControl = EndPlayer;
-        if (!controlPlayer)
+        public void StartCinematic(List<CinematicElement> cinematicElements, bool controlPlayer, bool DontEndUI,
+            bool EndPlayer)
         {
-            player.CinematicPlaying = true;
+            _skip = false;
+            GiveBackControl = EndPlayer;
+            StartCoroutine(Cinematic(cinematicElements, controlPlayer, DontEndUI, EndPlayer));
         }
 
-        
-
-
-        foreach (CinematicElement element in cinematicElements)
+        private IEnumerator Cinematic(List<CinematicElement> cinematicElements, bool controlPlayer, bool DontEndUI,
+            bool EndPlayer)
         {
-            CinematicUI = false;
-            element.StartProcess();
-            
-            yield return new WaitUntil(()=>NextCinematicElement(element));
+            GiveBackControl = EndPlayer;
+            if (!controlPlayer)
+            {
+                player.CinematicPlaying = true;
+            }
 
-        }
 
-        if (!GiveBackControl)
-        {
-            player.CinematicPlaying = false;
-            
+
+
+            foreach (CinematicElement element in cinematicElements)
+            {
+                CinematicUI = false;
+                element.StartProcess();
+
+                yield return new WaitUntil(() => NextCinematicElement(element));
+
+            }
+
+            if (!GiveBackControl)
+            {
+                player.CinematicPlaying = false;
+
+            }
+
+            if (!DontEndUI)
+            {
+                CinematicUI = false;
+            }
+
+            CinematicLauncher.CinematicEnded();
         }
-        if (!DontEndUI)
-        {
-            CinematicUI = false;
-        }
-        CinematicLauncher.CinematicEnded();
-    }
 
 
 
 }
+

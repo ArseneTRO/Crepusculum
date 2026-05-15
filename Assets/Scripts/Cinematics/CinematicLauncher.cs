@@ -21,7 +21,6 @@ public class CinematicLauncher : MonoBehaviour
     public PauseSystem pause;
     [SerializeField]
     private bool EndPlayer;
-    private bool isSkipped;
     public bool Skip;
 
     void Start()
@@ -41,6 +40,8 @@ public class CinematicLauncher : MonoBehaviour
         if(launchOnStart)
         {
             CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer, DontEndUI, EndPlayer);
+            CinematicManager.Instance.CinematicLauncher = this;
+            Skip = false;
         }
         pause = FindFirstObjectByType<PauseSystem>(FindObjectsInactive.Include);
 
@@ -70,19 +71,15 @@ private void OnTriggerEnter2D(Collider2D collision)
     {
         if (Input.GetKeyDown(KeyCode.P)) 
         {
-            isSkipped = true;
-            cinematicElements.RemoveAll(element => element.IsEnded());
-            CinematicManager.Instance.EndCinematic();
-            isSkipped = false;
-            Debug.Log("HELLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+            Skip = true; 
         }
-        Skip = isSkipped;
     }
 
     
 
     public void CinematicEnded()
     {
+        Skip = false;
         if (CinematicManager.Instance.CinematicLauncher == this)
         {
             CinematicManager.Instance.CinematicLauncher = null;
