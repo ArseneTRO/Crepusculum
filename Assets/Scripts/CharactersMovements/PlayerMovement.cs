@@ -82,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        mySpriteRenderer.flipX = (Mathf.Sign(rb.linearVelocityX) < 0);
+        mySpriteRenderer.flipX = ((transform.localScale.x * dashingPower) < 0);
 
 
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)) // Aller a droite
