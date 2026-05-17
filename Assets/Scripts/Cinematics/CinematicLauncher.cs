@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class CinematicLauncher : MonoBehaviour
@@ -22,9 +23,17 @@ public class CinematicLauncher : MonoBehaviour
     [SerializeField]
     private bool EndPlayer;
     public bool Skip;
+    [SerializeField]
+    private string cinematicID;
+    public PlayerMovement player;
 
     void Start()
     {
+        player = FindFirstObjectByType<PlayerMovement>();
+        if(string.IsNullOrEmpty(cinematicID))
+        {
+            cinematicID = this.gameObject.name + SceneManager.GetActiveScene().name;
+        }
         if (interactable != null)
             {
                 if (interactable.LoadIsComingFromMe) 
@@ -36,15 +45,23 @@ public class CinematicLauncher : MonoBehaviour
         
 
         cinematicElements = transform.GetComponentsInChildren<CinematicElement>().ToList();  
+        pause = FindFirstObjectByType<PauseSystem>(FindObjectsInactive.Include);
 
         if(launchOnStart)
         {
+            
+            if(PlayerPrefs.GetInt(cinematicID, 0) == 0)
+            {
             CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer, DontEndUI, EndPlayer);
             CinematicManager.Instance.CinematicLauncher = this;
             Skip = false;
+            }
+            else
+            {
+                player.CinematicPlaying = false;
+                return;
+            }
         }
-        pause = FindFirstObjectByType<PauseSystem>(FindObjectsInactive.Include);
-
     }
 
     public void Launch()
@@ -80,6 +97,7 @@ private void OnTriggerEnter2D(Collider2D collision)
     public void CinematicEnded()
     {
         Skip = false;
+        PlayerPrefs.SetInt(cinematicID, 1);
         if (CinematicManager.Instance.CinematicLauncher == this)
         {
             CinematicManager.Instance.CinematicLauncher = null;

@@ -11,10 +11,15 @@ public class TitleScreen : MonoBehaviour
     public Image randomSprite;
     public List<Sprite> sprites;
     public int result;
+    public Animator PlayScreenAnimation;
+    [SerializeField]
+    private GameObject PlayScreen;
+    public SaveData save;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Options.SetActive(false);
+        save = FindFirstObjectByType<SaveData>();
     }
 
     // Update is called once per frame
@@ -25,7 +30,8 @@ public class TitleScreen : MonoBehaviour
 
     public void Play()
     {
-        SceneManager.LoadScene("SnowScene");
+        save.iAlreadyPlaceThePlayer = false;
+        SceneManager.LoadScene(PlayerPrefs.GetString("LevelName", "SnowScene"));
     }
 
     public void Quit()
@@ -60,6 +66,21 @@ public class TitleScreen : MonoBehaviour
     {
         Options.SetActive(false);
     }
+
+    public void OpenPlay()
+    {
+        PlayScreenAnimation.SetBool("PlayScreenIsOpening", true);
+    }
+    public void ClosePlay()
+    {
+        PlayScreenAnimation.SetBool("PlayScreenIsOpening", false);
+    }
+        public void PlayFromBegenning()
+    {
+        PlayerPrefs.DeleteAll();
+        SceneManager.LoadScene("SnowScene");
+    }
+
 
 
 }

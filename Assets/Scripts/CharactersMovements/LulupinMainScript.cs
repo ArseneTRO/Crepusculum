@@ -20,7 +20,13 @@ public class LulupinMainScript : MonoBehaviour
     private Transform myTransform;
     public bool distanceSystem;
     public PlayerMovement playerMovement;
-    void Update()
+    
+    void Start()
+    {
+        playerMovement = FindFirstObjectByType<PlayerMovement>();
+    }
+    
+    void Update()  
     {
         myJoint = this.gameObject.GetComponent<Joint2D>();
         Physics2D.IgnoreCollision(playerBox, myBox);

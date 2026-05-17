@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     public LulupinMainScript lulupin;
     [SerializeField]
     private bool IsThisSceneIsJoint = false;
+    [SerializeField]
+    private LayerMask Ground;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
     
@@ -39,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     {
         isGrounded = false;
         pause = FindFirstObjectByType<PauseSystem>(FindObjectsInactive.Include);
+        Ground = LayerMask.GetMask("Ground");
     }
 
     // Update is called once per frame
@@ -108,11 +111,11 @@ public class PlayerMovement : MonoBehaviour
         }
         
         
-        var hit = Physics2D.Raycast(transform.position, Vector2.down, 0.001f);
-        Debug.DrawRay(transform.position, Vector2.down * 0.001f, Color.red);
+        var hit = Physics2D.Raycast(transform.position, Vector2.down, 0.03f, Ground);
         if (hit)
         {
             isGrounded = true;
+            jumpsLeft = 2;
         }
         if (Input.GetKeyDown(KeyCode.Space)) // jump
         {

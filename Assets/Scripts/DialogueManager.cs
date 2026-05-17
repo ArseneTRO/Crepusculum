@@ -99,7 +99,6 @@ public class DialogueManager : MonoBehaviour
         string sentence = sentences.Dequeue();
         
         print(sentences.Count);
-        print(sentence);
         StartCoroutine(TypeSentence(sentence));
         
         

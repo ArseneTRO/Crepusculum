@@ -12,6 +12,9 @@ public class PauseSystem : MonoBehaviour
     private GameObject pauseScreen;
     [SerializeField]
     private GameObject OptionsScreen;
+    [SerializeField]
+    private GameObject QuitScreen;
+    public SaveData save;
 
 
     private void Awake()
@@ -22,6 +25,7 @@ public class PauseSystem : MonoBehaviour
     void Start()
     {
         pause = false;
+        save = FindFirstObjectByType<SaveData>();
     }
 
     // Update is called once per frame
@@ -31,6 +35,8 @@ public class PauseSystem : MonoBehaviour
         if (!isPaused)
         {
             pauseScreen.SetActive(false);
+            QuitScreen.SetActive(false);
+            OptionsScreen.SetActive(false);
         }
         if (Input.GetKeyDown(KeyCode.Escape) && !pause)
         {
@@ -52,6 +58,14 @@ public class PauseSystem : MonoBehaviour
         {
             OptionsScreen.SetActive(false);
         }
+        public void QuitEnter()
+        {
+            QuitScreen.SetActive(true);
+        }
+        public void QuitExit()
+        {
+            QuitScreen.SetActive(false);
+        }
         public void ExitPause()
         {
             pause = false;
@@ -59,10 +73,17 @@ public class PauseSystem : MonoBehaviour
         }
         public void GoToTitleScreen()
         {
+            save.Save();
             StartCoroutine(GoToTheTitleScreen());
         }
         public void Quit()
         {
+            Application.Quit();
+        }
+        public void QuitWithoutSave()
+        {
+            save.saveOnQuit = false;
+            PlayerPrefs.DeleteAll();
             Application.Quit();
         }
 

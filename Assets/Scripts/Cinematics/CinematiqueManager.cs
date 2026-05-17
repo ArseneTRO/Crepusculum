@@ -18,6 +18,7 @@ public class CinematicManager : MonoBehaviour
     public TMP_Text dialogueText;
     public PlayerMovement player;
     public PauseSystem pauseSystem;
+    [SerializeField]
     private bool GiveBackControl;
     private bool _skip;
 

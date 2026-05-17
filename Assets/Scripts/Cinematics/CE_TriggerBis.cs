@@ -9,7 +9,7 @@ public class CE_TriggerBis : CinematicElement
     [SerializeField]
     private float StartDelay;
     [SerializeField]
-    private bool State;
+    private bool _state;
 
     public override void PostStartProcess()
     {
@@ -23,12 +23,12 @@ public class CE_TriggerBis : CinematicElement
 
     IEnumerator Trigger()
     {
-        Debug.Log("PostStartProcess appelé !");
+        Debug.Log("Runner begin !");
         isEnded = false;
         yield return new WaitForSeconds(0.5f);
+        runner.IsRunnerWorking = _state;
+        Debug.Log("Runner end !");
         isEnded = true;
-        yield return new WaitForSeconds(StartDelay);
-        runner.IsRunnerWorking = State;
         yield break;
     }
 }

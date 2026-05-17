@@ -38,7 +38,7 @@ public class CinematicElement : MonoBehaviour
         float t = 0f;
         while (t < 1f)
         {
-            myCamera.Lens.OrthographicSize = Mathf.Lerp(zoomStart, zoomEnd, t);
+            myCamera.Lens.OrthographicSize = (float) System.Math.Round(Mathf.Lerp(zoomStart, zoomEnd, t), 2);
             t += Time.deltaTime / cameraSpeed;
             yield return null;
         }

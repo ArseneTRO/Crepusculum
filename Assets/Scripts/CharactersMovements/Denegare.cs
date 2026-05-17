@@ -6,6 +6,7 @@ public class Denegare : MonoBehaviour
     public Dialogue dialogueDenied;
     public Dialogue dialogueNotEnough;
     public Dialogue dialogueAccepted;
+    public Dialogue dialogueAlreadyDone;
 
     public bool isInRange;
     public BoxCollider2D boxCollider2D;
@@ -59,13 +60,14 @@ public class Denegare : MonoBehaviour
     void TriggerDialogue()
     {
         Item result = inventorySystem.Inventory.Find(x => x.itemName == "Chaussons aux pommes");
+        Item resultBis = inventorySystem.Inventory.Find(x => x.itemName == "Clé de Den");
         if (result)
         {
-            if(result.amount <5)
+            if (result.amount < 5)
             {
-                DialogueManager.Instance.StartDialogue(dialogueDenied);
+                DialogueManager.Instance.StartDialogue(dialogueNotEnough);
             }
-            else
+            else 
             {
                 DialogueManager.Instance.StartDialogue(dialogueAccepted);
                 inventorySystem.Inventory.Add(denKey);
@@ -74,8 +76,17 @@ public class Denegare : MonoBehaviour
         }
         else
         {
-        DialogueManager.Instance.StartDialogue(dialogueDenied);
+            if(!result && !resultBis)
+            {
+                DialogueManager.Instance.StartDialogue(dialogueDenied);
+            }
+            if (resultBis && !result)
+            {
+                DialogueManager.Instance.StartDialogue(dialogueAlreadyDone);
+            }
+            print("Item unfound");
         }
+
     }
     void DisplayNextSentence()
     {
