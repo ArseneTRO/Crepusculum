@@ -12,10 +12,11 @@ public class DestructableWall : MonoBehaviour
     [SerializeField]
     private CircleCollider2D playercircle;
     public PlayerMovement player;
+    private Animator myAnimator;
 
     void Start()
     {
-        
+        myAnimator = this.gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -48,7 +49,8 @@ public class DestructableWall : MonoBehaviour
 
     IEnumerator PassThroughWall()
     {
-        print("Cible détruite");
+        myAnimator.SetBool("TreeAsFallen", true);
+        print("Cible dï¿½truite");
         Physics2D.IgnoreCollision(playerBox, myCollider, true);
         Physics2D.IgnoreCollision(playercircle, myCollider, true);
         yield return new WaitForSeconds(0.5f);

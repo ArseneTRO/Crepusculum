@@ -62,12 +62,16 @@ public class HealthSystem : MonoBehaviour
             playerAnimator.SetBool("isDead", true);
             yield return new WaitForSeconds(0.5f);
             playerAnimator.SetBool("isDead", false);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(1.7f);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y);
         }
         transform.position = checkpoint.position;
+        if (SceneManager.GetActiveScene().name == "Level4")
+        {
+            SceneManager.LoadScene("Level4");
+        }
         healthPoints = 3;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
         Debug.Log("Load from HealthSystem");
     }
 }
