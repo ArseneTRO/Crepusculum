@@ -49,30 +49,10 @@ public class SaveDataLevel4 : MonoBehaviour
 
     public void Save()
     {
-         PlayerPrefs.SetFloat("PositionX", player.gameObject.transform.position.x);
-         PlayerPrefs.SetFloat("PositionY", player.gameObject.transform.position.y);
-        PlayerPrefs.SetString("LevelName", SceneManager.GetActiveScene().name);
-         PlayerPrefs.Save();
+         PlayerPrefs.SetFloat("PositionX", 45.41f);
+         PlayerPrefs.SetFloat("PositionY", -0.87f);
+         PlayerPrefs.SetString("Level3", "Level3");
     }
 
-    public void LoadData()
-    {
-        if (!gameIsLaunched)
-        {
-            gameIsLaunched = true;
-            SceneManager.LoadScene(PlayerPrefs.GetString("LevelName", "SnowScene"));
-            Debug.Log("Load Data lancé");
-        }
-        
-    }
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        player = FindFirstObjectByType<FlowerSystem>() ?? null;
-        if (!iAlreadyPlaceThePlayer && player != null)
-        {
-            iAlreadyPlaceThePlayer = true;
-            player.gameObject.transform.position = new Vector2(PlayerPrefs.GetFloat("PositionX", 0), PlayerPrefs.GetFloat("PositionY", 0));
-        }
-        Debug.Log("OnSceneLoaded lancé");
-    }
+
 }

@@ -14,12 +14,12 @@ public class TitleScreen : MonoBehaviour
     public Animator PlayScreenAnimation;
     [SerializeField]
     private GameObject PlayScreen;
-    public SaveData save;
+    public SaveDataLevel4 save;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Options.SetActive(false);
-        save = FindFirstObjectByType<SaveData>();
+        save = FindFirstObjectByType<SaveDataLevel4>();
     }
 
     // Update is called once per frame

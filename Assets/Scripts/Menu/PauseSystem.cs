@@ -14,7 +14,7 @@ public class PauseSystem : MonoBehaviour
     private GameObject OptionsScreen;
     [SerializeField]
     private GameObject QuitScreen;
-    public SaveData save;
+    public SaveDataLevel4 save;
 
 
     private void Awake()
@@ -25,7 +25,7 @@ public class PauseSystem : MonoBehaviour
     void Start()
     {
         pause = false;
-        save = FindFirstObjectByType<SaveData>();
+        save = FindFirstObjectByType<SaveDataLevel4>();
     }
 
     // Update is called once per frame
