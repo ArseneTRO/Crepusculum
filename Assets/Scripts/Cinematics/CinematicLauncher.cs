@@ -49,18 +49,28 @@ public class CinematicLauncher : MonoBehaviour
 
         if(launchOnStart)
         {
-            
-            if(PlayerPrefs.GetInt(cinematicID, 0) == 0)
+            if(SceneManager.GetActiveScene().name != "Level4")
             {
+                if(PlayerPrefs.GetInt(cinematicID, 0) == 0)
+                {
+                    CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer, DontEndUI, EndPlayer);
+                    CinematicManager.Instance.CinematicLauncher = this;
+                    Skip = false;
+                }
+                else
+                {
+                    player.CinematicPlaying = false;
+                    return;
+                }
+            }
+
+        else if (SceneManager.GetActiveScene().name == "Level4")
+        {
             CinematicManager.Instance.StartCinematic(cinematicElements, controlPlayer, DontEndUI, EndPlayer);
             CinematicManager.Instance.CinematicLauncher = this;
             Skip = false;
-            }
-            else
-            {
-                player.CinematicPlaying = false;
-                return;
-            }
+        }
+
         }
     }
 

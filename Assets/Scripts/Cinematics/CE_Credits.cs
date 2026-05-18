@@ -24,6 +24,7 @@ public class CE_Credits : CinematicElement
         CreditsOn = false;
         isEnded = true;
         SceneManager.LoadScene("TitleScreen");
+        Debug.Log("Load from TitleScreen");
     }
 
     private void Update()
@@ -33,6 +34,8 @@ public class CE_Credits : CinematicElement
             CreditsOn = false;
             isEnded = true;
             SceneManager.LoadScene("TitleScreen");
+            Debug.Log("Load from TitleScreen");
+
         }
     }
 

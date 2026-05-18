@@ -20,28 +20,32 @@ public class ChangeScene : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(this.gameObject);
-
         }
         else
         {
-
             Destroy(gameObject); // doublon
-            
         }
 
-        loadScene = GameObject.Find("LoadScreen").GetComponent<Canvas>();
+        loadScene = GameObject.Find("LoadScreen")?.GetComponent<Canvas>();
     }
+    public void ChangeTheScene(string sceneName)
+    {
+        if (loadScene != null)
+        {
+            StartCoroutine(LoadScene(sceneName));
+        }
+        else
+        {
+            Debug.Log("Pas de loadscreen !");
+        }
+    }
+
     void Update()
     {
         if(loadScene == null)
         {
-            loadScene = GameObject.Find("LoadScreen").GetComponent<Canvas>();
-            print("loadscene error");
+            loadScene = GameObject.Find("LoadScreen")?.GetComponent<Canvas>();
         }
-    }
-    public void ChangeTheScene(string sceneName)
-    {
-        StartCoroutine(LoadScene(sceneName));
     }
 
     IEnumerator LoadScene(string theSceneName)
@@ -49,9 +53,12 @@ public class ChangeScene : MonoBehaviour
             loadScene.scaleFactor = 1.0f;  
             yield return new WaitForSeconds(4f);
             SceneManager.LoadScene(theSceneName);
+            Debug.Log("Load from ChangeScene");
             yield return new WaitForSeconds(0.5f);
             loadScene.scaleFactor = 0;
             isFromAnotherScene = true;
             yield break;
         }
+    
+
 }

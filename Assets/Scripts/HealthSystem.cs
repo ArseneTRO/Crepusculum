@@ -68,5 +68,6 @@ public class HealthSystem : MonoBehaviour
         transform.position = checkpoint.position;
         healthPoints = 3;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Debug.Log("Load from HealthSystem");
     }
 }

@@ -32,6 +32,7 @@ public class TitleScreen : MonoBehaviour
     {
         save.iAlreadyPlaceThePlayer = false;
         SceneManager.LoadScene(PlayerPrefs.GetString("LevelName", "SnowScene"));
+        Debug.Log("Load from Title Screen");
     }
 
     public void Quit()
@@ -79,6 +80,7 @@ public class TitleScreen : MonoBehaviour
     {
         PlayerPrefs.DeleteAll();
         SceneManager.LoadScene("SnowScene");
+        Debug.Log("Load from Title Screen");
     }
 
 

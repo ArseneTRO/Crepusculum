@@ -40,7 +40,6 @@ public class Interactable : MonoBehaviour
     private void Awake()
     {
         DontDestroyOnLoad(shortLoading);
-        DontDestroyOnLoad(Feedback);
         DontDestroyOnLoad(Feedback.gameObject);
     }
     void Start()
@@ -113,6 +112,7 @@ public class Interactable : MonoBehaviour
                     dontStartCinematicOnStart = true;
                 }
                 SceneManager.LoadScene(myScene);
+                Debug.Log("Load from Interactable");
                 playerTransform.position = position;
                 yield return new WaitForSeconds(1);
                 shortLoading.SetActive(false);
@@ -121,6 +121,7 @@ public class Interactable : MonoBehaviour
                 yield break;
             }
             SceneManager.LoadScene(myScene);
+            Debug.Log("Load from Interactable");
             yield return new WaitForSeconds(1);
             shortLoading.SetActive(false);
         }
