@@ -27,7 +27,11 @@ public class DialogueTrigger : MonoBehaviour
             TriggerDialogue();
             playerMovement.DialoguePlaying = true;
         }
-        if (Input.GetKeyDown(KeyCode.Space) /*&& CanSkip && playerMovement.DialoguePlaying*/)
+        if (Input.GetKeyDown(KeyCode.Space) && playerMovement.CinematicPlaying)
+        {
+                StartCoroutine(DispNextSentence());
+        }
+                if (Input.GetKeyDown(KeyCode.E) && !playerMovement.CinematicPlaying)
         {
                 StartCoroutine(DispNextSentence());
         }

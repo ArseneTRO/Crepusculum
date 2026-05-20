@@ -78,6 +78,7 @@ public class PauseSystem : MonoBehaviour
         }
         public void Quit()
         {
+            save.Save();
             Application.Quit();
         }
         public void QuitWithoutSave()

@@ -21,7 +21,7 @@ public class DiscoveringSystem : MonoBehaviour
      
      
         DiscoverManager.Instance.discoveredItems.Add(Name);
-        DialogueManager.Instance.StartDialogue(new Dialogue { name = Name, sentences = Description, sprite = Illustration });
+        DialogueManager.Instance.StartDialogue(new Dialogue { name = Name, sentences = Description, sprite = Illustration}, true);
     
     
     }

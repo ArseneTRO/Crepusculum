@@ -71,6 +71,7 @@ public class PlayerMovement : MonoBehaviour
             }
             else
             {
+                rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
                 rb.linearVelocity = Vector2.zero; // pour que le player puisse pas bouger pendant les cinmatiques
             }
             return;

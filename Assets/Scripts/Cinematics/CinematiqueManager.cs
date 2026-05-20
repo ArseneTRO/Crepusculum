@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Cinemachine;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 using static CinematicManager;
@@ -20,6 +19,7 @@ public class CinematicManager : MonoBehaviour
     public PauseSystem pauseSystem;
     [SerializeField]
     private bool GiveBackControl;
+    public DialogueManager DialogueManager;
     private bool _skip;
 
 
@@ -34,6 +34,7 @@ public class CinematicManager : MonoBehaviour
         {
             Destroy(gameObject); // SI  doublon
         }
+        DialogueManager = FindFirstObjectByType<DialogueManager>();
     }
 
     private void Update()
@@ -43,6 +44,8 @@ public class CinematicManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.P)) 
         {
             _skip = true; 
+            
+            animator.SetBool("CinematicIsOn", false);
         }
     }
 
@@ -65,19 +68,21 @@ public class CinematicManager : MonoBehaviour
     {
         if (_skip)
         {
+            CinematicUI = false;
+            DialogueManager.EndDialogue();
             print("Skip partiel");
             if (element.GetType() == typeof(CE_Dialogue) || element.GetType() == typeof(CE_Text))
             {
                 print("Skip total");
                 return true;
             }
+            
         }
         print("no skip");
         return element.IsEnded();
     }
 
-        public void StartCinematic(List<CinematicElement> cinematicElements, bool controlPlayer, bool DontEndUI,
-            bool EndPlayer)
+        public void StartCinematic(List<CinematicElement> cinematicElements, bool controlPlayer, bool DontEndUI, bool EndPlayer)
         {
             _skip = false;
             GiveBackControl = EndPlayer;

@@ -13,6 +13,8 @@ public class DialogueManager : MonoBehaviour
     public DialogueTrigger trigger;
     public Animator animator;
     public PauseSystem PauseSystem;
+    public GameObject spaceIndicator;
+    public GameObject eIndicator;
 
     private Queue<string> sentences;
     public List<Dialogue> dialogues;
@@ -45,7 +47,7 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
     }
 
-    public void StartDialogue(Dialogue dialogue)
+    public void StartDialogue(Dialogue dialogue, bool Discovery = false)
     {
         if (!dialogueEnded)
         {
@@ -55,6 +57,18 @@ public class DialogueManager : MonoBehaviour
         dialogueEnded = false;
 
         animator.SetBool("IsOpen", true);
+        if(Discovery)
+        {
+            eIndicator.SetActive(true);
+            spaceIndicator.SetActive(false);
+            print("C'est E!");
+        }
+        else
+        {
+            spaceIndicator.SetActive(true);
+            eIndicator.SetActive(false);
+            print("c'est Space");
+        }
         nameText.text = dialogue.name;
 
         
@@ -64,7 +78,6 @@ public class DialogueManager : MonoBehaviour
         {
             sentences.Enqueue(sentence);
         }
-
 
         if (dialogue.sprite != null)
         {
@@ -117,9 +130,11 @@ public class DialogueManager : MonoBehaviour
     }
 
 
-    void EndDialogue()
+    public void EndDialogue()
     {
-        dialogueEnded =true;    
+        dialogueEnded =true;   
+        spaceIndicator.SetActive(false); 
+        eIndicator.SetActive(false); 
         animator.SetBool("IsOpen", false);
         playerMovement.DialoguePlaying = false;
     }

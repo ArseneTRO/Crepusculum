@@ -26,7 +26,11 @@ public class ChangeScene : MonoBehaviour
             Destroy(gameObject); // doublon
         }
 
-        loadScene = GameObject.Find("LoadScreen")?.GetComponent<Canvas>();
+    }
+
+    void Start()
+    {
+        loadScene = FindFirstObjectByType<loadScreen>().gameObject.GetComponent<Canvas>();
     }
     public void ChangeTheScene(string sceneName)
     {
@@ -44,12 +48,13 @@ public class ChangeScene : MonoBehaviour
     {
         if(loadScene == null)
         {
-            loadScene = GameObject.Find("LoadScreen")?.GetComponent<Canvas>();
+            loadScene = FindFirstObjectByType<loadScreen>().gameObject.GetComponent<Canvas>();
         }
     }
 
     IEnumerator LoadScene(string theSceneName)
         { 
+            loadScene = FindFirstObjectByType<loadScreen>().gameObject.GetComponent<Canvas>();
             loadScene.scaleFactor = 1.0f;  
             yield return new WaitForSeconds(4f);
             SceneManager.LoadScene(theSceneName);

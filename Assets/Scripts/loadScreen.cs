@@ -6,7 +6,7 @@ public class loadScreen : MonoBehaviour
     void Start()
     {
         changeScene = FindFirstObjectByType<ChangeScene>();
-        if (changeScene = null)
+        if (changeScene == null)
         {
             changeScene.loadScene = this.GetComponent<Canvas>();
         }
