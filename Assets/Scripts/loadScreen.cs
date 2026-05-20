@@ -3,15 +3,28 @@ using UnityEngine;
 public class loadScreen : MonoBehaviour
 {
     public ChangeScene changeScene;
-    void Start()
+
+    public static loadScreen Instance;
+        private void Awake()
     {
-        changeScene = FindFirstObjectByType<ChangeScene>();
-        if (changeScene == null)
+
+        if (Instance == null)
         {
-            changeScene.loadScene = this.GetComponent<Canvas>();
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject); // doublon
         }
 
-        this.GetComponent<Canvas>().scaleFactor = 0;
+    }
+    void Start()
+    {
+        if (changeScene != null)
+        {
+            changeScene.loadScene = this.gameObject;
+        }
     }
 
     void Update()

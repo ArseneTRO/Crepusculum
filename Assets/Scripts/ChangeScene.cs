@@ -7,9 +7,8 @@ using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
-    public Canvas loadScene;
+    public GameObject loadScene;
     bool isFromAnotherScene;
-    GameObject AnotherChangeScene;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public static ChangeScene Instance;
@@ -30,7 +29,7 @@ public class ChangeScene : MonoBehaviour
 
     void Start()
     {
-        loadScene = FindFirstObjectByType<loadScreen>().gameObject.GetComponent<Canvas>();
+        loadScene.SetActive(false);
     }
     public void ChangeTheScene(string sceneName)
     {
@@ -44,23 +43,14 @@ public class ChangeScene : MonoBehaviour
         }
     }
 
-    void Update()
-    {
-        if(loadScene == null)
-        {
-            loadScene = FindFirstObjectByType<loadScreen>().gameObject.GetComponent<Canvas>();
-        }
-    }
-
     IEnumerator LoadScene(string theSceneName)
         { 
-            loadScene = FindFirstObjectByType<loadScreen>().gameObject.GetComponent<Canvas>();
-            loadScene.scaleFactor = 1.0f;  
+            loadScene.SetActive(true);
             yield return new WaitForSeconds(4f);
             SceneManager.LoadScene(theSceneName);
             Debug.Log("Load from ChangeScene");
             yield return new WaitForSeconds(0.5f);
-            loadScene.scaleFactor = 0;
+            loadScene.gameObject.SetActive(false);
             isFromAnotherScene = true;
             yield break;
         }

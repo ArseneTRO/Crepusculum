@@ -19,17 +19,18 @@ public class HealthSystem : MonoBehaviour
     private int maxHealthPoints = 3;
     public Transform checkpoint;
     public Transform transform;
+    private bool _Die;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         healthPoints = maxHealthPoints;
+        rb = this.gameObject.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-
     }
 
     public void ChangeHealth(int newAmount)
@@ -43,35 +44,44 @@ public class HealthSystem : MonoBehaviour
 
     public void Die()
     {
+        
         if (checkpoint == null)
         {
             Destroy(gameObject);
         }
         else
         {
-            rb = this.gameObject.GetComponent<Rigidbody2D>();
             StartCoroutine(PlayerDie());
         }
     }
 
     IEnumerator PlayerDie()
     {
-        if (playerAnimator != null)
+        if (_Die)
         {
-            rb.linearVelocity = Vector2.zero;
-            playerAnimator.SetBool("isDead", true);
-            yield return new WaitForSeconds(0.5f);
-            playerAnimator.SetBool("isDead", false);
-            yield return new WaitForSeconds(1.7f);
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y);
+            yield break;
         }
-        transform.position = checkpoint.position;
-        if (SceneManager.GetActiveScene().name == "Level4")
+        else
         {
-            SceneManager.LoadScene("Level4");
-        }
-        healthPoints = 3;
+            _Die = true;
+                if (playerAnimator != null)
+            {
 
-        Debug.Log("Load from HealthSystem");
+                rb.simulated = false;
+                playerAnimator.SetBool("isDead", true);
+                yield return new WaitForSeconds(0.5f);
+                playerAnimator.SetBool("isDead", false);
+                yield return new WaitForSeconds(1.7f);
+                rb.simulated = true;
+            }
+            transform.position = checkpoint.position;
+            if (SceneManager.GetActiveScene().name == "Level4")
+            {
+                SceneManager.LoadScene("Level4");
+            }
+            healthPoints = 3;
+            _Die = false;
+        }
+        
     }
 }

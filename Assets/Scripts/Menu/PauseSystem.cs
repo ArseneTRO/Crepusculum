@@ -73,17 +73,26 @@ public class PauseSystem : MonoBehaviour
         }
         public void GoToTitleScreen()
         {
-            save.Save();
+            if (save != null)
+            {
+                save.Save();
+            }
             StartCoroutine(GoToTheTitleScreen());
         }
         public void Quit()
         {
-            save.Save();
+            if (save != null)
+            {
+                save.Save();
+            }
             Application.Quit();
         }
         public void QuitWithoutSave()
         {
-            save.saveOnQuit = false;
+            if (save != null)
+            {
+                save.saveOnQuit = false;
+            }
             PlayerPrefs.DeleteAll();
             Application.Quit();
         }
