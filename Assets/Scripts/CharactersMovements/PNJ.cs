@@ -6,7 +6,7 @@ public class PNJ : MonoBehaviour
     private BoxCollider2D myBox;
     private CircleCollider2D playerCircle;
     private CircleCollider2D myCircle;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Ce script permet uniquement de retirer les collisions entre le joueur et le pnj, tout en concervant les collision avec le sol par exemple, pour rendre le pnj exploitable aux déplacements réalistes via cinématique tout de même
     void Start()
     {
         playerBox = GameObject.FindGameObjectWithTag("Player").GetComponent<BoxCollider2D>(); 

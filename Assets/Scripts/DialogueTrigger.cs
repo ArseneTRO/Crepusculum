@@ -9,17 +9,19 @@ public class DialogueTrigger : MonoBehaviour
     public bool isInRange;
     public BoxCollider2D boxCollider2D;
     public PlayerMovement playerMovement;
-    //public bool CanSkip = true;
 
 
      void Start()
     {
-        boxCollider2D = GetComponent<BoxCollider2D>();
+        if (boxCollider2D == null)
+        {
+            boxCollider2D = GetComponent<BoxCollider2D>();
+        }
         playerMovement = FindFirstObjectByType<PlayerMovement>();
-        //CanSkip = true;
     }
 
-    // Update is called once per frame
+    //Ce script permet de lancer un dialogue lorsqu'on est dans la range d'un pnj et qu'il as un dialogue. Il gère aussi le défilement des dialogues en appuyant sur espace en fonction des situation (si on est en dialogue ou en cinématique, le joueur ne bouge pas
+    //donc on utilise espace, car de toute manière il ne peux pas sauter. Si le joueur peut sauter,on utilise E, pour éviter qu'il skip un dialogue involontairement en sautant)
     void Update()
     {
         if (isInRange && Input.GetKeyDown(KeyCode.E) && playerMovement.CinematicPlaying == false)
@@ -27,11 +29,11 @@ public class DialogueTrigger : MonoBehaviour
             TriggerDialogue();
             playerMovement.DialoguePlaying = true;
         }
-        if (Input.GetKeyDown(KeyCode.Space) && playerMovement.CinematicPlaying)
+        if (Input.GetKeyDown(KeyCode.Space) && (playerMovement.CinematicPlaying || playerMovement.DialoguePlaying) && !DialogueManager.Instance.isDiscovery)
         {
                 StartCoroutine(DispNextSentence());
         }
-                if (Input.GetKeyDown(KeyCode.E) && !playerMovement.CinematicPlaying)
+                if (Input.GetKeyDown(KeyCode.E) && !playerMovement.CinematicPlaying && !playerMovement.DialoguePlaying)
         {
                 StartCoroutine(DispNextSentence());
         }
@@ -42,9 +44,10 @@ public class DialogueTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if (collision.gameObject.name == "Player")
         {
             isInRange = true;
+            print("Why is in range isnt working");
         }
     }
 

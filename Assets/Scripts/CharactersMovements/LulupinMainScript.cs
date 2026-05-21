@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
-using System.Collections;   
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class LulupinMainScript : MonoBehaviour
 {
@@ -34,7 +35,8 @@ public class LulupinMainScript : MonoBehaviour
         Physics2D.IgnoreCollision(playerCircle, myBox);
         Physics2D.IgnoreCollision(playerBox, myCircle);
         float distance = Vector3.Distance(vitalinaTransform.position, myTransform.position);
-        if(distanceSystem)
+
+        if(distanceSystem && SceneManager.GetActiveScene().name != "SnowScene")
         { 
             if (distance > 1.5)
             {
@@ -49,13 +51,19 @@ public class LulupinMainScript : MonoBehaviour
         }
         else
         {
-            myJoint.enabled = true;
+            if (myJoint != null)
+            {
+                myJoint.enabled = true;
+            }
             distanceSystem = true;
         }
         
         IEnumerator CinematicPlaying()
         {
-            myJoint.enabled = false;
+            if (myJoint != null)
+            {
+                myJoint.enabled = false;
+            }
             yield return new WaitForSeconds(0.5f);
             distanceSystem = false;
         }

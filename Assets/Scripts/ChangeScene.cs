@@ -9,7 +9,7 @@ public class ChangeScene : MonoBehaviour
 {
     public GameObject loadScene;
     bool isFromAnotherScene;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Ce script contient le protocole pour passer d'une scène à une autre. Il afiche le load screen, change la scène, désaffiche le loadscreen
 
     public static ChangeScene Instance;
     private void Awake()

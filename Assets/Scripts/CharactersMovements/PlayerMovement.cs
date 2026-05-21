@@ -44,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
         Ground = LayerMask.GetMask("Ground");
     }
 
-    // Update is called once per frame
+    //Un gros gros script qui gère tout les déplacement du joueur. Pas spécialement compliqué, mais très complet surtout
     public void Update()
     {
         if (pause.isPaused)
@@ -66,8 +66,7 @@ public class PlayerMovement : MonoBehaviour
             if(!isGrounded)
             {
                 rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
-                //joint2D.enabled = false;
-                //lulupin.distanceSystem = false;
+
             }
             else
             {
@@ -118,7 +117,7 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
             jumpsLeft = 2;
         }
-        if (Input.GetKeyDown(KeyCode.Space)) // jump
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.Z)) // jump
         {
             if (isGrounded)
             {
@@ -175,10 +174,11 @@ public class PlayerMovement : MonoBehaviour
                 rb.linearVelocity = new Vector2(transform.localScale.x * dashingPower, 0f);
                 tr.emitting = true;
                 yield return new WaitForSeconds(dashingTime);
-                tr.emitting = false;
+                
                 rb.gravityScale = originalGravity;
                 isDashing = false;
                 yield return new WaitForSeconds(dashingCooldown);
+                tr.emitting = false;
                 canDash = true;
             }
         }

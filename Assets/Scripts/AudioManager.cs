@@ -15,6 +15,9 @@ public class AudioManager : MonoBehaviour
     private bool nextSongIsLooped;
     private float TimeBeforeEnd;
     private bool WaitTillEnding;
+
+    //Ce script gère l'audio. Il dois permettre de "coordiner" l'audio avec le joueur quand c'est nécessaire. Supposons un audio qu'il faut diviser en 3 partie : une partie intro, une partie loop, une partie drop. Le script joue l'intro puis transit vers le loop
+    // qu'il joue en boucle. Via un Cinematic Element, on peut ensuite déclencher le drop au moment propice. Le système du drop n'est utilisé que dans l'intro. Il étais intéressant mais un peu compliqué de comprendre comment l'audio marche dans Unity
     void Start()
     {
         StartCoroutine(StartMusic());

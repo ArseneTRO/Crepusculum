@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<string> sentences;
     public List<Dialogue> dialogues;
+    public bool isDiscovery = false;
     private bool canDisplay;
 
     private bool dialogueEnded = true;
@@ -55,7 +56,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         dialogueEnded = false;
-
+        isDiscovery = Discovery;
         animator.SetBool("IsOpen", true);
         if(Discovery)
         {
