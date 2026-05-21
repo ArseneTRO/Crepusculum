@@ -21,7 +21,7 @@ public class HealthSystem : MonoBehaviour
     public Transform transform;
     private bool _Die;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Simple système de santé pour tout les mobs
     void Start()
     {
         healthPoints = maxHealthPoints;

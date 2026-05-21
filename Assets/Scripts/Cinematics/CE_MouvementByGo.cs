@@ -8,6 +8,7 @@ public class CE_MouvementByGo : CinematicElement
     public float moveSpeed;
     public bool isEnded;
 
+    //déplace la target à la position d'un gameobject précis
     public override void PostStartProcess()
     {
         isEnded = false;

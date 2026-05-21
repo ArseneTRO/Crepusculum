@@ -10,7 +10,7 @@ public class PupilBehaviour : MonoBehaviour
     private SpriteRenderer Tree;
     [SerializeField]
     private SpriteRenderer mySpriteRendered;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Comportement des pupilles des arbres du niveau 2 qui suivent le joueur
     void Start()
     {
         mySpriteRendered = this.gameObject.GetComponent<SpriteRenderer>();

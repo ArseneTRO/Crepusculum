@@ -5,6 +5,7 @@ public class loadScreen : MonoBehaviour
     public ChangeScene changeScene;
 
     public static loadScreen Instance;
+    //Système de loadscreen
         private void Awake()
     {
 

@@ -13,7 +13,7 @@ public class DashableWall : MonoBehaviour
     private CircleCollider2D playercircle;
     public PlayerMovement player;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Murs dashable du niveau 2
     void Start()
     {
         

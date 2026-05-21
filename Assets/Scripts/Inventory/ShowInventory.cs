@@ -10,7 +10,7 @@ public class ShowInventory : MonoBehaviour
     private TextMeshProUGUI _count;
     [SerializeField]
     private Image _image;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // gère le petit slot d'inventaire en bas à droite de l'écran dans le level 2
     void Start()
     {
         

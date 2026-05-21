@@ -5,6 +5,8 @@ public class FlowerSystem : PlayerMovement
 {
     public GameObject flowerObject;
     public GameObject interactable;
+
+    //Nerf de Vitalina quand elle est proche des fleurs
     void Update()
     {
         if (flowerObject != null)

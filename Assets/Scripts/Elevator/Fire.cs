@@ -3,7 +3,7 @@ using UnityEngine;
 public class Fire : MonoBehaviour
 {
     private HealthSystem playerHP;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Le feu tue le joueur
     void Start()
     {
         playerHP = FindFirstObjectByType<PlayerMovement>().gameObject.GetComponent<HealthSystem>();

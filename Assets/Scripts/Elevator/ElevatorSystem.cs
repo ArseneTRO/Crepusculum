@@ -18,7 +18,7 @@ public class ElevatorSystem : MonoBehaviour
         t = 0;
     }
 
-    // Update is called once per frame
+    //Système d'ascenseur. Si le joueur est là, l'ascenseur descend de plus en plus doucement à l'aide d'un lerp, sinon il monte
     void Update()
     {
         if (GettingDown)

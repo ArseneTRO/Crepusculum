@@ -12,7 +12,7 @@ public class Item : MonoBehaviour
 
     public InventorySystem inventorySystem;
     public Item itemScript;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Définit ce qu'est un Item dans l'inventaire et ce qu'il contient comme info
     void Start()
     {
         inventorySystem = FindAnyObjectByType<InventorySystem>();

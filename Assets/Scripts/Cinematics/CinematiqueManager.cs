@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static CinematicManager;
 
+//CinematicManager définit le déroulement d'un cinématique. Il est le schéma type de celle-ci, le mode d'emplois si on préfère
 public class CinematicManager : MonoBehaviour
 {
     //Singleton (porte d'entr�e pour acc�der � chaque �l�ment facilement) (absolument exceptionnel)

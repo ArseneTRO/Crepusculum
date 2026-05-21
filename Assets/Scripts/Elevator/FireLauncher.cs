@@ -11,7 +11,7 @@ public class FireLauncher : MonoBehaviour
     private GameObject Fire2;
     [SerializeField]
     private Animator Fire2Anim;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Le feu s'alterne entre le lanceur 1 et le lanceur 2 
     void Start()
     {
         StartCoroutine(Fire());

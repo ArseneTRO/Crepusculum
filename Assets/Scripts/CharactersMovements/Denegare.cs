@@ -14,7 +14,7 @@ public class Denegare : MonoBehaviour
     public InventorySystem inventorySystem;
     public Item denKey;
     public ShowInventory showInventory;
-    //public bool CanSkip = true;
+    //Le script permet de faire fonctionner le pnj Denegare. Il va adapter son dialogue en fonction des circonstances. Il doit vérifier si le joueur a le bon item en bonne quantité, et donne la réponse en conséquence.
 
 
     void Start()

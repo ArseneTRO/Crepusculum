@@ -4,6 +4,8 @@ using System.Collections;
 using UnityEngine.SceneManagement;
 using UnityEditor;
 
+//Demande un changement de scène, déclenche le ChangeScene
+
     public class CE_ChangeScene : CinematicElement
     {
         public bool WeNeedToLoadScene = false;

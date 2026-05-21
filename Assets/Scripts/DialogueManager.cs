@@ -23,7 +23,7 @@ public class DialogueManager : MonoBehaviour
 
     private bool dialogueEnded = true;
 
-
+    //Système centrale du système de dialogues. Il est en singleton et contient les fonctions principales (Start Dialogue, End Dialogue, Display Next Sentence...)
 
     public bool IsDialogueEnded()
     {

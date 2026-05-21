@@ -11,6 +11,7 @@ public class CinematicElement : MonoBehaviour
     public float cameraSpeed;
     public bool shouldCameraMove;
 
+    //Définit ce qu'est un cinématique element par défaut, ce qu'il contient à l'origine
     public void StartProcess()
     {
         if(shouldCameraMove)

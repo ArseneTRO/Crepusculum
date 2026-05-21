@@ -10,7 +10,7 @@ public class CE_Dialogue : CinematicElement
     private string npcName;
 
 
-
+    //lance un dialogue dans une cinématique
 
     public override void PostStartProcess()
     {

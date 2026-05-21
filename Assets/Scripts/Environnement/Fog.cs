@@ -16,7 +16,7 @@ public class Fog : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
+    // Comportement du brouillard du niveau 2
     void Update()
     {
         myTransform.position = new Vector3(myTransform.position.x - speed * Time.deltaTime, myTransform.position.y, myTransform.position.z);

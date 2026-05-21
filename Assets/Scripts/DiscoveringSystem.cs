@@ -10,7 +10,7 @@ public class DiscoveringSystem : MonoBehaviour
     [SerializeField]
     private Sprite Illustration;
 
-
+    //Discovering Système, s'active seul lorsqu'on découvre quelque chose, comme les fleurs ou un nouveau chemin
     private void OnTriggerEnter2D(Collider2D collision)
     {
 

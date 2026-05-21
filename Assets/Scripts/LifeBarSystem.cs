@@ -7,7 +7,7 @@ public class LifeBarSystem : MonoBehaviour
     public Transform LifeBar;
     public HealthSystem PlayerHealthSystem;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //système de barre de vie
     void Start()
     {
     }

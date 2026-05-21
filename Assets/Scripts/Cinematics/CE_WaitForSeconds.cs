@@ -7,6 +7,7 @@ public class CE_WaitForSeconds : CinematicElement
     public int timeToWait;
     public bool isEnded;
 
+    //Lance une attente pour seconde
     public override void PostStartProcess()
     {
         StartCoroutine(Wait());

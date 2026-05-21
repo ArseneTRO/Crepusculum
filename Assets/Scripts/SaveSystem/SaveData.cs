@@ -11,6 +11,7 @@ public class SaveDataLevel4 : MonoBehaviour
     public bool saveOnQuit = true;
     public bool isLevel4;
 
+    // Système de sauvegarde. On sauvegarde des données dans PlayerPrefs et on les réutilise lorsque nécessaire
     public void Start()
     {
         if(SceneManager.GetActiveScene().name != "TitleScreen")

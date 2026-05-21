@@ -9,6 +9,8 @@ public class CE_Movement : CinematicElement
     public float moveSpeed;
     public bool isEnded;
 
+    //Déplace la target à une position précise
+
     public override void PostStartProcess()
     {
         isEnded = false;

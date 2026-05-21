@@ -19,7 +19,7 @@ public class DestructableWall : MonoBehaviour
         myAnimator = this.gameObject.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+    //Fonctionnement des murs destructibles du niveau 4
     void Update()
     {
         

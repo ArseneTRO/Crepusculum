@@ -8,6 +8,7 @@ public class CE_Trigger : CinematicElement
     public string myBool;
     public bool isEnded;
 
+    //Déclenche un trigger
     public override void PostStartProcess()
     {
         StartCoroutine(Trigger());

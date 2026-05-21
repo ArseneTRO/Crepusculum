@@ -17,7 +17,7 @@ public class RunnerSystem : MonoBehaviour
 
     }
 
-    // Update is called once per frame
+    //Système pour le runner du niveau 4 qui prévois le déplacement, et la mort du joueur  s'il est distancé de 12 unités par Azraët
     void Update()
     {
 
@@ -28,12 +28,10 @@ public class RunnerSystem : MonoBehaviour
         if (IsRunnerWorking)
         {
             rb.linearVelocity = new Vector3(speed, rb.linearVelocity.y);
-            print("Position modifiée");
         }
         else
         {
             rb.linearVelocity = new Vector3(0, rb.linearVelocity.y);
-            print("Rigibody EGALE ZEROOOOOOOOO");
         }
         var dist = Mathf.Abs(playerTransform.position.x - AzraetTransform.position.x);
         if (dist > 12)

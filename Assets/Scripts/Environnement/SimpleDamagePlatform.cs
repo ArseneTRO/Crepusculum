@@ -8,6 +8,7 @@ public class SimpleDamagePlatform : MonoBehaviour
     [SerializeField]
     public int damages;
 
+    //Système de dégat basique
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))

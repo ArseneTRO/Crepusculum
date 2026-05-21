@@ -11,7 +11,7 @@ public class NewMonoBehaviourScript : MonoBehaviour, IPointerEnterHandler, IPoin
     [SerializeField]
     private Color colorHandler = new Color32(0x9E, 0x9E, 0xB7, 0xFF);
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    // Qu'un texte survollé change de couleur
     void Start()
     {
         myText.color = colorBase;

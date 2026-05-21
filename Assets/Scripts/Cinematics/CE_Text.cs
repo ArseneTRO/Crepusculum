@@ -10,6 +10,8 @@ public class CE_Text : CinematicElement
     private TMP_Text dialogueText;
     private bool ended;
     public PauseSystem pauseSystem;
+
+    //Lance un texte de cinématique narrative
     public override void PostStartProcess()
     {
         pauseSystem = FindFirstObjectByType<PauseSystem>();

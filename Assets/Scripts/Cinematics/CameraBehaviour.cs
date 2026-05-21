@@ -14,7 +14,7 @@ public class CameraBehaviour : MonoBehaviour
     private bool isCoroutineLaunched;
     [SerializeField]
     private bool Outside;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Définit le comportement de la caméra
     void Start()
     {
         isCoroutineLaunched = false;

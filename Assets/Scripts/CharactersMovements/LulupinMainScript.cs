@@ -22,6 +22,7 @@ public class LulupinMainScript : MonoBehaviour
     public bool distanceSystem;
     public PlayerMovement playerMovement;
     
+    //Script principale de Lulupin. Il permet de supprimer les collision avec le joueur, de gérer le joint avec lui, et assure la protection en faisant un TP s'il est trop loin
     void Start()
     {
         playerMovement = FindFirstObjectByType<PlayerMovement>();

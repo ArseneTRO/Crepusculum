@@ -10,6 +10,8 @@ public class CE_LaunchVerifier : CinematicElement
     public CinematicLauncher Denied;
     public bool isEnded;
 
+
+    //lance le vérifieur, lui pose une question qui reviens true ou false
     public override void PostStartProcess()
     {
         isEnded = false;

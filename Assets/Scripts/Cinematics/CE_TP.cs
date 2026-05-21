@@ -12,6 +12,7 @@ public class CE_TP : CinematicElement
     [SerializeField]
     private Transform targetTransform;
 
+    //Tp la target à une position
     public override void PostStartProcess()
     {
         isEnded = false;

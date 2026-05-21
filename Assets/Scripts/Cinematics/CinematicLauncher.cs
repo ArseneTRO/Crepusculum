@@ -27,6 +27,7 @@ public class CinematicLauncher : MonoBehaviour
     private string cinematicID;
     public PlayerMovement player;
 
+    //Le cinematic launcher lance une cinématique. Il est déclencheur et paramètreur d'une cinématique. Chaque CinematicElement, dit "Step" est enfant de ce Cinematic Launcher
     void Start()
     {
         player = FindFirstObjectByType<PlayerMovement>();

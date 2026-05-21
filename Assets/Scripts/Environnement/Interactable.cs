@@ -36,7 +36,7 @@ public class Interactable : MonoBehaviour
     [HideInInspector]
     public bool LoadIsComingFromMe;
     public PauseSystem pause;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Comportement d'un intéractable, souvent PNJ, qui lancent un dialogue en appuyant sur E si on est dans la range
     private void Awake()
     {
         DontDestroyOnLoad(shortLoading);

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
-
+//Gère les crédits de fin
 public class CE_Credits : CinematicElement
 {
     public Animator AllCredits;

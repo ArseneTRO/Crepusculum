@@ -44,7 +44,8 @@ public class PlayerMovement : MonoBehaviour
         Ground = LayerMask.GetMask("Ground");
     }
 
-    //Un gros gros script qui gère tout les déplacement du joueur. Pas spécialement compliqué, mais très complet surtout
+    //Un gros gros script qui gère tout les déplacement du joueur. Pas spécialement compliqué, mais très complet surtout. Il contient le dash, les déplacement et le double jump, mais aussi des fonctions utilisées 
+    //par d'autre script pour bloquer les commandes player par exemple
     public void Update()
     {
         if (pause.isPaused)

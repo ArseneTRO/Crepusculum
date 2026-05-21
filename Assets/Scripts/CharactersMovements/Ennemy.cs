@@ -12,7 +12,7 @@ public class Ennemy : MonoBehaviour
     public HealthSystem playerHealth;
     private bool canHit = true;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Ennemie basique
     void Start()
     {
         StartCoroutine(Path());

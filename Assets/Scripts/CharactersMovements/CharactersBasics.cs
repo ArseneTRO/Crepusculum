@@ -8,6 +8,8 @@ public class CharactersBasics : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer mySpriteRenderer;
     public PauseSystem pause;
+
+    //Les basiques d'un character ( qu'il marche, qu'il se retourne ...)
     void Start()
     {
         animator = GetComponent<Animator>();

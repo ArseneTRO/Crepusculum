@@ -13,7 +13,7 @@ public class TempPlateform : MonoBehaviour
     {
     }
 
-    // Update is called once per frame
+    //Plateform temporaire du niveau 3
     void Update()
     {
         

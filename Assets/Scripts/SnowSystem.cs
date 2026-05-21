@@ -10,7 +10,7 @@ public class SnowSystem : MonoBehaviour
     float currentX;
     float result;
     float t;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //Système qui accentue la neige du niveau 1 au fur et à mesure qu'on avance dans le niveau
     void Start()
     {
         myParticles = GetComponent<ParticleSystem>();
