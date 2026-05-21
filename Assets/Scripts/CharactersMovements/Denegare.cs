@@ -13,6 +13,7 @@ public class Denegare : MonoBehaviour
     public PlayerMovement playerMovement;
     public InventorySystem inventorySystem;
     public Item denKey;
+    public ShowInventory showInventory;
     //public bool CanSkip = true;
 
 
@@ -59,19 +60,20 @@ public class Denegare : MonoBehaviour
 
     void TriggerDialogue()
     {
-        Item result = inventorySystem.Inventory.Find(x => x.itemName == "Chaussons aux pommes");
-        Item resultBis = inventorySystem.Inventory.Find(x => x.itemName == "Clé de Den");
+        Item result = inventorySystem.inventory.Find(x => x.itemName == "Chaussons aux pommes");
+        Item resultBis = inventorySystem.inventory.Find(x => x.itemName == "Clé de Den");
         if (result)
         {
-            if (result.amount < 5)
+            if (result.amount < 7)
             {
                 DialogueManager.Instance.StartDialogue(dialogueNotEnough);
             }
             else 
             {
                 DialogueManager.Instance.StartDialogue(dialogueAccepted);
-                inventorySystem.Inventory.Add(denKey);
-                inventorySystem.Inventory.Remove(result);
+                inventorySystem.inventory.Add(denKey);
+                inventorySystem.inventory.Remove(result);
+                showInventory.UpdateItem();
             }
         }
         else

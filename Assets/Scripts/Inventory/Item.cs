@@ -8,6 +8,7 @@ public class Item : MonoBehaviour
     public SpriteRenderer sprite;
     [SerializeField]
     private CircleCollider2D collider;
+    public ShowInventory showInventory;
 
     public InventorySystem inventorySystem;
     public Item itemScript;
@@ -28,15 +29,17 @@ public class Item : MonoBehaviour
     {
         if (!collision.CompareTag("Player")) return;
 
-        Item existingItem = inventorySystem.Inventory.Find(x => x.itemName == itemName);
+        Item existingItem = inventorySystem.inventory.Find(x => x.itemName == itemName);
 
         if (existingItem != null)
         {
             existingItem.amount += amount;
+            showInventory.UpdateItem();
         }
         else
         {
-            inventorySystem.Inventory.Add(this);
+            inventorySystem.inventory.Add(this);
+            showInventory.UpdateItem();
         }
 
         collider.enabled = false;

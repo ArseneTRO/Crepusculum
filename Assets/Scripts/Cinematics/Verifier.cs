@@ -21,7 +21,7 @@ public class Verifier : MonoBehaviour
         {
             CinematicDenied.Launch();
         }
-    Item result = InventorySystem.Inventory.Find(x => x.itemName == ItemSearched);
+    Item result = InventorySystem.inventory.Find(x => x.itemName == ItemSearched);
         if (result)
         {
             if (result.amount >= AmountRequired)
